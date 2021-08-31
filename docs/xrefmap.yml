@@ -33,23 +33,6 @@ references:
   fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).ArgumentMetadata
   nameWithType: ArgumentMetadata<T>.ArgumentMetadata
   nameWithType.vb: ArgumentMetadata(Of T).ArgumentMetadata
-- uid: MASES.CLIParser.ArgumentMetadata`1.Check
-  name: Check()
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_Check
-  commentId: M:MASES.CLIParser.ArgumentMetadata`1.Check
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.Check()
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).Check()
-  nameWithType: ArgumentMetadata<T>.Check()
-  nameWithType.vb: ArgumentMetadata(Of T).Check()
-- uid: MASES.CLIParser.ArgumentMetadata`1.Check*
-  name: Check
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_Check_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadata`1.Check
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.Check
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).Check
-  nameWithType: ArgumentMetadata<T>.Check
-  nameWithType.vb: ArgumentMetadata(Of T).Check
 - uid: MASES.CLIParser.ArgumentMetadata`1.DefaultMultiValue
   name: DefaultMultiValue
   href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_DefaultMultiValue
@@ -67,92 +50,6 @@ references:
   fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).DefaultMultiValue
   nameWithType: ArgumentMetadata<T>.DefaultMultiValue
   nameWithType.vb: ArgumentMetadata(Of T).DefaultMultiValue
-- uid: MASES.CLIParser.ArgumentMetadata`1.DescriptionBuilder(System.Int32)
-  name: DescriptionBuilder(Int32)
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_DescriptionBuilder_System_Int32_
-  commentId: M:MASES.CLIParser.ArgumentMetadata`1.DescriptionBuilder(System.Int32)
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.DescriptionBuilder(System.Int32)
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).DescriptionBuilder(System.Int32)
-  nameWithType: ArgumentMetadata<T>.DescriptionBuilder(Int32)
-  nameWithType.vb: ArgumentMetadata(Of T).DescriptionBuilder(Int32)
-- uid: MASES.CLIParser.ArgumentMetadata`1.DescriptionBuilder*
-  name: DescriptionBuilder
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_DescriptionBuilder_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadata`1.DescriptionBuilder
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.DescriptionBuilder
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).DescriptionBuilder
-  nameWithType: ArgumentMetadata<T>.DescriptionBuilder
-  nameWithType.vb: ArgumentMetadata(Of T).DescriptionBuilder
-- uid: MASES.CLIParser.ArgumentMetadata`1.Parameter
-  name: Parameter()
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_Parameter
-  commentId: M:MASES.CLIParser.ArgumentMetadata`1.Parameter
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.Parameter()
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).Parameter()
-  nameWithType: ArgumentMetadata<T>.Parameter()
-  nameWithType.vb: ArgumentMetadata(Of T).Parameter()
-- uid: MASES.CLIParser.ArgumentMetadata`1.Parameter*
-  name: Parameter
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_Parameter_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadata`1.Parameter
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.Parameter
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).Parameter
-  nameWithType: ArgumentMetadata<T>.Parameter
-  nameWithType.vb: ArgumentMetadata(Of T).Parameter
-- uid: MASES.CLIParser.ArgumentMetadata`1.Parse(System.Collections.Generic.IList{System.String})
-  name: Parse(IList<String>)
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_Parse_System_Collections_Generic_IList_System_String__
-  commentId: M:MASES.CLIParser.ArgumentMetadata`1.Parse(System.Collections.Generic.IList{System.String})
-  name.vb: Parse(IList(Of String))
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.Parse(System.Collections.Generic.IList<System.String>)
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).Parse(System.Collections.Generic.IList(Of System.String))
-  nameWithType: ArgumentMetadata<T>.Parse(IList<String>)
-  nameWithType.vb: ArgumentMetadata(Of T).Parse(IList(Of String))
-- uid: MASES.CLIParser.ArgumentMetadata`1.Parse*
-  name: Parse
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_Parse_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadata`1.Parse
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.Parse
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).Parse
-  nameWithType: ArgumentMetadata<T>.Parse
-  nameWithType.vb: ArgumentMetadata(Of T).Parse
-- uid: MASES.CLIParser.ArgumentMetadata`1.ShortStartWith
-  name: ShortStartWith
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_ShortStartWith
-  commentId: P:MASES.CLIParser.ArgumentMetadata`1.ShortStartWith
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.ShortStartWith
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).ShortStartWith
-  nameWithType: ArgumentMetadata<T>.ShortStartWith
-  nameWithType.vb: ArgumentMetadata(Of T).ShortStartWith
-- uid: MASES.CLIParser.ArgumentMetadata`1.ShortStartWith*
-  name: ShortStartWith
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_ShortStartWith_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadata`1.ShortStartWith
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.ShortStartWith
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).ShortStartWith
-  nameWithType: ArgumentMetadata<T>.ShortStartWith
-  nameWithType.vb: ArgumentMetadata(Of T).ShortStartWith
-- uid: MASES.CLIParser.ArgumentMetadata`1.StartWith
-  name: StartWith
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_StartWith
-  commentId: P:MASES.CLIParser.ArgumentMetadata`1.StartWith
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.StartWith
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).StartWith
-  nameWithType: ArgumentMetadata<T>.StartWith
-  nameWithType.vb: ArgumentMetadata(Of T).StartWith
-- uid: MASES.CLIParser.ArgumentMetadata`1.StartWith*
-  name: StartWith
-  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1_StartWith_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadata`1.StartWith
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadata<T>.StartWith
-  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).StartWith
-  nameWithType: ArgumentMetadata<T>.StartWith
-  nameWithType.vb: ArgumentMetadata(Of T).StartWith
 - uid: MASES.CLIParser.ArgumentMetadataBase
   name: ArgumentMetadataBase
   href: api/MASES.CLIParser.ArgumentMetadataBase.html
