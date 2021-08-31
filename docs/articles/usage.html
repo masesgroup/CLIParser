@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Welcome to CLI Parser | CLI Parser website </title>
+    <title>How it works | CLI Parser website </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Welcome to CLI Parser | CLI Parser website ">
+    <meta name="title" content="How it works | CLI Parser website ">
     <meta name="generator" content="docfx 2.58.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,10 +67,47 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="welcome-to-cli-parser">Welcome to <strong>CLI Parser</strong></h1>
+<h1 id="how-it-works">How it works</h1>
 
-<p>A library to manage command-line arguments in a simple way. It was an internal MASES project, now it is available to anyone.</p>
-<p>This project adheres to the Contributor <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/CODE_OF_CONDUCT.md">Covenant code of conduct</a>. By participating, you are expected to uphold this code. Please report unacceptable behavior to coc_reporting@masesgroup.com.</p>
+<p>The library is very simple in its usage. The definition of command-line switches is based on generic C# types. The parser fully analyze the command line searching for switches and arguments. A special case is the one where the swithes can be inserted within an external file listing the switches line-by-line.
+To see a real application of the library look at project [JCOReflectorCLI[(https://github.com/masesgroup/JCOReflector/tree/master/JCOReflector/CLI) and <a href="https://github.com/masesgroup/JCOReflector/blob/master/JCOReflector/engine/SharedClasses.cs">JCOReflectorEngine</a></p>
+<h2 id="argument-definition">Argument definition</h2>
+<p>An argument can be defined using the following syntax sinppets:</p>
+<pre><code class="lang-C#">arg = new ArgumentMetadata&lt;bool&gt;()
+{
+	Name = &quot;test&quot;,
+	ShortName = &quot;tst&quot;,
+	Help = &quot;this is a test&quot;,
+	Type = ArgumentType.Double,
+	ValueType = ArgumentValueType.Free,
+}
+
+arg1 = new ArgumentMetadata&lt;int&gt;()
+{
+	Name = &quot;range&quot;,
+	Default = 9,
+	Type = ArgumentType.Double,
+	ValueType = ArgumentValueType.Range,
+	MinValue = 2,
+	MaxValue = 10,
+}
+</code></pre>
+<h2 id="parser-initialization">Parser initialization</h2>
+<p>Upon arguments are defined theu can be added to the list managed from the parser using:</p>
+<pre><code class="lang-C#">Parser.Add(arg);
+</code></pre>
+<p>or the compact version:</p>
+<pre><code class="lang-C#">arg1.Add();
+</code></pre>
+<h2 id="parser-use">Parser use</h2>
+<p>Then it is possible to use the parser on command-line arguments:</p>
+<pre><code class="lang-C#">Parser.Parse(args);
+</code></pre>
+<p>or the compact version:</p>
+<pre><code class="lang-C#">args.Parse();
+</code></pre>
+<h2 id="argument-check">Argument check</h2>
+<p>When the <code>Parse</code> method returns, a list of prepared arguments is available. The list can be used to get value or check for existence.</p>
 </article>
           </div>
           
@@ -79,7 +116,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/Documentation/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/Documentation/articles/usage.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
