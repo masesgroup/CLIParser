@@ -36,15 +36,6 @@ jobs:
       - name: Build NuGet Packages
         run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\CLIParser.sln
 
-      - name: Upload CLIParser NuGet to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\bin\*.nupkg
-          asset_name: CLIParser
-          tag: ${{ github.ref }}
-          overwrite: true
-
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
