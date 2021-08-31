@@ -7,7 +7,7 @@ This project adheres to the Contributor [Covenant code of conduct](https://githu
 ## How it works
 
 The library is very simple in its usage. The definition of command-line switches is based on generic C# types. The parser fully analyze the command line searching for switches and arguments. A special case is the one where the swithes can be inserted within an external file listing the switches line-by-line.
-To see a real application of the library look at project [JCOReflectorCLI[(https://github.com/masesgroup/JCOReflector/tree/master/JCOReflector/CLI) and [JCOReflectorEngine](https://github.com/masesgroup/JCOReflector/blob/master/JCOReflector/engine/SharedClasses.cs)
+To see a real application of the library look at project [JCOReflectorCLI](https://github.com/masesgroup/JCOReflector/tree/master/JCOReflector/CLI) and [JCOReflectorEngine](https://github.com/masesgroup/JCOReflector/blob/master/JCOReflector/engine/SharedClasses.cs)
 
 ### Argument definition
 
