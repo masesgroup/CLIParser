@@ -1,15 +1,9 @@
-# CLI Parser
-
-A library to manage command-line arguments in a simple way. It was an internal MASES project, now it is available to anyone.
-
-This project adheres to the Contributor [Covenant code of conduct](https://github.com/masesgroup/DataDistributionManager/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to coc_reporting@masesgroup.com.
-
-## How it works
+# How it works
 
 The library is very simple in its usage. The definition of command-line switches is based on generic C# types. The parser fully analyze the command line searching for switches and arguments. A special case is the one where the swithes can be inserted within an external file listing the switches line-by-line.
 To see a real application of the library look at project [JCOReflectorCLI[(https://github.com/masesgroup/JCOReflector/tree/master/JCOReflector/CLI) and [JCOReflectorEngine](https://github.com/masesgroup/JCOReflector/blob/master/JCOReflector/engine/SharedClasses.cs)
 
-### Argument definition
+## Argument definition
 
 An argument can be defined using the following syntax sinppets:
 
@@ -34,7 +28,7 @@ arg1 = new ArgumentMetadata<int>()
 }
 ```
 
-### Parser initialization
+## Parser initialization
 
 Upon arguments are defined theu can be added to the list managed from the parser using:
 
@@ -48,7 +42,7 @@ or the compact version:
 arg1.Add();
 ```
 
-### Parser use
+## Parser use
 
 Then it is possible to use the parser on command-line arguments:
 
@@ -62,7 +56,6 @@ or the compact version:
 args.Parse();
 ```
 
-### Argument check
+## Argument check
 
 When the `Parse` method returns, a list of prepared arguments is available. The list can be used to get value or check for existence.
-
