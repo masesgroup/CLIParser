@@ -1,4 +1,4 @@
-# CLI Parser
+# Welcome to **CLI Parser**
 
 A library helping to manage parsing of command-line arguments.
 
