@@ -40,8 +40,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\bin\*nupkg
-          asset_name: CLIParser.nupkg
+          file: .\bin\*.nupkg
+          asset_name: CLIParser
           tag: ${{ github.ref }}
           overwrite: true
 
