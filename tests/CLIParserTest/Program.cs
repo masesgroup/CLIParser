@@ -36,6 +36,7 @@ namespace MASES.CLIParserTest
             Second = 0x2,
             Third = 0x4
         };
+
         static void Main(string[] args)
         {
             new ArgumentMetadata<MyValues>()
@@ -74,8 +75,6 @@ namespace MASES.CLIParserTest
                 Name = "myval",
                 Type = ArgumentType.Single,
             }.Add();
-
-            Console.WriteLine(Parser.HelpInfo()); 
 
             var result = args.Parse();
 

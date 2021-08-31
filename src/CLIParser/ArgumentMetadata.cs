@@ -208,6 +208,8 @@ namespace MASES.CLIParser
 
         string ShortStartWith { get; }
 
+        string GetPrefix();
+
         string Parameter();
 
         string DescriptionBuilder(int width);
@@ -215,6 +217,8 @@ namespace MASES.CLIParser
         void Check();
 
         IArgumentMetadataParsed Parse(IList<string> args);
+
+        void TestValue(object value);
     }
 
     /// <summary>
@@ -361,7 +365,9 @@ namespace MASES.CLIParser
             }
         }
 
-        string getPrefix()
+        IArgumentMetadataHelper Helper { get { return this; } }
+
+        string IArgumentMetadataHelper.GetPrefix()
         {
             switch (Prefix)
             {
@@ -379,11 +385,11 @@ namespace MASES.CLIParser
             }
         }
 
-        public string StartWith
+        string IArgumentMetadataHelper.StartWith
         {
             get
             {
-                string arg = getPrefix();
+                string arg = Helper.GetPrefix();
                 switch (Type)
                 {
                     case ArgumentType.Single:
@@ -404,13 +410,13 @@ namespace MASES.CLIParser
             }
         }
 
-        public string ShortStartWith
+        string IArgumentMetadataHelper.ShortStartWith
         {
             get
             {
                 if (string.IsNullOrEmpty(ShortName)) return null;
 
-                string arg = getPrefix();
+                string arg = Helper.GetPrefix();
                 switch (Type)
                 {
                     case ArgumentType.Single:
@@ -431,7 +437,7 @@ namespace MASES.CLIParser
             }
         }
 
-        public string Parameter()
+        string IArgumentMetadataHelper.Parameter()
         {
             string description = Name;
             if (!string.IsNullOrEmpty(ShortName))
@@ -441,10 +447,10 @@ namespace MASES.CLIParser
             return description;
         }
 
-        public string DescriptionBuilder(int width)
+        string IArgumentMetadataHelper.DescriptionBuilder(int width)
         {
-            Check();
-            string description = Parameter();
+            Helper.Check();
+            string description = Helper.Parameter();
             description = description.PadRight(Parser.DefaultDescriptionPadding, ' ');
             description += ": ";
             if (!string.IsNullOrEmpty(Help))
@@ -494,13 +500,13 @@ namespace MASES.CLIParser
                 case ArgumentType.KeyValue:
                     if (!string.IsNullOrEmpty(range))
                     {
-                        description += string.Format("{0}{1}=<{2}>.", getPrefix(), Name, range);
+                        description += string.Format("{0}{1}=<{2}>.", Helper.GetPrefix(), Name, range);
                     }
                     break;
                 case ArgumentType.Double:
                     if (!string.IsNullOrEmpty(range))
                     {
-                        description += string.Format("{0}{1} <{2}>.", getPrefix(), Name, range);
+                        description += string.Format("{0}{1} <{2}>.", Helper.GetPrefix(), Name, range);
                     }
                     break;
                 default:
@@ -519,7 +525,7 @@ namespace MASES.CLIParser
             return builder.ToString();
         }
 
-        public void Check()
+        void IArgumentMetadataHelper.Check()
         {
             if (string.IsNullOrEmpty(Name)) throw new ArgumentException("Argument needs to set Name.");
             if (Default != null)
@@ -560,10 +566,10 @@ namespace MASES.CLIParser
                 default:
                     break;
             }
-            if (Default != null) testValue(Default);
+            if (Default != null) Helper.TestValue(Default);
         }
 
-        public IArgumentMetadataParsed Parse(IList<string> args)
+        IArgumentMetadataParsed IArgumentMetadataHelper.Parse(IList<string> args)
         {
             for (int i = 0; i < args.Count; i++)
             {
@@ -580,7 +586,7 @@ namespace MASES.CLIParser
                     args.RemoveAt(i);
                     return parsedData;
                 }
-                else if (stringToTest.StartsWith(StartWith) || (!string.IsNullOrEmpty(ShortStartWith) ? stringToTest.StartsWith(ShortStartWith) : false))
+                else if (stringToTest.StartsWith(Helper.StartWith) || (!string.IsNullOrEmpty(Helper.ShortStartWith) ? stringToTest.StartsWith(Helper.ShortStartWith) : false))
                 {
                     ArgumentMetadataParsed parsedData = new ArgumentMetadataParsed(this)
                     {
@@ -590,21 +596,21 @@ namespace MASES.CLIParser
                     {
                         case ArgumentType.Single:
                             {
-                                parsedData.Value = Convert.ChangeType(args[i].Substring(getPrefix().Length), DataType);
-                                testValue(parsedData.Value);
+                                parsedData.Value = Convert.ChangeType(args[i].Substring(Helper.GetPrefix().Length), DataType);
+                                Helper.TestValue(parsedData.Value);
                                 args.RemoveAt(i);
                             }
                             break;
                         case ArgumentType.KeyValue:
                             {
                                 string value = args[i];
-                                if (stringToTest.StartsWith(StartWith))
+                                if (stringToTest.StartsWith(Helper.StartWith))
                                 {
-                                    value = args[i].Substring(StartWith.Length);
+                                    value = args[i].Substring(Helper.StartWith.Length);
                                 }
                                 else
                                 {
-                                    value = args[i].Substring(ShortStartWith.Length);
+                                    value = args[i].Substring(Helper.ShortStartWith.Length);
                                 }
                                 if (string.IsNullOrEmpty(value))
                                 {
@@ -615,7 +621,7 @@ namespace MASES.CLIParser
                                     try
                                     {
                                         parsedData.Value = Enum.Parse(DataType, value, IsCaseInvariant);
-                                        testValue(parsedData.Value);
+                                        Helper.TestValue(parsedData.Value);
                                     }
                                     catch
                                     {
@@ -629,7 +635,7 @@ namespace MASES.CLIParser
                                     foreach (var item in datas)
                                     {
                                         object oVal = Convert.ChangeType(value, DataType);
-                                        testValue(oVal);
+                                        Helper.TestValue(oVal);
                                         values.Add((T)oVal);
                                     }
                                     parsedData.Value = values.ToArray();
@@ -637,7 +643,7 @@ namespace MASES.CLIParser
                                 else
                                 {
                                     parsedData.Value = Convert.ChangeType(value, DataType);
-                                    testValue(parsedData.Value);
+                                    Helper.TestValue(parsedData.Value);
                                 }
                                 args.RemoveAt(i);
                             }
@@ -652,7 +658,7 @@ namespace MASES.CLIParser
                                         try
                                         {
                                             parsedData.Value = Enum.Parse(DataType, value, IsCaseInvariant);
-                                            testValue(parsedData.Value);
+                                            Helper.TestValue(parsedData.Value);
                                         }
                                         catch
                                         {
@@ -666,7 +672,7 @@ namespace MASES.CLIParser
                                         foreach (var item in datas)
                                         {
                                             object oVal = Convert.ChangeType(item, DataType);
-                                            testValue(oVal);
+                                            Helper.TestValue(oVal);
                                             values.Add((T)oVal);
                                         }
                                         parsedData.Value = values.ToArray();
@@ -674,7 +680,7 @@ namespace MASES.CLIParser
                                     else
                                     {
                                         parsedData.Value = Convert.ChangeType(value, DataType);
-                                        testValue(parsedData.Value);
+                                        Helper.TestValue(parsedData.Value);
                                     }
                                     args.RemoveAt(i);
                                     args.RemoveAt(i);
@@ -699,7 +705,7 @@ namespace MASES.CLIParser
             };
         }
 
-        void testValue(object value)
+        void IArgumentMetadataHelper.TestValue(object value)
         {
             if (IsEnum)
             {

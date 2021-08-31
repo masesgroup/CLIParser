@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>CLIParser</AssemblyName>
+    <AssemblyName>MASES.CLIParser</AssemblyName>
     <RootNamespace>MASES.CLIParser</RootNamespace>
     <Title>CLIParser - a parser for command line interface</Title>
     <Description>CLIParser - a parser for command line interface</Description>
@@ -8,7 +8,7 @@
     <Owners>MASES s.r.l.</Owners>
     <Authors>MASES s.r.l.</Authors>
     <Company>MASES s.r.l.</Company>
-    <Version>1.0.0.0</Version>
+    <Version>1.1.0.0</Version>
     <Product>CLIParser</Product>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <TargetFrameworks>net461;netcoreapp3.1;net5.0;net5.0-windows</TargetFrameworks>
@@ -17,7 +17,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/masesgroup/CLIParser/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/masesgroup/CLIParser/</PackageProjectUrl>
-    <!--<PackageIconUrl>https://www.jcobridge.com/wp-content/uploads/2019/03/Logo.png</PackageIconUrl>-->
+    <PackageIconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/masesgroup/CLIParser</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/masesgroup/CLIParser/releases</PackageReleaseNotes>
     <PackageTags>command-line cli parser dotnet clr netcore net5</PackageTags>

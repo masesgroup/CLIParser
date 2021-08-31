@@ -339,7 +339,10 @@ namespace MASES.CLIParser
 
             return existArgs;
         }
-
+        /// <summary>
+        /// Returns the padding calculated on argument length
+        /// </summary>
+        /// <returns>The calculated length</returns>
         public static int PaddingFromArguments()
         {
             int len = 0;

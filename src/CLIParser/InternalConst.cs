@@ -45,6 +45,5 @@ namespace MASES.CLIParser
             /// </summary>
             public const string Slash = "/";
         }
-
     }
 }
