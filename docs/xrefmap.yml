@@ -791,6 +791,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Parser.Arguments
   nameWithType: Parser.Arguments
+- uid: MASES.CLIParser.Parser.CreateInstance
+  name: CreateInstance()
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_CreateInstance
+  commentId: M:MASES.CLIParser.Parser.CreateInstance
+  fullName: MASES.CLIParser.Parser.CreateInstance()
+  nameWithType: Parser.CreateInstance()
+- uid: MASES.CLIParser.Parser.CreateInstance*
+  name: CreateInstance
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_CreateInstance_
+  commentId: Overload:MASES.CLIParser.Parser.CreateInstance
+  isSpec: "True"
+  fullName: MASES.CLIParser.Parser.CreateInstance
+  nameWithType: Parser.CreateInstance
 - uid: MASES.CLIParser.Parser.DefaultCustomPrefix
   name: DefaultCustomPrefix
   href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultCustomPrefix
