@@ -31,7 +31,7 @@ namespace MASES.CLIParser
     /// <summary>
     /// Public entry point for the parser
     /// </summary>
-    public static class Parser
+    public class Parser
     {
         /// <summary>
         /// Default value of identifier used when an argument represent a file containing the arguments
@@ -69,22 +69,29 @@ namespace MASES.CLIParser
         /// Default value to use on padding the help information
         /// </summary>
         public static int DefaultDescriptionPadding = 30;
+        /// <summary>
+        /// Creates a new instance of <see cref="Parser"/>
+        /// </summary>
+        /// <returns>The newly created instance</returns>
+        public static Parser CreateInstance()
+        {
+            return new Parser();
+        }
 
-        static readonly IDictionary<string, IArgumentMetadata> arguments;
-        
-        static Parser()
+        readonly IDictionary<string, IArgumentMetadata> arguments;      
+        Parser()
         {
             arguments = new Dictionary<string, IArgumentMetadata>();
         }
         /// <summary>
         /// Available <see cref="IArgumentMetadata"/> for parsing
         /// </summary>
-        public static IReadOnlyList<IArgumentMetadata> Arguments { get { return new List<IArgumentMetadata>(arguments.Values); } }
+        public IReadOnlyList<IArgumentMetadata> Arguments { get { return new List<IArgumentMetadata>(arguments.Values); } }
         /// <summary>
         /// Adds <paramref name="metadata"/> to the argument to be parsed from <see cref="Parse(string[])"/>
         /// </summary>
         /// <param name="metadata"><see cref="IArgumentMetadata"/> to be added</param>
-        public static void Add(this IArgumentMetadata metadata)
+        public void Add(IArgumentMetadata metadata)
         {
             if (metadata == null) throw new ArgumentNullException("metadata cannot be null.");
             if (string.IsNullOrEmpty(metadata.Name)) throw new ArgumentException("Parameter Name shall be set.");
@@ -96,7 +103,7 @@ namespace MASES.CLIParser
         /// Adds <paramref name="metadata"/> to the argument to be parsed from <see cref="Parse(string[])"/>
         /// </summary>
         /// <param name="metadata"><see cref="IArgumentMetadata"/> to be added</param>
-        public static void Add(this IEnumerable<IArgumentMetadata> metadatas)
+        public void Add(IEnumerable<IArgumentMetadata> metadatas)
         {
             foreach (var item in metadatas)
             {
@@ -108,7 +115,7 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="args">Arguments to parse using the list prepared using <see cref="Add(IArgumentMetadata)"/></param>
         /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> Parse(this string[] args)
+        public IEnumerable<IArgumentMetadataParsed> Parse(string[] args)
         {
             Dictionary<string, IArgumentMetadataParsed> parsedArgs = new Dictionary<string, IArgumentMetadataParsed>();
 
@@ -138,7 +145,7 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="arg"><see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> Parse(this IArgumentMetadataParsed arg)
+        public IEnumerable<IArgumentMetadataParsed> Parse(IArgumentMetadataParsed arg)
         {
             if (arg == null) throw new ArgumentNullException("arg cannot be null.");
             if (!arg.IsFile) throw new ArgumentException("arg does not represent a file argument.");
@@ -164,10 +171,10 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="arg">The <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> FromFile(this IArgumentMetadataParsed arg)
+        public IEnumerable<IArgumentMetadataParsed> FromFile(IArgumentMetadataParsed arg)
         {
             if (arg == null) throw new ArgumentNullException("arg cannot be null.");
-            return arg.Parse();
+            return Parse(arg);
         }
 
         /// <summary>
@@ -175,13 +182,13 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> FromFile(this IEnumerable<IArgumentMetadataParsed> args)
+        public IEnumerable<IArgumentMetadataParsed> FromFile(IEnumerable<IArgumentMetadataParsed> args)
         {
             foreach (var item in args)
             {
                 if (item.IsFile)
                 {
-                    return item.Parse();
+                    return Parse(item);
                 }
             }
 
@@ -194,7 +201,7 @@ namespace MASES.CLIParser
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <param name="index">Index to get</param>
         /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
-        public static IArgumentMetadataParsed Get(this IEnumerable<IArgumentMetadataParsed> args, int index)
+        public IArgumentMetadataParsed Get(IEnumerable<IArgumentMetadataParsed> args, int index)
         {
             return new List<IArgumentMetadataParsed>(args)[index];
         }
@@ -205,7 +212,7 @@ namespace MASES.CLIParser
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <param name="name">The argument name, or short name, to get</param>
         /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
-        public static IArgumentMetadataParsed Get(this IEnumerable<IArgumentMetadataParsed> args, string name)
+        public IArgumentMetadataParsed Get(IEnumerable<IArgumentMetadataParsed> args, string name)
         {
             foreach (var item in new List<IArgumentMetadataParsed>(args))
             {
@@ -220,11 +227,11 @@ namespace MASES.CLIParser
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <param name="name">The argument name, or short name, to get</param>
         /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
-        public static T Get<T>(this IEnumerable<IArgumentMetadataParsed> args, string name)
+        public T Get<T>(IEnumerable<IArgumentMetadataParsed> args, string name)
         {
             foreach (var item in new List<IArgumentMetadataParsed>(args))
             {
-                if (item.Name == name || item.ShortName == name) return item.Get<T>();
+                if (item.Name == name || item.ShortName == name) return Get<T>(item);
             }
             throw new ArgumentException("name is not a valid argument.");
         }
@@ -235,7 +242,7 @@ namespace MASES.CLIParser
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <param name="name">The argument name, or short name, to get</param>
         /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
-        public static T Get<T>(this IArgumentMetadataParsed arg)
+        public T Get<T>(IArgumentMetadataParsed arg)
         {
             if (arg == null) throw new ArgumentNullException("arg cannot be null.");
             if (!typeof(T).IsAssignableFrom(arg.DataType)) throw new ArgumentException(string.Format("{0} is incomplatible wirh {1}.", typeof(T), arg.DataType));
@@ -251,7 +258,7 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to check</param>
         /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> RemoveFile(this IEnumerable<IArgumentMetadataParsed> args)
+        public IEnumerable<IArgumentMetadataParsed> RemoveFile(IEnumerable<IArgumentMetadataParsed> args)
         {
             List<IArgumentMetadataParsed> parsedArgs = new List<IArgumentMetadataParsed>(args);
 
@@ -269,7 +276,7 @@ namespace MASES.CLIParser
         /// <param name="source">An ensemble of <see cref="IArgumentMetadataParsed"/></param>
         /// <param name="rawReplace">Replace destionation without check if argument exist in the source</param>
         /// <returns>The updated <paramref name="destination"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> Override(this IEnumerable<IArgumentMetadataParsed> destination, IEnumerable<IArgumentMetadataParsed> source, bool rawReplace = false)
+        public IEnumerable<IArgumentMetadataParsed> Override(IEnumerable<IArgumentMetadataParsed> destination, IEnumerable<IArgumentMetadataParsed> source, bool rawReplace = false)
         {
             List<IArgumentMetadataParsed> newSrc = new List<IArgumentMetadataParsed>(source);
             foreach (var item in destination)
@@ -291,7 +298,7 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
         /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> Exists(this IEnumerable<IArgumentMetadataParsed> args)
+        public IEnumerable<IArgumentMetadataParsed> Exists(IEnumerable<IArgumentMetadataParsed> args)
         {
             List<IArgumentMetadataParsed> existArgs = new List<IArgumentMetadataParsed>();
             foreach (IArgumentMetadataParsed item in args)
@@ -311,7 +318,7 @@ namespace MASES.CLIParser
         /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
         /// <param name="name">Argument name to search</param>
         /// <returns>true if the the argument with <paramref name="name"/> name exist</returns>
-        public static bool Exist(this IEnumerable<IArgumentMetadataParsed> args, string name)
+        public bool Exist(IEnumerable<IArgumentMetadataParsed> args, string name)
         {
             foreach (var item in Exists(args))
             {
@@ -326,7 +333,7 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
         /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
-        public static IEnumerable<IArgumentMetadataParsed> NotExists(this IEnumerable<IArgumentMetadataParsed> args)
+        public IEnumerable<IArgumentMetadataParsed> NotExists(IEnumerable<IArgumentMetadataParsed> args)
         {
             List<IArgumentMetadataParsed> existArgs = new List<IArgumentMetadataParsed>();
             foreach (IArgumentMetadataParsed item in args)
@@ -343,7 +350,7 @@ namespace MASES.CLIParser
         /// Returns the padding calculated on argument length
         /// </summary>
         /// <returns>The calculated length</returns>
-        public static int PaddingFromArguments()
+        public int PaddingFromArguments()
         {
             int len = 0;
             foreach (IArgumentMetadataHelper item in Arguments)
@@ -358,7 +365,7 @@ namespace MASES.CLIParser
         /// </summary>
         /// <param name="width">The width of the help to write</param>
         /// <returns>A <see cref="string with help information"/></returns>
-        public static string HelpInfo(int? width = null)
+        public string HelpInfo(int? width = null)
         {
             int newWidth = Console.WindowWidth;
             if (width.HasValue) newWidth = width.Value;

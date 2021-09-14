@@ -39,14 +39,16 @@ namespace MASES.CLIParserTest
 
         static void Main(string[] args)
         {
-            new ArgumentMetadata<MyValues>()
+            Parser parser = Parser.CreateInstance();
+
+            parser.Add(new ArgumentMetadata<MyValues>()
             {
                 Name = "enum",
                 Default = MyValues.First,
                 Help = "this is an enum test",
                 Type = ArgumentType.Double,
-            }.Add();
-            Parser.Add(new ArgumentMetadata<bool>()
+            });
+            parser.Add(new ArgumentMetadata<bool>()
             {
                 Name = "test",
                 ShortName = "tst",
@@ -54,7 +56,7 @@ namespace MASES.CLIParserTest
                 Type = ArgumentType.Double,
                 ValueType = ArgumentValueType.Free,
             });
-            Parser.Add(new ArgumentMetadata<int>()
+            parser.Add(new ArgumentMetadata<int>()
             {
                 Name = "range",
                 Default = 9,
@@ -63,28 +65,28 @@ namespace MASES.CLIParserTest
                 MinValue = 2,
                 MaxValue = 10,
             });
-            new ArgumentMetadata<string>()
+            parser.Add(new ArgumentMetadata<string>()
             {
                 Name = "multivalue",
                 Type = ArgumentType.Double,
                 IsMultiValue = true,
                 Default = new string[] {"a", "b"}
-            }.Add();
-            new ArgumentMetadata<string>()
+            });
+            parser.Add(new ArgumentMetadata<string>()
             {
                 Name = "myval",
                 Type = ArgumentType.Single,
-            }.Add();
+            });
 
-            var result = args.Parse();
+            var result =  parser.Parse(args);
 
-            var fileInfo = result.FromFile();
+            var fileInfo = parser.FromFile(result);
 
-            result.Override(fileInfo);
+            parser.Override(result, fileInfo);
 
-            var noFile = result.RemoveFile();
+            var noFile = parser.RemoveFile(result);
 
-            foreach (var item in noFile.Exists())
+            foreach (var item in parser.Exists(noFile))
             {
                 if (!item.IsMultiValue)
                 {
@@ -96,7 +98,7 @@ namespace MASES.CLIParserTest
                 }
             }
 
-            foreach (var item in noFile.NotExists())
+            foreach (var item in parser.NotExists(noFile))
             {
                 Console.WriteLine("{0} not exist", item.Name);
             }
