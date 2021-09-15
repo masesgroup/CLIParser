@@ -204,6 +204,8 @@ namespace MASES.CLIParser
 
     interface IArgumentMetadataHelper
     {
+        Parser Parser { get; set; }
+
         string StartWith { get; }
 
         string ShortStartWith { get; }
@@ -230,32 +232,33 @@ namespace MASES.CLIParser
         /// <summary>
         /// Dafault used to check for file argument
         /// </summary>
-        public static IArgumentMetadata DefaultFileArgumentMetadata
+        public static IArgumentMetadata DefaultFileArgumentMetadata(Parser parser)
         {
-            get
+            return new ArgumentMetadata<string>(parser)
             {
-                return new ArgumentMetadata<string>()
-                {
-                    Name = string.Empty,
-                    ShortName = string.Empty,
-                    Default = null,
-                    Prefix = ArgumentPrefix.Custom,
-                    CustomPrefix = Parser.DefaultFileNameIdentifier.ToString(),
-                    Type = ArgumentType.Single,
-                    ValueType = ArgumentValueType.Free,
-                };
-            }
+                Name = string.Empty,
+                ShortName = string.Empty,
+                Default = null,
+                Prefix = ArgumentPrefix.Custom,
+                CustomPrefix = parser.Settings.DefaultFileNameIdentifier.ToString(),
+                Type = ArgumentType.Single,
+                ValueType = ArgumentValueType.Free,
+            };
         }
 
-        public ArgumentMetadataBase()
+        internal ArgumentMetadataBase()
         {
-            Prefix = Parser.DefaultPrefix;
-            CustomPrefix = Parser.DefaultCustomPrefix;
-            Type = Parser.DefaultType;
-            ValueType = Parser.DefaultValueType;
-            KeyValuePairSeparator = Parser.DefaultKeyValuePairSeparator;
-            IsCaseInvariant = Parser.DefaultIsCaseInvariant;
-            MultiValueSeparator = Parser.DefaultMultiValueSeparator;
+        }
+
+        public ArgumentMetadataBase(Parser parser)
+        {
+            Prefix = parser.Settings.DefaultPrefix;
+            CustomPrefix = parser.Settings.DefaultCustomPrefix;
+            Type = parser.Settings.DefaultType;
+            ValueType = parser.Settings.DefaultValueType;
+            KeyValuePairSeparator = parser.Settings.DefaultKeyValuePairSeparator;
+            IsCaseInvariant = parser.Settings.DefaultIsCaseInvariant;
+            MultiValueSeparator = parser.Settings.DefaultMultiValueSeparator;
         }
         /// <inheritdoc/>
         public virtual ArgumentPrefix Prefix { get; set; }
@@ -354,7 +357,8 @@ namespace MASES.CLIParser
         /// </summary>
         public static IEnumerable<T> DefaultMultiValue { get { return new T[] { }; } }
 
-        public ArgumentMetadata()
+        public ArgumentMetadata(Parser parser)
+            : base(parser)
         {
             Default = default(T);
             DataType = typeof(T);
@@ -363,6 +367,7 @@ namespace MASES.CLIParser
             {
                 IsFlag = true; break;
             }
+            Helper.Parser = parser;
         }
 
         IArgumentMetadataHelper Helper { get { return this; } }
@@ -384,6 +389,8 @@ namespace MASES.CLIParser
                     return string.Empty;
             }
         }
+
+        Parser IArgumentMetadataHelper.Parser { get; set; }
 
         string IArgumentMetadataHelper.StartWith
         {
@@ -451,7 +458,7 @@ namespace MASES.CLIParser
         {
             Helper.Check();
             string description = Helper.Parameter();
-            description = description.PadRight(Parser.DefaultDescriptionPadding, ' ');
+            description = description.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding, ' ');
             description += ": ";
             if (!string.IsNullOrEmpty(Help))
             {
@@ -518,7 +525,7 @@ namespace MASES.CLIParser
             while (trimming.Length > width)
             {
                 builder.AppendLine(trimming.Substring(0, width - 2) + "-");
-                trimming = string.Empty.PadRight(Parser.DefaultDescriptionPadding + 2, ' ') + trimming.Remove(0, width - 2);
+                trimming = string.Empty.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding + 2, ' ') + trimming.Remove(0, width - 2);
             }
             builder.AppendLine(trimming);
 
@@ -574,7 +581,7 @@ namespace MASES.CLIParser
             for (int i = 0; i < args.Count; i++)
             {
                 string stringToTest = (IsCaseInvariant) ? args[i].ToLowerInvariant() : args[i];
-                if (stringToTest.StartsWith(Parser.DefaultFileNameIdentifier.ToString()))
+                if (stringToTest.StartsWith(Helper.Parser.Settings.DefaultFileNameIdentifier.ToString()))
                 {
                     // represent a file
                     ArgumentMetadataParsed parsedData = new ArgumentMetadataParsed(this)

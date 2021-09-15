@@ -29,60 +29,119 @@ using System.Text;
 namespace MASES.CLIParser
 {
     /// <summary>
+    /// Helper methods for the <see cref="Parser"/>
+    /// </summary>
+    public static class ParserExtension
+    {
+        /// <summary>
+        /// Adds an <see cref="IArgumentMetadata"/>
+        /// </summary>
+        /// <param name="metadatas">The <see cref="IArgumentMetadata"/> to add</param>
+        public static void Add(this IArgumentMetadata metadata)
+        {
+            IArgumentMetadataHelper helper = metadata as IArgumentMetadataHelper;
+            helper.Parser.Add(metadata);
+        }
+        /// <summary>
+        /// Adds a collection of <see cref="IArgumentMetadata"/>
+        /// </summary>
+        /// <param name="metadatas">The collection of <see cref="IArgumentMetadata"/> to add</param>
+        public static void Add(this IEnumerable<IArgumentMetadata> metadatas)
+        {
+            foreach (var item in metadatas)
+            {
+                IArgumentMetadataHelper helper = item as IArgumentMetadataHelper;
+                helper.Parser.Add(item);
+            }
+        }
+    }
+
+    /// <summary>
+    /// The class managing the settings of <see cref="Parser"/>
+    /// </summary>
+    public class Settings
+    {
+        /// <summary>
+        /// Initializa a new instance of <see cref="Settings"/>
+        /// </summary>
+        public Settings()
+        {
+            DefaultFileNameIdentifier = InternalConst.DefaultFileNameIdentifier;
+            DefaultPrefix = ArgumentPrefix.Dash;
+            DefaultCustomPrefix = string.Empty;
+            DefaultType = ArgumentType.Single;
+            DefaultValueType = ArgumentValueType.Free;
+            DefaultMultiValueSeparator = InternalConst.DefaultMultiValueSeparator;
+            DefaultKeyValuePairSeparator = InternalConst.DefaultKeyValuePairSeparator;
+            DefaultIsCaseInvariant = true;
+            DefaultDescriptionPadding = 30;
+        }
+
+        /// <summary>
+        /// Default value of identifier used when an argument represent a file containing the arguments
+        /// </summary>
+        public char DefaultFileNameIdentifier { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.Prefix"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public ArgumentPrefix DefaultPrefix { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.CustomPrefix"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public string DefaultCustomPrefix { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.Type"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public ArgumentType DefaultType { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.ValueType"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public ArgumentValueType DefaultValueType { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.MultiValueSeparator"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public char DefaultMultiValueSeparator { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.KeyValuePairSeparator"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public string DefaultKeyValuePairSeparator { get; set; }
+        /// <summary>
+        /// Default value of <see cref="IArgumentMetadata.IsCaseInvariant"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
+        /// </summary>
+        public bool DefaultIsCaseInvariant { get; set; }
+        /// <summary>
+        /// Default value to use on padding the help information
+        /// </summary>
+        public int DefaultDescriptionPadding { get; set; }
+    }
+
+    /// <summary>
     /// Public entry point for the parser
     /// </summary>
     public class Parser
     {
         /// <summary>
-        /// Default value of identifier used when an argument represent a file containing the arguments
-        /// </summary>
-        public static char DefaultFileNameIdentifier = InternalConst.DefaultFileNameIdentifier;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.Prefix"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static ArgumentPrefix DefaultPrefix = ArgumentPrefix.Dash;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.CustomPrefix"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static string DefaultCustomPrefix = string.Empty;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.Type"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static ArgumentType DefaultType = ArgumentType.Single;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.ValueType"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static ArgumentValueType DefaultValueType = ArgumentValueType.Free;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.MultiValueSeparator"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static char DefaultMultiValueSeparator = InternalConst.DefaultMultiValueSeparator;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.KeyValuePairSeparator"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static string DefaultKeyValuePairSeparator = InternalConst.DefaultKeyValuePairSeparator;
-        /// <summary>
-        /// Default value of <see cref="IArgumentMetadata.IsCaseInvariant"/> used when a new instance of <see cref="ArgumentMetadataBase"/> is created
-        /// </summary>
-        public static bool DefaultIsCaseInvariant = true;
-        /// <summary>
-        /// Default value to use on padding the help information
-        /// </summary>
-        public static int DefaultDescriptionPadding = 30;
-        /// <summary>
         /// Creates a new instance of <see cref="Parser"/>
         /// </summary>
+        /// <param name="settings">The <see cref="Settings"/> to use or the default</param>
         /// <returns>The newly created instance</returns>
-        public static Parser CreateInstance()
+        public static Parser CreateInstance(Settings settings = null)
         {
-            return new Parser();
+            return new Parser(settings);
         }
 
-        readonly IDictionary<string, IArgumentMetadata> arguments;      
-        Parser()
+        readonly IDictionary<string, IArgumentMetadata> arguments;
+        
+        Parser(Settings settings)
         {
+            if (settings == null) settings = new Settings();
+            Settings = settings;
             arguments = new Dictionary<string, IArgumentMetadata>();
         }
+        /// <summary>
+        /// The settings in use
+        /// </summary>
+        public Settings Settings { get; private set; }
         /// <summary>
         /// Available <see cref="IArgumentMetadata"/> for parsing
         /// </summary>
@@ -122,7 +181,7 @@ namespace MASES.CLIParser
             IList<string> lstArgs = new List<string>(args);
 
             List<IArgumentMetadata> argsToCheck = new List<IArgumentMetadata>();
-            argsToCheck.Add(ArgumentMetadataBase.DefaultFileArgumentMetadata);
+            argsToCheck.Add(ArgumentMetadataBase.DefaultFileArgumentMetadata(this));
             argsToCheck.AddRange(Arguments);
 
             foreach (IArgumentMetadataHelper item in argsToCheck)
