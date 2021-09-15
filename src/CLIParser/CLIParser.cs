@@ -113,6 +113,10 @@ namespace MASES.CLIParser
         /// Default value to use on padding the help information
         /// </summary>
         public int DefaultDescriptionPadding { get; set; }
+        /// <summary>
+        /// True to test if there are unwanted switches
+        /// </summary>
+        public bool CheckUnwanted { get; set; }
     }
 
     /// <summary>
@@ -131,7 +135,7 @@ namespace MASES.CLIParser
         }
 
         readonly IDictionary<string, IArgumentMetadata> arguments;
-        
+
         Parser(Settings settings)
         {
             if (settings == null) settings = new Settings();
@@ -194,6 +198,11 @@ namespace MASES.CLIParser
                 {
                     parsedArgs.Add(dataParsed.Name, dataParsed);
                 }
+            }
+
+            if (Settings.CheckUnwanted && lstArgs.Count != 0)
+            {
+                throw new ArgumentException(string.Format("Parameter{0} {1} are not managed", lstArgs.Count == 1 ? string.Empty : "s", string.Join(", ", lstArgs)));
             }
 
             return parsedArgs.Values;

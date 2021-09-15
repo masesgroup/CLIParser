@@ -39,7 +39,10 @@ namespace MASES.CLIParserTest
 
         static void Main(string[] args)
         {
-            Parser parser = Parser.CreateInstance();
+            Parser parser = Parser.CreateInstance(new Settings()
+            {
+                CheckUnwanted = true
+            });
 
             new ArgumentMetadata<MyValues>(parser)
             {
