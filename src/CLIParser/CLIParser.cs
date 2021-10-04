@@ -159,7 +159,17 @@ namespace MASES.CLIParser
             if (metadata == null) throw new ArgumentNullException("metadata cannot be null.");
             if (string.IsNullOrEmpty(metadata.Name)) throw new ArgumentException("Parameter Name shall be set.");
             if (arguments.ContainsKey(metadata.Name)) throw new ArgumentException(string.Format("Parameter {0} is duplicated", metadata.Name));
-            (metadata as IArgumentMetadataHelper).Check();
+            IArgumentMetadataHelper helper = metadata as IArgumentMetadataHelper;
+            if (helper.Parser == null)
+            {
+                helper.Parser = this;
+                helper.SetDefault(this);
+            }
+            if (!ReferenceEquals(helper.Parser, this))
+            {
+                throw new ArgumentException(string.Format("Parser mismatch: {0} is not associated to this parser instance.", metadata.Name));
+            }
+            helper.Check();
             arguments.Add(metadata.Name, metadata);
         }
         /// <summary>

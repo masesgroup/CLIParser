@@ -41,7 +41,7 @@ namespace MASES.CLIParserTest
         {
             Parser parser = Parser.CreateInstance(new Settings()
             {
-                CheckUnwanted = true
+                CheckUnwanted = false
             });
 
             new ArgumentMetadata<MyValues>(parser)
@@ -51,7 +51,7 @@ namespace MASES.CLIParserTest
                 Help = "this is an enum test",
                 Type = ArgumentType.Double,
             }.Add();
-            parser.Add(new ArgumentMetadata<bool>(parser)
+            parser.Add(new ArgumentMetadata<bool>()
             {
                 Name = "test",
                 ShortName = "tst",
