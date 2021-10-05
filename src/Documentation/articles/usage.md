@@ -30,7 +30,7 @@ arg1 = new ArgumentMetadata<int>()
 
 ## Parser initialization
 
-Upon arguments are defined theu can be added to the list managed from the parser using:
+Upon arguments are defined they can be added to the list managed from the parser using:
 
 ```C#
 Parser.Add(arg);

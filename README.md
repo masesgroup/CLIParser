@@ -1,3 +1,5 @@
+[![CI_BUILD](https://github.com/masesgroup/CLIParser/actions/workflows/build.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/build.yaml) [![CI_PULLREQUEST](https://github.com/masesgroup/CLIParser/actions/workflows/pullrequest.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/pullrequest.yaml) [![CI_RELEASE](https://github.com/masesgroup/CLIParser/actions/workflows/release.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/release.yaml)
+
 # CLI Parser
 
 A library to manage command-line arguments in a simple way. It was an internal MASES project, now it is available to anyone.
@@ -36,7 +38,7 @@ arg1 = new ArgumentMetadata<int>()
 
 ### Parser initialization
 
-Upon arguments are defined theu can be added to the list managed from the parser using:
+Upon arguments are defined they can be added to the list managed from the parser using:
 
 ```C#
 Parser.Add(arg);

@@ -39,15 +39,18 @@ namespace MASES.CLIParserTest
 
         static void Main(string[] args)
         {
-            Parser parser = Parser.CreateInstance();
+            Parser parser = Parser.CreateInstance(new Settings()
+            {
+                CheckUnwanted = false
+            });
 
-            parser.Add(new ArgumentMetadata<MyValues>()
+            new ArgumentMetadata<MyValues>(parser)
             {
                 Name = "enum",
                 Default = MyValues.First,
                 Help = "this is an enum test",
                 Type = ArgumentType.Double,
-            });
+            }.Add();
             parser.Add(new ArgumentMetadata<bool>()
             {
                 Name = "test",
@@ -56,7 +59,7 @@ namespace MASES.CLIParserTest
                 Type = ArgumentType.Double,
                 ValueType = ArgumentValueType.Free,
             });
-            parser.Add(new ArgumentMetadata<int>()
+            parser.Add(new ArgumentMetadata<int>(parser)
             {
                 Name = "range",
                 Default = 9,
@@ -65,14 +68,14 @@ namespace MASES.CLIParserTest
                 MinValue = 2,
                 MaxValue = 10,
             });
-            parser.Add(new ArgumentMetadata<string>()
+            parser.Add(new ArgumentMetadata<string>(parser)
             {
                 Name = "multivalue",
                 Type = ArgumentType.Double,
                 IsMultiValue = true,
                 Default = new string[] {"a", "b"}
             });
-            parser.Add(new ArgumentMetadata<string>()
+            parser.Add(new ArgumentMetadata<string>(parser)
             {
                 Name = "myval",
                 Type = ArgumentType.Single,

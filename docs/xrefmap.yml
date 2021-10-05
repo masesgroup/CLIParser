@@ -24,6 +24,14 @@ references:
   fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).ArgumentMetadata()
   nameWithType: ArgumentMetadata<T>.ArgumentMetadata()
   nameWithType.vb: ArgumentMetadata(Of T).ArgumentMetadata()
+- uid: MASES.CLIParser.ArgumentMetadata`1.#ctor(MASES.CLIParser.Parser)
+  name: ArgumentMetadata(Parser)
+  href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1__ctor_MASES_CLIParser_Parser_
+  commentId: M:MASES.CLIParser.ArgumentMetadata`1.#ctor(MASES.CLIParser.Parser)
+  fullName: MASES.CLIParser.ArgumentMetadata<T>.ArgumentMetadata(MASES.CLIParser.Parser)
+  fullName.vb: MASES.CLIParser.ArgumentMetadata(Of T).ArgumentMetadata(MASES.CLIParser.Parser)
+  nameWithType: ArgumentMetadata<T>.ArgumentMetadata(Parser)
+  nameWithType.vb: ArgumentMetadata(Of T).ArgumentMetadata(Parser)
 - uid: MASES.CLIParser.ArgumentMetadata`1.#ctor*
   name: ArgumentMetadata
   href: api/MASES.CLIParser.ArgumentMetadata-1.html#MASES_CLIParser_ArgumentMetadata_1__ctor_
@@ -56,19 +64,6 @@ references:
   commentId: T:MASES.CLIParser.ArgumentMetadataBase
   fullName: MASES.CLIParser.ArgumentMetadataBase
   nameWithType: ArgumentMetadataBase
-- uid: MASES.CLIParser.ArgumentMetadataBase.#ctor
-  name: ArgumentMetadataBase()
-  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase__ctor
-  commentId: M:MASES.CLIParser.ArgumentMetadataBase.#ctor
-  fullName: MASES.CLIParser.ArgumentMetadataBase.ArgumentMetadataBase()
-  nameWithType: ArgumentMetadataBase.ArgumentMetadataBase()
-- uid: MASES.CLIParser.ArgumentMetadataBase.#ctor*
-  name: ArgumentMetadataBase
-  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase__ctor_
-  commentId: Overload:MASES.CLIParser.ArgumentMetadataBase.#ctor
-  isSpec: "True"
-  fullName: MASES.CLIParser.ArgumentMetadataBase.ArgumentMetadataBase
-  nameWithType: ArgumentMetadataBase.ArgumentMetadataBase
 - uid: MASES.CLIParser.ArgumentMetadataBase.ArrayValues
   name: ArrayValues
   href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_ArrayValues
@@ -121,12 +116,12 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ArgumentMetadataBase.Default
   nameWithType: ArgumentMetadataBase.Default
-- uid: MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata
-  name: DefaultFileArgumentMetadata
-  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_DefaultFileArgumentMetadata
-  commentId: P:MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata
-  fullName: MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata
-  nameWithType: ArgumentMetadataBase.DefaultFileArgumentMetadata
+- uid: MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata(MASES.CLIParser.Parser)
+  name: DefaultFileArgumentMetadata(Parser)
+  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_DefaultFileArgumentMetadata_MASES_CLIParser_Parser_
+  commentId: M:MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata(MASES.CLIParser.Parser)
+  fullName: MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata(MASES.CLIParser.Parser)
+  nameWithType: ArgumentMetadataBase.DefaultFileArgumentMetadata(Parser)
 - uid: MASES.CLIParser.ArgumentMetadataBase.DefaultFileArgumentMetadata*
   name: DefaultFileArgumentMetadata
   href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_DefaultFileArgumentMetadata_
@@ -791,12 +786,12 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Parser.Arguments
   nameWithType: Parser.Arguments
-- uid: MASES.CLIParser.Parser.CreateInstance
-  name: CreateInstance()
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_CreateInstance
-  commentId: M:MASES.CLIParser.Parser.CreateInstance
-  fullName: MASES.CLIParser.Parser.CreateInstance()
-  nameWithType: Parser.CreateInstance()
+- uid: MASES.CLIParser.Parser.CreateInstance(MASES.CLIParser.Settings)
+  name: CreateInstance(Settings)
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_CreateInstance_MASES_CLIParser_Settings_
+  commentId: M:MASES.CLIParser.Parser.CreateInstance(MASES.CLIParser.Settings)
+  fullName: MASES.CLIParser.Parser.CreateInstance(MASES.CLIParser.Settings)
+  nameWithType: Parser.CreateInstance(Settings)
 - uid: MASES.CLIParser.Parser.CreateInstance*
   name: CreateInstance
   href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_CreateInstance_
@@ -804,60 +799,6 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Parser.CreateInstance
   nameWithType: Parser.CreateInstance
-- uid: MASES.CLIParser.Parser.DefaultCustomPrefix
-  name: DefaultCustomPrefix
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultCustomPrefix
-  commentId: F:MASES.CLIParser.Parser.DefaultCustomPrefix
-  fullName: MASES.CLIParser.Parser.DefaultCustomPrefix
-  nameWithType: Parser.DefaultCustomPrefix
-- uid: MASES.CLIParser.Parser.DefaultDescriptionPadding
-  name: DefaultDescriptionPadding
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultDescriptionPadding
-  commentId: F:MASES.CLIParser.Parser.DefaultDescriptionPadding
-  fullName: MASES.CLIParser.Parser.DefaultDescriptionPadding
-  nameWithType: Parser.DefaultDescriptionPadding
-- uid: MASES.CLIParser.Parser.DefaultFileNameIdentifier
-  name: DefaultFileNameIdentifier
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultFileNameIdentifier
-  commentId: F:MASES.CLIParser.Parser.DefaultFileNameIdentifier
-  fullName: MASES.CLIParser.Parser.DefaultFileNameIdentifier
-  nameWithType: Parser.DefaultFileNameIdentifier
-- uid: MASES.CLIParser.Parser.DefaultIsCaseInvariant
-  name: DefaultIsCaseInvariant
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultIsCaseInvariant
-  commentId: F:MASES.CLIParser.Parser.DefaultIsCaseInvariant
-  fullName: MASES.CLIParser.Parser.DefaultIsCaseInvariant
-  nameWithType: Parser.DefaultIsCaseInvariant
-- uid: MASES.CLIParser.Parser.DefaultKeyValuePairSeparator
-  name: DefaultKeyValuePairSeparator
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultKeyValuePairSeparator
-  commentId: F:MASES.CLIParser.Parser.DefaultKeyValuePairSeparator
-  fullName: MASES.CLIParser.Parser.DefaultKeyValuePairSeparator
-  nameWithType: Parser.DefaultKeyValuePairSeparator
-- uid: MASES.CLIParser.Parser.DefaultMultiValueSeparator
-  name: DefaultMultiValueSeparator
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultMultiValueSeparator
-  commentId: F:MASES.CLIParser.Parser.DefaultMultiValueSeparator
-  fullName: MASES.CLIParser.Parser.DefaultMultiValueSeparator
-  nameWithType: Parser.DefaultMultiValueSeparator
-- uid: MASES.CLIParser.Parser.DefaultPrefix
-  name: DefaultPrefix
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultPrefix
-  commentId: F:MASES.CLIParser.Parser.DefaultPrefix
-  fullName: MASES.CLIParser.Parser.DefaultPrefix
-  nameWithType: Parser.DefaultPrefix
-- uid: MASES.CLIParser.Parser.DefaultType
-  name: DefaultType
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultType
-  commentId: F:MASES.CLIParser.Parser.DefaultType
-  fullName: MASES.CLIParser.Parser.DefaultType
-  nameWithType: Parser.DefaultType
-- uid: MASES.CLIParser.Parser.DefaultValueType
-  name: DefaultValueType
-  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_DefaultValueType
-  commentId: F:MASES.CLIParser.Parser.DefaultValueType
-  fullName: MASES.CLIParser.Parser.DefaultValueType
-  nameWithType: Parser.DefaultValueType
 - uid: MASES.CLIParser.Parser.Exist(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
   name: Exist(IEnumerable<IArgumentMetadataParsed>, String)
   href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_Exist_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_
@@ -1054,3 +995,193 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Parser.RemoveFile
   nameWithType: Parser.RemoveFile
+- uid: MASES.CLIParser.Parser.Settings
+  name: Settings
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_Settings
+  commentId: P:MASES.CLIParser.Parser.Settings
+  fullName: MASES.CLIParser.Parser.Settings
+  nameWithType: Parser.Settings
+- uid: MASES.CLIParser.Parser.Settings*
+  name: Settings
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_Settings_
+  commentId: Overload:MASES.CLIParser.Parser.Settings
+  isSpec: "True"
+  fullName: MASES.CLIParser.Parser.Settings
+  nameWithType: Parser.Settings
+- uid: MASES.CLIParser.ParserExtension
+  name: ParserExtension
+  href: api/MASES.CLIParser.ParserExtension.html
+  commentId: T:MASES.CLIParser.ParserExtension
+  fullName: MASES.CLIParser.ParserExtension
+  nameWithType: ParserExtension
+- uid: MASES.CLIParser.ParserExtension.Add(MASES.CLIParser.IArgumentMetadata)
+  name: Add(IArgumentMetadata)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Add_MASES_CLIParser_IArgumentMetadata_
+  commentId: M:MASES.CLIParser.ParserExtension.Add(MASES.CLIParser.IArgumentMetadata)
+  fullName: MASES.CLIParser.ParserExtension.Add(MASES.CLIParser.IArgumentMetadata)
+  nameWithType: ParserExtension.Add(IArgumentMetadata)
+- uid: MASES.CLIParser.ParserExtension.Add(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata})
+  name: Add(IEnumerable<IArgumentMetadata>)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Add_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadata__
+  commentId: M:MASES.CLIParser.ParserExtension.Add(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata})
+  name.vb: Add(IEnumerable(Of IArgumentMetadata))
+  fullName: MASES.CLIParser.ParserExtension.Add(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadata>)
+  fullName.vb: MASES.CLIParser.ParserExtension.Add(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadata))
+  nameWithType: ParserExtension.Add(IEnumerable<IArgumentMetadata>)
+  nameWithType.vb: ParserExtension.Add(IEnumerable(Of IArgumentMetadata))
+- uid: MASES.CLIParser.ParserExtension.Add*
+  name: Add
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Add_
+  commentId: Overload:MASES.CLIParser.ParserExtension.Add
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.Add
+  nameWithType: ParserExtension.Add
+- uid: MASES.CLIParser.Settings
+  name: Settings
+  href: api/MASES.CLIParser.Settings.html
+  commentId: T:MASES.CLIParser.Settings
+  fullName: MASES.CLIParser.Settings
+  nameWithType: Settings
+- uid: MASES.CLIParser.Settings.#ctor
+  name: Settings()
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings__ctor
+  commentId: M:MASES.CLIParser.Settings.#ctor
+  fullName: MASES.CLIParser.Settings.Settings()
+  nameWithType: Settings.Settings()
+- uid: MASES.CLIParser.Settings.#ctor*
+  name: Settings
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings__ctor_
+  commentId: Overload:MASES.CLIParser.Settings.#ctor
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.Settings
+  nameWithType: Settings.Settings
+- uid: MASES.CLIParser.Settings.CheckUnwanted
+  name: CheckUnwanted
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_CheckUnwanted
+  commentId: P:MASES.CLIParser.Settings.CheckUnwanted
+  fullName: MASES.CLIParser.Settings.CheckUnwanted
+  nameWithType: Settings.CheckUnwanted
+- uid: MASES.CLIParser.Settings.CheckUnwanted*
+  name: CheckUnwanted
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_CheckUnwanted_
+  commentId: Overload:MASES.CLIParser.Settings.CheckUnwanted
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.CheckUnwanted
+  nameWithType: Settings.CheckUnwanted
+- uid: MASES.CLIParser.Settings.DefaultCustomPrefix
+  name: DefaultCustomPrefix
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultCustomPrefix
+  commentId: P:MASES.CLIParser.Settings.DefaultCustomPrefix
+  fullName: MASES.CLIParser.Settings.DefaultCustomPrefix
+  nameWithType: Settings.DefaultCustomPrefix
+- uid: MASES.CLIParser.Settings.DefaultCustomPrefix*
+  name: DefaultCustomPrefix
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultCustomPrefix_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultCustomPrefix
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultCustomPrefix
+  nameWithType: Settings.DefaultCustomPrefix
+- uid: MASES.CLIParser.Settings.DefaultDescriptionPadding
+  name: DefaultDescriptionPadding
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultDescriptionPadding
+  commentId: P:MASES.CLIParser.Settings.DefaultDescriptionPadding
+  fullName: MASES.CLIParser.Settings.DefaultDescriptionPadding
+  nameWithType: Settings.DefaultDescriptionPadding
+- uid: MASES.CLIParser.Settings.DefaultDescriptionPadding*
+  name: DefaultDescriptionPadding
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultDescriptionPadding_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultDescriptionPadding
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultDescriptionPadding
+  nameWithType: Settings.DefaultDescriptionPadding
+- uid: MASES.CLIParser.Settings.DefaultFileNameIdentifier
+  name: DefaultFileNameIdentifier
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultFileNameIdentifier
+  commentId: P:MASES.CLIParser.Settings.DefaultFileNameIdentifier
+  fullName: MASES.CLIParser.Settings.DefaultFileNameIdentifier
+  nameWithType: Settings.DefaultFileNameIdentifier
+- uid: MASES.CLIParser.Settings.DefaultFileNameIdentifier*
+  name: DefaultFileNameIdentifier
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultFileNameIdentifier_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultFileNameIdentifier
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultFileNameIdentifier
+  nameWithType: Settings.DefaultFileNameIdentifier
+- uid: MASES.CLIParser.Settings.DefaultIsCaseInvariant
+  name: DefaultIsCaseInvariant
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultIsCaseInvariant
+  commentId: P:MASES.CLIParser.Settings.DefaultIsCaseInvariant
+  fullName: MASES.CLIParser.Settings.DefaultIsCaseInvariant
+  nameWithType: Settings.DefaultIsCaseInvariant
+- uid: MASES.CLIParser.Settings.DefaultIsCaseInvariant*
+  name: DefaultIsCaseInvariant
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultIsCaseInvariant_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultIsCaseInvariant
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultIsCaseInvariant
+  nameWithType: Settings.DefaultIsCaseInvariant
+- uid: MASES.CLIParser.Settings.DefaultKeyValuePairSeparator
+  name: DefaultKeyValuePairSeparator
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultKeyValuePairSeparator
+  commentId: P:MASES.CLIParser.Settings.DefaultKeyValuePairSeparator
+  fullName: MASES.CLIParser.Settings.DefaultKeyValuePairSeparator
+  nameWithType: Settings.DefaultKeyValuePairSeparator
+- uid: MASES.CLIParser.Settings.DefaultKeyValuePairSeparator*
+  name: DefaultKeyValuePairSeparator
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultKeyValuePairSeparator_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultKeyValuePairSeparator
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultKeyValuePairSeparator
+  nameWithType: Settings.DefaultKeyValuePairSeparator
+- uid: MASES.CLIParser.Settings.DefaultMultiValueSeparator
+  name: DefaultMultiValueSeparator
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultMultiValueSeparator
+  commentId: P:MASES.CLIParser.Settings.DefaultMultiValueSeparator
+  fullName: MASES.CLIParser.Settings.DefaultMultiValueSeparator
+  nameWithType: Settings.DefaultMultiValueSeparator
+- uid: MASES.CLIParser.Settings.DefaultMultiValueSeparator*
+  name: DefaultMultiValueSeparator
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultMultiValueSeparator_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultMultiValueSeparator
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultMultiValueSeparator
+  nameWithType: Settings.DefaultMultiValueSeparator
+- uid: MASES.CLIParser.Settings.DefaultPrefix
+  name: DefaultPrefix
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultPrefix
+  commentId: P:MASES.CLIParser.Settings.DefaultPrefix
+  fullName: MASES.CLIParser.Settings.DefaultPrefix
+  nameWithType: Settings.DefaultPrefix
+- uid: MASES.CLIParser.Settings.DefaultPrefix*
+  name: DefaultPrefix
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultPrefix_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultPrefix
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultPrefix
+  nameWithType: Settings.DefaultPrefix
+- uid: MASES.CLIParser.Settings.DefaultType
+  name: DefaultType
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultType
+  commentId: P:MASES.CLIParser.Settings.DefaultType
+  fullName: MASES.CLIParser.Settings.DefaultType
+  nameWithType: Settings.DefaultType
+- uid: MASES.CLIParser.Settings.DefaultType*
+  name: DefaultType
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultType_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultType
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultType
+  nameWithType: Settings.DefaultType
+- uid: MASES.CLIParser.Settings.DefaultValueType
+  name: DefaultValueType
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultValueType
+  commentId: P:MASES.CLIParser.Settings.DefaultValueType
+  fullName: MASES.CLIParser.Settings.DefaultValueType
+  nameWithType: Settings.DefaultValueType
+- uid: MASES.CLIParser.Settings.DefaultValueType*
+  name: DefaultValueType
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultValueType_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultValueType
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultValueType
+  nameWithType: Settings.DefaultValueType

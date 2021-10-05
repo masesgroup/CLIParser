@@ -99,7 +99,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// <see cref="ArgumentPrefix"/> prefix associated to <see cref="IArgumentMetadata"/>
         /// </summary>
-        ArgumentPrefix Prefix { get; set; }
+        ArgumentPrefix? Prefix { get; set; }
         /// <summary>
         /// If <see cref="Prefix"/> contains <see cref="ArgumentPrefix.Custom"/> use <see cref="CustomPrefix"/> to analyze arguments
         /// </summary>
@@ -119,11 +119,11 @@ namespace MASES.CLIParser
         /// <summary>
         /// Set how to manage the <see cref="IArgumentMetadata"/>
         /// </summary>
-        ArgumentType Type { get; set; }
+        ArgumentType? Type { get; set; }
         /// <summary>
         /// <see cref="ArgumentValueType"/> to check input
         /// </summary>
-        ArgumentValueType ValueType { get; set; }
+        ArgumentValueType? ValueType { get; set; }
         /// <summary>
         /// Separator used when <see cref="Type"/> is set to <see cref="ArgumentType.KeyValue"/>
         /// </summary>
@@ -131,7 +131,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// True if the argument shall be treated as case invariant
         /// </summary>
-        bool IsCaseInvariant { get; set; }
+        bool? IsCaseInvariant { get; set; }
         /// <summary>
         /// True if the argument shall be mandatory
         /// </summary>
@@ -155,7 +155,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// The separator used in the multiple value argument
         /// </summary>
-        char MultiValueSeparator { get; set; }
+        char? MultiValueSeparator { get; set; }
         /// <summary>
         /// The dafault value to use if the value is not found
         /// </summary>
@@ -204,9 +204,13 @@ namespace MASES.CLIParser
 
     interface IArgumentMetadataHelper
     {
+        Parser Parser { get; set; }
+
         string StartWith { get; }
 
         string ShortStartWith { get; }
+
+        void SetDefault(Parser parser);
 
         string GetPrefix();
 
@@ -230,35 +234,26 @@ namespace MASES.CLIParser
         /// <summary>
         /// Dafault used to check for file argument
         /// </summary>
-        public static IArgumentMetadata DefaultFileArgumentMetadata
+        public static IArgumentMetadata DefaultFileArgumentMetadata(Parser parser)
         {
-            get
+            return new ArgumentMetadata<string>(parser)
             {
-                return new ArgumentMetadata<string>()
-                {
-                    Name = string.Empty,
-                    ShortName = string.Empty,
-                    Default = null,
-                    Prefix = ArgumentPrefix.Custom,
-                    CustomPrefix = Parser.DefaultFileNameIdentifier.ToString(),
-                    Type = ArgumentType.Single,
-                    ValueType = ArgumentValueType.Free,
-                };
-            }
+                Name = string.Empty,
+                ShortName = string.Empty,
+                Default = null,
+                Prefix = ArgumentPrefix.Custom,
+                CustomPrefix = parser.Settings.DefaultFileNameIdentifier.ToString(),
+                Type = ArgumentType.Single,
+                ValueType = ArgumentValueType.Free,
+            };
         }
 
-        public ArgumentMetadataBase()
+        internal ArgumentMetadataBase()
         {
-            Prefix = Parser.DefaultPrefix;
-            CustomPrefix = Parser.DefaultCustomPrefix;
-            Type = Parser.DefaultType;
-            ValueType = Parser.DefaultValueType;
-            KeyValuePairSeparator = Parser.DefaultKeyValuePairSeparator;
-            IsCaseInvariant = Parser.DefaultIsCaseInvariant;
-            MultiValueSeparator = Parser.DefaultMultiValueSeparator;
         }
+
         /// <inheritdoc/>
-        public virtual ArgumentPrefix Prefix { get; set; }
+        public virtual ArgumentPrefix? Prefix { get; set; }
         /// <inheritdoc/>
         public virtual string CustomPrefix { get; set; }
         /// <inheritdoc/>
@@ -268,13 +263,13 @@ namespace MASES.CLIParser
         /// <inheritdoc/>
         public virtual string Help { get; set; }
         /// <inheritdoc/>
-        public virtual ArgumentType Type { get; set; }
+        public virtual ArgumentType? Type { get; set; }
         /// <inheritdoc/>
-        public virtual ArgumentValueType ValueType { get; set; }
+        public virtual ArgumentValueType? ValueType { get; set; }
         /// <inheritdoc/>
         public virtual string KeyValuePairSeparator { get; set; }
         /// <inheritdoc/>
-        public virtual bool IsCaseInvariant { get; set; }
+        public virtual bool? IsCaseInvariant { get; set; }
         /// <inheritdoc/>
         public virtual bool IsMandatory { get; set; }
         /// <inheritdoc/>
@@ -286,7 +281,7 @@ namespace MASES.CLIParser
         /// <inheritdoc/>
         public virtual bool IsFlag { get; protected set; }
         /// <inheritdoc/>
-        public virtual char MultiValueSeparator { get; set; }
+        public virtual char? MultiValueSeparator { get; set; }
         /// <inheritdoc/>
         public virtual object Default { get; set; }
         /// <inheritdoc/>
@@ -356,6 +351,18 @@ namespace MASES.CLIParser
 
         public ArgumentMetadata()
         {
+            Prepare();
+        }
+
+        public ArgumentMetadata(Parser parser)
+        {
+            Prepare();
+            Helper.Parser = parser;
+            Helper.SetDefault(parser);
+        }
+
+        void Prepare()
+        {
             Default = default(T);
             DataType = typeof(T);
             IsEnum = DataType.IsEnum;
@@ -385,6 +392,8 @@ namespace MASES.CLIParser
             }
         }
 
+        Parser IArgumentMetadataHelper.Parser { get; set; }
+
         string IArgumentMetadataHelper.StartWith
         {
             get
@@ -404,7 +413,7 @@ namespace MASES.CLIParser
                         break;
                 }
 
-                if (IsCaseInvariant) arg = arg.ToLowerInvariant();
+                if (IsCaseInvariant.Value) arg = arg.ToLowerInvariant();
 
                 return arg;
             }
@@ -431,10 +440,21 @@ namespace MASES.CLIParser
                         break;
                 }
 
-                if (IsCaseInvariant) arg = arg.ToLowerInvariant();
+                if (IsCaseInvariant.Value) arg = arg.ToLowerInvariant();
 
                 return arg;
             }
+        }
+
+        void IArgumentMetadataHelper.SetDefault(Parser parser)
+        {
+            if (!Prefix.HasValue) Prefix = parser.Settings.DefaultPrefix;
+            if (CustomPrefix == null) CustomPrefix = parser.Settings.DefaultCustomPrefix;
+            if (!Type.HasValue) Type = parser.Settings.DefaultType;
+            if (!ValueType.HasValue) ValueType = parser.Settings.DefaultValueType;
+            if (KeyValuePairSeparator == null) KeyValuePairSeparator = parser.Settings.DefaultKeyValuePairSeparator;
+            if (!IsCaseInvariant.HasValue) IsCaseInvariant = parser.Settings.DefaultIsCaseInvariant;
+            if (!MultiValueSeparator.HasValue) MultiValueSeparator = parser.Settings.DefaultMultiValueSeparator;
         }
 
         string IArgumentMetadataHelper.Parameter()
@@ -451,7 +471,7 @@ namespace MASES.CLIParser
         {
             Helper.Check();
             string description = Helper.Parameter();
-            description = description.PadRight(Parser.DefaultDescriptionPadding, ' ');
+            description = description.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding, ' ');
             description += ": ";
             if (!string.IsNullOrEmpty(Help))
             {
@@ -518,7 +538,7 @@ namespace MASES.CLIParser
             while (trimming.Length > width)
             {
                 builder.AppendLine(trimming.Substring(0, width - 2) + "-");
-                trimming = string.Empty.PadRight(Parser.DefaultDescriptionPadding + 2, ' ') + trimming.Remove(0, width - 2);
+                trimming = string.Empty.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding + 2, ' ') + trimming.Remove(0, width - 2);
             }
             builder.AppendLine(trimming);
 
@@ -573,8 +593,8 @@ namespace MASES.CLIParser
         {
             for (int i = 0; i < args.Count; i++)
             {
-                string stringToTest = (IsCaseInvariant) ? args[i].ToLowerInvariant() : args[i];
-                if (stringToTest.StartsWith(Parser.DefaultFileNameIdentifier.ToString()))
+                string stringToTest = (IsCaseInvariant.Value) ? args[i].ToLowerInvariant() : args[i];
+                if (stringToTest.StartsWith(Helper.Parser.Settings.DefaultFileNameIdentifier.ToString()))
                 {
                     // represent a file
                     ArgumentMetadataParsed parsedData = new ArgumentMetadataParsed(this)
@@ -620,7 +640,7 @@ namespace MASES.CLIParser
                                 {
                                     try
                                     {
-                                        parsedData.Value = Enum.Parse(DataType, value, IsCaseInvariant);
+                                        parsedData.Value = Enum.Parse(DataType, value, IsCaseInvariant.Value);
                                         Helper.TestValue(parsedData.Value);
                                     }
                                     catch
@@ -631,7 +651,7 @@ namespace MASES.CLIParser
                                 else if (IsMultiValue)
                                 {
                                     List<T> values = new List<T>();
-                                    string[] datas = value.Split(MultiValueSeparator);
+                                    string[] datas = value.Split(MultiValueSeparator.Value);
                                     foreach (var item in datas)
                                     {
                                         object oVal = Convert.ChangeType(value, DataType);
@@ -657,7 +677,7 @@ namespace MASES.CLIParser
                                     {
                                         try
                                         {
-                                            parsedData.Value = Enum.Parse(DataType, value, IsCaseInvariant);
+                                            parsedData.Value = Enum.Parse(DataType, value, IsCaseInvariant.Value);
                                             Helper.TestValue(parsedData.Value);
                                         }
                                         catch
@@ -668,7 +688,7 @@ namespace MASES.CLIParser
                                     else if (IsMultiValue)
                                     {
                                         List<T> values = new List<T>();
-                                        string[] datas = value.Split(MultiValueSeparator);
+                                        string[] datas = value.Split(MultiValueSeparator.Value);
                                         foreach (var item in datas)
                                         {
                                             object oVal = Convert.ChangeType(item, DataType);
