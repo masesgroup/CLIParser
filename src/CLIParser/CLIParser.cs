@@ -40,6 +40,7 @@ namespace MASES.CLIParser
         public static void Add(this IArgumentMetadata metadata)
         {
             IArgumentMetadataHelper helper = metadata as IArgumentMetadataHelper;
+            if (helper.Parser == null) throw new ArgumentException(string.Format("Parameter {0} does not have any associated Parser", metadata.Name));
             helper.Parser.Add(metadata);
         }
         /// <summary>
@@ -50,8 +51,7 @@ namespace MASES.CLIParser
         {
             foreach (var item in metadatas)
             {
-                IArgumentMetadataHelper helper = item as IArgumentMetadataHelper;
-                helper.Parser.Add(item);
+                Add(item);
             }
         }
     }
