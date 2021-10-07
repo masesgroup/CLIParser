@@ -73,7 +73,7 @@
   
   <h1 id="MASES_CLIParser_ParserExtension" data-uid="MASES.CLIParser.ParserExtension" class="text-break">Class ParserExtension
   </h1>
-  <div class="markdown level0 summary"><p>Helper methods for the <a class="xref" href="MASES.CLIParser.Parser.html">Parser</a></p>
+  <div class="markdown level0 summary"><p>Helper methods for the <a class="xref" href="MASES.CLIParser.Parser.html">Parser</a> class</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -182,10 +182,228 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Get__1_MASES_CLIParser_IArgumentMetadataParsed_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Get%60%601(MASES.CLIParser.IArgumentMetadataParsed)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Exist_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Exist(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L192">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Exist_" data-uid="MASES.CLIParser.ParserExtension.Exist*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Exist_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_" data-uid="MASES.CLIParser.ParserExtension.Exist(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)">Exist(IEnumerable&lt;IArgumentMetadataParsed&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Check the <code data-dev-comment-type="paramref" class="paramref">args</code> for existing <code data-dev-comment-type="paramref" class="paramref">name</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Exist(this IEnumerable&lt;IArgumentMetadataParsed&gt; args, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>Arguments to test using the list prepared using <see cref="!:Parse(string[])"></see></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Argument name to search</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the the argument with <code data-dev-comment-type="paramref" class="paramref">name</code> name exist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Exists_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Exists(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L172">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Exists_" data-uid="MASES.CLIParser.ParserExtension.Exists*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Exists_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__" data-uid="MASES.CLIParser.ParserExtension.Exists(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})">Exists(IEnumerable&lt;IArgumentMetadataParsed&gt;)</h4>
+  <div class="markdown level1 summary"><p>Filter the <code data-dev-comment-type="paramref" class="paramref">args</code> for existing <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IArgumentMetadataParsed&gt; Exists(this IEnumerable&lt;IArgumentMetadataParsed&gt; args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>Arguments to test using the list prepared using <see cref="!:Parse(string[])"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><p>A filtered list of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L64">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Get_" data-uid="MASES.CLIParser.ParserExtension.Get*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_" data-uid="MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)">Get(IEnumerable&lt;IArgumentMetadataParsed&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return the <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> at <code data-dev-comment-type="paramref" class="paramref">index</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentMetadataParsed Get(this IEnumerable&lt;IArgumentMetadataParsed&gt; args, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> to parse</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Index to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></td>
+        <td><p>The selected <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L75">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Get_" data-uid="MASES.CLIParser.ParserExtension.Get*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_" data-uid="MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)">Get(IEnumerable&lt;IArgumentMetadataParsed&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Return the <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> at <code data-dev-comment-type="paramref" class="paramref">name</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentMetadataParsed Get(this IEnumerable&lt;IArgumentMetadataParsed&gt; args, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> to parse</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The argument name, or short name, to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></td>
+        <td><p>The selected <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Get__1_MASES_CLIParser_IArgumentMetadataParsed_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Get%60%601(MASES.CLIParser.IArgumentMetadataParsed)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L116">View Source</a>
   </span>
   <a id="MASES_CLIParser_ParserExtension_Get_" data-uid="MASES.CLIParser.ParserExtension.Get*"></a>
   <h4 id="MASES_CLIParser_ParserExtension_Get__1_MASES_CLIParser_IArgumentMetadataParsed_" data-uid="MASES.CLIParser.ParserExtension.Get``1(MASES.CLIParser.IArgumentMetadataParsed)">Get&lt;T&gt;(IArgumentMetadataParsed)</h4>
@@ -242,6 +460,310 @@
       <tr>
         <td><span class="parametername">T</span></td>
         <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> to use to retrieve value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Get%60%601(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L105">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Get_" data-uid="MASES.CLIParser.ParserExtension.Get*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_" data-uid="MASES.CLIParser.ParserExtension.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)">Get&lt;T&gt;(IEnumerable&lt;IArgumentMetadataParsed&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return the value of the <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> ensemble at <code data-dev-comment-type="paramref" class="paramref">index</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T Get&lt;T&gt;(this IEnumerable&lt;IArgumentMetadataParsed&gt; args, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> to parse</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Index to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The value from <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Get%60%601(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L90">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Get_" data-uid="MASES.CLIParser.ParserExtension.Get*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_" data-uid="MASES.CLIParser.ParserExtension.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)">Get&lt;T&gt;(IEnumerable&lt;IArgumentMetadataParsed&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Return the value of the <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> ensemble at <code data-dev-comment-type="paramref" class="paramref">name</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T Get&lt;T&gt;(this IEnumerable&lt;IArgumentMetadataParsed&gt; args, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> to parse</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The argument name, or short name, to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The value from <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_NotExists_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.NotExists(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L207">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_NotExists_" data-uid="MASES.CLIParser.ParserExtension.NotExists*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_NotExists_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__" data-uid="MASES.CLIParser.ParserExtension.NotExists(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})">NotExists(IEnumerable&lt;IArgumentMetadataParsed&gt;)</h4>
+  <div class="markdown level1 summary"><p>Filter the <code data-dev-comment-type="paramref" class="paramref">args</code> for non existing <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IArgumentMetadataParsed&gt; NotExists(this IEnumerable&lt;IArgumentMetadataParsed&gt; args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>Arguments to test using the list prepared using <see cref="!:Parse(string[])"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><p>A filtered list of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_Override_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Boolean_.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.Override(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L150">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_Override_" data-uid="MASES.CLIParser.ParserExtension.Override*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_Override_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Boolean_" data-uid="MASES.CLIParser.ParserExtension.Override(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Boolean)">Override(IEnumerable&lt;IArgumentMetadataParsed&gt;, IEnumerable&lt;IArgumentMetadataParsed&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Overrides values in <code data-dev-comment-type="paramref" class="paramref">destination</code> with values found in <code data-dev-comment-type="paramref" class="paramref">source</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IArgumentMetadataParsed&gt; Override(this IEnumerable&lt;IArgumentMetadataParsed&gt; destination, IEnumerable&lt;IArgumentMetadataParsed&gt; source, bool rawReplace = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">destination</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">rawReplace</span></td>
+        <td><p>Replace destionation without check if argument exist in the source</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><p>The updated <code data-dev-comment-type="paramref" class="paramref">destination</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_ParserExtension_RemoveFile_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__.md&amp;value=---%0Auid%3A%20MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable%7BMASES.CLIParser.IArgumentMetadataParsed%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/CLIParser.cs/#L132">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_ParserExtension_RemoveFile_" data-uid="MASES.CLIParser.ParserExtension.RemoveFile*"></a>
+  <h4 id="MASES_CLIParser_ParserExtension_RemoveFile_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__" data-uid="MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})">RemoveFile(IEnumerable&lt;IArgumentMetadataParsed&gt;)</h4>
+  <div class="markdown level1 summary"><p>Return the <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> without any accurrence of file argument (i.e. <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html#MASES_CLIParser_IArgumentMetadataParsed_IsFile">IsFile</a> is true)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IArgumentMetadataParsed&gt; RemoveFile(this IEnumerable&lt;IArgumentMetadataParsed&gt; args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An ensemble of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a> to check</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;</td>
+        <td><p>A list of <a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a></p>
 </td>
       </tr>
     </tbody>

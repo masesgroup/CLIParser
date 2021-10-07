@@ -887,6 +887,15 @@ references:
   fullName.vb: MASES.CLIParser.Parser.Get(Of T)(MASES.CLIParser.IArgumentMetadataParsed)
   nameWithType: Parser.Get<T>(IArgumentMetadataParsed)
   nameWithType.vb: Parser.Get(Of T)(IArgumentMetadataParsed)
+- uid: MASES.CLIParser.Parser.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
+  name: Get<T>(IEnumerable<IArgumentMetadataParsed>, Int32)
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_
+  commentId: M:MASES.CLIParser.Parser.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
+  name.vb: Get(Of T)(IEnumerable(Of IArgumentMetadataParsed), Int32)
+  fullName: MASES.CLIParser.Parser.Get<T>(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.Int32)
+  fullName.vb: MASES.CLIParser.Parser.Get(Of T)(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.Int32)
+  nameWithType: Parser.Get<T>(IEnumerable<IArgumentMetadataParsed>, Int32)
+  nameWithType.vb: Parser.Get(Of T)(IEnumerable(Of IArgumentMetadataParsed), Int32)
 - uid: MASES.CLIParser.Parser.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
   name: Get<T>(IEnumerable<IArgumentMetadataParsed>, String)
   href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_
@@ -1036,6 +1045,56 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ParserExtension.Add
   nameWithType: ParserExtension.Add
+- uid: MASES.CLIParser.ParserExtension.Exist(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
+  name: Exist(IEnumerable<IArgumentMetadataParsed>, String)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Exist_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_
+  commentId: M:MASES.CLIParser.ParserExtension.Exist(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
+  name.vb: Exist(IEnumerable(Of IArgumentMetadataParsed), String)
+  fullName: MASES.CLIParser.ParserExtension.Exist(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.String)
+  fullName.vb: MASES.CLIParser.ParserExtension.Exist(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.String)
+  nameWithType: ParserExtension.Exist(IEnumerable<IArgumentMetadataParsed>, String)
+  nameWithType.vb: ParserExtension.Exist(IEnumerable(Of IArgumentMetadataParsed), String)
+- uid: MASES.CLIParser.ParserExtension.Exist*
+  name: Exist
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Exist_
+  commentId: Overload:MASES.CLIParser.ParserExtension.Exist
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.Exist
+  nameWithType: ParserExtension.Exist
+- uid: MASES.CLIParser.ParserExtension.Exists(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
+  name: Exists(IEnumerable<IArgumentMetadataParsed>)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Exists_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__
+  commentId: M:MASES.CLIParser.ParserExtension.Exists(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
+  name.vb: Exists(IEnumerable(Of IArgumentMetadataParsed))
+  fullName: MASES.CLIParser.ParserExtension.Exists(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>)
+  fullName.vb: MASES.CLIParser.ParserExtension.Exists(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed))
+  nameWithType: ParserExtension.Exists(IEnumerable<IArgumentMetadataParsed>)
+  nameWithType.vb: ParserExtension.Exists(IEnumerable(Of IArgumentMetadataParsed))
+- uid: MASES.CLIParser.ParserExtension.Exists*
+  name: Exists
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Exists_
+  commentId: Overload:MASES.CLIParser.ParserExtension.Exists
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.Exists
+  nameWithType: ParserExtension.Exists
+- uid: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
+  name: Get(IEnumerable<IArgumentMetadataParsed>, Int32)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_
+  commentId: M:MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
+  name.vb: Get(IEnumerable(Of IArgumentMetadataParsed), Int32)
+  fullName: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.Int32)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.Int32)
+  nameWithType: ParserExtension.Get(IEnumerable<IArgumentMetadataParsed>, Int32)
+  nameWithType.vb: ParserExtension.Get(IEnumerable(Of IArgumentMetadataParsed), Int32)
+- uid: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
+  name: Get(IEnumerable<IArgumentMetadataParsed>, String)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_
+  commentId: M:MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
+  name.vb: Get(IEnumerable(Of IArgumentMetadataParsed), String)
+  fullName: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.String)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.String)
+  nameWithType: ParserExtension.Get(IEnumerable<IArgumentMetadataParsed>, String)
+  nameWithType.vb: ParserExtension.Get(IEnumerable(Of IArgumentMetadataParsed), String)
 - uid: MASES.CLIParser.ParserExtension.Get*
   name: Get
   href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_
@@ -1052,6 +1111,72 @@ references:
   fullName.vb: MASES.CLIParser.ParserExtension.Get(Of T)(MASES.CLIParser.IArgumentMetadataParsed)
   nameWithType: ParserExtension.Get<T>(IArgumentMetadataParsed)
   nameWithType.vb: ParserExtension.Get(Of T)(IArgumentMetadataParsed)
+- uid: MASES.CLIParser.ParserExtension.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
+  name: Get<T>(IEnumerable<IArgumentMetadataParsed>, Int32)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_
+  commentId: M:MASES.CLIParser.ParserExtension.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
+  name.vb: Get(Of T)(IEnumerable(Of IArgumentMetadataParsed), Int32)
+  fullName: MASES.CLIParser.ParserExtension.Get<T>(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.Int32)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(Of T)(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.Int32)
+  nameWithType: ParserExtension.Get<T>(IEnumerable<IArgumentMetadataParsed>, Int32)
+  nameWithType.vb: ParserExtension.Get(Of T)(IEnumerable(Of IArgumentMetadataParsed), Int32)
+- uid: MASES.CLIParser.ParserExtension.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
+  name: Get<T>(IEnumerable<IArgumentMetadataParsed>, String)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get__1_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_String_
+  commentId: M:MASES.CLIParser.ParserExtension.Get``1(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.String)
+  name.vb: Get(Of T)(IEnumerable(Of IArgumentMetadataParsed), String)
+  fullName: MASES.CLIParser.ParserExtension.Get<T>(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.String)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(Of T)(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.String)
+  nameWithType: ParserExtension.Get<T>(IEnumerable<IArgumentMetadataParsed>, String)
+  nameWithType.vb: ParserExtension.Get(Of T)(IEnumerable(Of IArgumentMetadataParsed), String)
+- uid: MASES.CLIParser.ParserExtension.NotExists(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
+  name: NotExists(IEnumerable<IArgumentMetadataParsed>)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_NotExists_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__
+  commentId: M:MASES.CLIParser.ParserExtension.NotExists(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
+  name.vb: NotExists(IEnumerable(Of IArgumentMetadataParsed))
+  fullName: MASES.CLIParser.ParserExtension.NotExists(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>)
+  fullName.vb: MASES.CLIParser.ParserExtension.NotExists(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed))
+  nameWithType: ParserExtension.NotExists(IEnumerable<IArgumentMetadataParsed>)
+  nameWithType.vb: ParserExtension.NotExists(IEnumerable(Of IArgumentMetadataParsed))
+- uid: MASES.CLIParser.ParserExtension.NotExists*
+  name: NotExists
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_NotExists_
+  commentId: Overload:MASES.CLIParser.ParserExtension.NotExists
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.NotExists
+  nameWithType: ParserExtension.NotExists
+- uid: MASES.CLIParser.ParserExtension.Override(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Boolean)
+  name: Override(IEnumerable<IArgumentMetadataParsed>, IEnumerable<IArgumentMetadataParsed>, Boolean)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Override_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Boolean_
+  commentId: M:MASES.CLIParser.ParserExtension.Override(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Boolean)
+  name.vb: Override(IEnumerable(Of IArgumentMetadataParsed), IEnumerable(Of IArgumentMetadataParsed), Boolean)
+  fullName: MASES.CLIParser.ParserExtension.Override(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>, System.Boolean)
+  fullName.vb: MASES.CLIParser.ParserExtension.Override(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed), System.Boolean)
+  nameWithType: ParserExtension.Override(IEnumerable<IArgumentMetadataParsed>, IEnumerable<IArgumentMetadataParsed>, Boolean)
+  nameWithType.vb: ParserExtension.Override(IEnumerable(Of IArgumentMetadataParsed), IEnumerable(Of IArgumentMetadataParsed), Boolean)
+- uid: MASES.CLIParser.ParserExtension.Override*
+  name: Override
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Override_
+  commentId: Overload:MASES.CLIParser.ParserExtension.Override
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.Override
+  nameWithType: ParserExtension.Override
+- uid: MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
+  name: RemoveFile(IEnumerable<IArgumentMetadataParsed>)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_RemoveFile_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__
+  commentId: M:MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
+  name.vb: RemoveFile(IEnumerable(Of IArgumentMetadataParsed))
+  fullName: MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadataParsed>)
+  fullName.vb: MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadataParsed))
+  nameWithType: ParserExtension.RemoveFile(IEnumerable<IArgumentMetadataParsed>)
+  nameWithType.vb: ParserExtension.RemoveFile(IEnumerable(Of IArgumentMetadataParsed))
+- uid: MASES.CLIParser.ParserExtension.RemoveFile*
+  name: RemoveFile
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_RemoveFile_
+  commentId: Overload:MASES.CLIParser.ParserExtension.RemoveFile
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.RemoveFile
+  nameWithType: ParserExtension.RemoveFile
 - uid: MASES.CLIParser.Settings
   name: Settings
   href: api/MASES.CLIParser.Settings.html
