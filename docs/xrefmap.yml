@@ -1036,6 +1036,22 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ParserExtension.Add
   nameWithType: ParserExtension.Add
+- uid: MASES.CLIParser.ParserExtension.Get*
+  name: Get
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_
+  commentId: Overload:MASES.CLIParser.ParserExtension.Get
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.Get
+  nameWithType: ParserExtension.Get
+- uid: MASES.CLIParser.ParserExtension.Get``1(MASES.CLIParser.IArgumentMetadataParsed)
+  name: Get<T>(IArgumentMetadataParsed)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get__1_MASES_CLIParser_IArgumentMetadataParsed_
+  commentId: M:MASES.CLIParser.ParserExtension.Get``1(MASES.CLIParser.IArgumentMetadataParsed)
+  name.vb: Get(Of T)(IArgumentMetadataParsed)
+  fullName: MASES.CLIParser.ParserExtension.Get<T>(MASES.CLIParser.IArgumentMetadataParsed)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(Of T)(MASES.CLIParser.IArgumentMetadataParsed)
+  nameWithType: ParserExtension.Get<T>(IArgumentMetadataParsed)
+  nameWithType.vb: ParserExtension.Get(Of T)(IArgumentMetadataParsed)
 - uid: MASES.CLIParser.Settings
   name: Settings
   href: api/MASES.CLIParser.Settings.html
