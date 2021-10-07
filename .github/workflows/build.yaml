@@ -92,6 +92,7 @@ jobs:
         shell: bash
 
       - name: Commit changes
+        if: ${{ github.repository_owner == 'masesgroup'}} #do not push any changes outside main repo
         uses: EndBug/add-and-commit@v5
         with:
           author_name: github-actions
