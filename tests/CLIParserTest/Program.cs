@@ -73,7 +73,7 @@ namespace MASES.CLIParserTest
                 Name = "multivalue",
                 Type = ArgumentType.Double,
                 IsMultiValue = true,
-                Default = new string[] {"a", "b"}
+                Default = new string[] { "a", "b" }
             });
             parser.Add(new ArgumentMetadata<string>(parser)
             {
@@ -81,7 +81,7 @@ namespace MASES.CLIParserTest
                 Type = ArgumentType.Single,
             });
 
-            var result =  parser.Parse(args);
+            var result = parser.Parse(args);
 
             var fileInfo = parser.FromFile(result);
 
