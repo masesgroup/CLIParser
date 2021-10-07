@@ -29,7 +29,7 @@ using System.Text;
 namespace MASES.CLIParser
 {
     /// <summary>
-    /// Helper methods for the <see cref="Parser"/>
+    /// Helper methods for the <see cref="Parser"/> class
     /// </summary>
     public static class ParserExtension
     {
@@ -56,6 +56,58 @@ namespace MASES.CLIParser
         }
 
         /// <summary>
+        /// Return the <see cref="IArgumentMetadataParsed"/> at <paramref name="index"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
+        /// <param name="index">Index to get</param>
+        /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
+        public static IArgumentMetadataParsed Get(this IEnumerable<IArgumentMetadataParsed> args, int index)
+        {
+            return new List<IArgumentMetadataParsed>(args)[index];
+        }
+
+        /// <summary>
+        /// Return the <see cref="IArgumentMetadataParsed"/> at <paramref name="name"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
+        /// <param name="name">The argument name, or short name, to get</param>
+        /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
+        public static IArgumentMetadataParsed Get(this IEnumerable<IArgumentMetadataParsed> args, string name)
+        {
+            foreach (var item in new List<IArgumentMetadataParsed>(args))
+            {
+                if (item.Name == name || item.ShortName == name) return item;
+            }
+            throw new ArgumentException("name is not a valid argument.");
+        }
+
+        /// <summary>
+        /// Return the value of the <see cref="IArgumentMetadataParsed"/> ensemble at <paramref name="name"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
+        /// <param name="name">The argument name, or short name, to get</param>
+        /// <returns>The value from <see cref="IArgumentMetadataParsed"/></returns>
+        public static T Get<T>(this IEnumerable<IArgumentMetadataParsed> args, string name)
+        {
+            foreach (var item in new List<IArgumentMetadataParsed>(args))
+            {
+                if (item.Name == name || item.ShortName == name) return Get<T>(item);
+            }
+            throw new ArgumentException("name is not a valid argument.");
+        }
+
+        /// <summary>
+        /// Return the value of the <see cref="IArgumentMetadataParsed"/> ensemble at <paramref name="index"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
+        /// <param name="index">Index to get</param>
+        /// <returns>The value from <see cref="IArgumentMetadataParsed"/></returns>
+        public static T Get<T>(this IEnumerable<IArgumentMetadataParsed> args, int index)
+        {
+            return Get(args, index).Get<T>();
+        }
+
+        /// <summary>
         /// Return the value from <see cref="IArgumentMetadataParsed"/> or the default value
         /// </summary>
         /// <typeparam name="T">The <see cref="Type"/> to use to retrieve value</typeparam>
@@ -70,6 +122,100 @@ namespace MASES.CLIParser
                 return (T)arg.Value;
             }
             return (T)arg.Default;
+        }
+
+        /// <summary>
+        /// Return the <see cref="IArgumentMetadataParsed"/> without any accurrence of file argument (i.e. <see cref="IArgumentMetadataParsed.IsFile"/> is true)
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to check</param>
+        /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
+        public static IEnumerable<IArgumentMetadataParsed> RemoveFile(this IEnumerable<IArgumentMetadataParsed> args)
+        {
+            List<IArgumentMetadataParsed> parsedArgs = new List<IArgumentMetadataParsed>(args);
+
+            foreach (var item in parsedArgs.ToArray())
+            {
+                if (item.IsFile) parsedArgs.Remove(item);
+            }
+            return parsedArgs;
+        }
+
+        /// <summary>
+        /// Overrides values in <paramref name="destination"/> with values found in <paramref name="source"/>
+        /// </summary>
+        /// <param name="destination">An ensemble of <see cref="IArgumentMetadataParsed"/></param>
+        /// <param name="source">An ensemble of <see cref="IArgumentMetadataParsed"/></param>
+        /// <param name="rawReplace">Replace destionation without check if argument exist in the source</param>
+        /// <returns>The updated <paramref name="destination"/></returns>
+        public static IEnumerable<IArgumentMetadataParsed> Override(this IEnumerable<IArgumentMetadataParsed> destination, IEnumerable<IArgumentMetadataParsed> source, bool rawReplace = false)
+        {
+            List<IArgumentMetadataParsed> newSrc = new List<IArgumentMetadataParsed>(source);
+            foreach (var item in destination)
+            {
+                foreach (var item2 in newSrc.ToArray())
+                {
+                    if (rawReplace ? true : item2.Exist && item.Override(item2))
+                    {
+                        newSrc.Remove(item2);
+                        break;
+                    }
+                }
+            }
+            return destination;
+        }
+
+        /// <summary>
+        /// Filter the <paramref name="args"/> for existing <see cref="IArgumentMetadataParsed"/>
+        /// </summary>
+        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
+        /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
+        public static IEnumerable<IArgumentMetadataParsed> Exists(this IEnumerable<IArgumentMetadataParsed> args)
+        {
+            List<IArgumentMetadataParsed> existArgs = new List<IArgumentMetadataParsed>();
+            foreach (IArgumentMetadataParsed item in args)
+            {
+                if (item.Exist)
+                {
+                    existArgs.Add(item);
+                }
+            }
+
+            return existArgs;
+        }
+
+        /// <summary>
+        /// Check the <paramref name="args"/> for existing <paramref name="name"/>
+        /// </summary>
+        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
+        /// <param name="name">Argument name to search</param>
+        /// <returns>true if the the argument with <paramref name="name"/> name exist</returns>
+        public static bool Exist(this IEnumerable<IArgumentMetadataParsed> args, string name)
+        {
+            foreach (var item in Exists(args))
+            {
+                if (item.Name == name || item.ShortName == name) return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Filter the <paramref name="args"/> for non existing <see cref="IArgumentMetadataParsed"/>
+        /// </summary>
+        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
+        /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
+        public static IEnumerable<IArgumentMetadataParsed> NotExists(this IEnumerable<IArgumentMetadataParsed> args)
+        {
+            List<IArgumentMetadataParsed> existArgs = new List<IArgumentMetadataParsed>();
+            foreach (IArgumentMetadataParsed item in args)
+            {
+                if (!item.Exist)
+                {
+                    existArgs.Add(item);
+                }
+            }
+
+            return existArgs;
         }
     }
 
@@ -298,7 +444,7 @@ namespace MASES.CLIParser
         /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
         public IArgumentMetadataParsed Get(IEnumerable<IArgumentMetadataParsed> args, int index)
         {
-            return new List<IArgumentMetadataParsed>(args)[index];
+            return args.Get(index);
         }
 
         /// <summary>
@@ -309,26 +455,29 @@ namespace MASES.CLIParser
         /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
         public IArgumentMetadataParsed Get(IEnumerable<IArgumentMetadataParsed> args, string name)
         {
-            foreach (var item in new List<IArgumentMetadataParsed>(args))
-            {
-                if (item.Name == name || item.ShortName == name) return item;
-            }
-            throw new ArgumentException("name is not a valid argument.");
+            return args.Get(name);
         }
 
         /// <summary>
-        /// Return the <see cref="IArgumentMetadataParsed"/> at <paramref name="name"/>
+        /// Return the value of the <see cref="IArgumentMetadataParsed"/> ensemble at <paramref name="index"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
+        /// <param name="index">Index to get</param>
+        /// <returns>The value from <see cref="IArgumentMetadataParsed"/></returns>
+        public T Get<T>(IEnumerable<IArgumentMetadataParsed> args, int index)
+        {
+            return args.Get<T>(index);
+        }
+
+        /// <summary>
+        /// Return the value of the <see cref="IArgumentMetadataParsed"/> ensemble at <paramref name="name"/>
         /// </summary>
         /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
         /// <param name="name">The argument name, or short name, to get</param>
-        /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
+        /// <returns>The value from <see cref="IArgumentMetadataParsed"/></returns>
         public T Get<T>(IEnumerable<IArgumentMetadataParsed> args, string name)
         {
-            foreach (var item in new List<IArgumentMetadataParsed>(args))
-            {
-                if (item.Name == name || item.ShortName == name) return Get<T>(item);
-            }
-            throw new ArgumentException("name is not a valid argument.");
+            return args.Get<T>(name);
         }
 
         /// <summary>
@@ -349,13 +498,7 @@ namespace MASES.CLIParser
         /// <returns>A list of <see cref="IArgumentMetadataParsed"/></returns>
         public IEnumerable<IArgumentMetadataParsed> RemoveFile(IEnumerable<IArgumentMetadataParsed> args)
         {
-            List<IArgumentMetadataParsed> parsedArgs = new List<IArgumentMetadataParsed>(args);
-
-            foreach (var item in parsedArgs.ToArray())
-            {
-                if (item.IsFile) parsedArgs.Remove(item);
-            }
-            return parsedArgs;
+            return args.RemoveFile();
         }
 
         /// <summary>
@@ -367,19 +510,7 @@ namespace MASES.CLIParser
         /// <returns>The updated <paramref name="destination"/></returns>
         public IEnumerable<IArgumentMetadataParsed> Override(IEnumerable<IArgumentMetadataParsed> destination, IEnumerable<IArgumentMetadataParsed> source, bool rawReplace = false)
         {
-            List<IArgumentMetadataParsed> newSrc = new List<IArgumentMetadataParsed>(source);
-            foreach (var item in destination)
-            {
-                foreach (var item2 in newSrc.ToArray())
-                {
-                    if (rawReplace ? true : item2.Exist && item.Override(item2))
-                    {
-                        newSrc.Remove(item2);
-                        break;
-                    }
-                }
-            }
-            return destination;
+            return destination.Override(source, rawReplace);
         }
 
         /// <summary>
@@ -389,16 +520,7 @@ namespace MASES.CLIParser
         /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
         public IEnumerable<IArgumentMetadataParsed> Exists(IEnumerable<IArgumentMetadataParsed> args)
         {
-            List<IArgumentMetadataParsed> existArgs = new List<IArgumentMetadataParsed>();
-            foreach (IArgumentMetadataParsed item in args)
-            {
-                if (item.Exist)
-                {
-                    existArgs.Add(item);
-                }
-            }
-
-            return existArgs;
+            return args.Exists();
         }
 
         /// <summary>
@@ -409,12 +531,7 @@ namespace MASES.CLIParser
         /// <returns>true if the the argument with <paramref name="name"/> name exist</returns>
         public bool Exist(IEnumerable<IArgumentMetadataParsed> args, string name)
         {
-            foreach (var item in Exists(args))
-            {
-                if (item.Name == name || item.ShortName == name) return true;
-            }
-
-            return false;
+            return args.Exist(name);
         }
 
         /// <summary>
@@ -424,16 +541,7 @@ namespace MASES.CLIParser
         /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
         public IEnumerable<IArgumentMetadataParsed> NotExists(IEnumerable<IArgumentMetadataParsed> args)
         {
-            List<IArgumentMetadataParsed> existArgs = new List<IArgumentMetadataParsed>();
-            foreach (IArgumentMetadataParsed item in args)
-            {
-                if (!item.Exist)
-                {
-                    existArgs.Add(item);
-                }
-            }
-
-            return existArgs;
+            return args.NotExists();
         }
         /// <summary>
         /// Returns the padding calculated on argument length
