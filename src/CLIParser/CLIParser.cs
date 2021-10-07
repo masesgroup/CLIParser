@@ -54,6 +54,23 @@ namespace MASES.CLIParser
                 Add(item);
             }
         }
+
+        /// <summary>
+        /// Return the value from <see cref="IArgumentMetadataParsed"/> or the default value
+        /// </summary>
+        /// <typeparam name="T">The <see cref="Type"/> to use to retrieve value</typeparam>
+        /// <param name="arg">The <see cref="IArgumentMetadataParsed"/> to use to get value</param>
+        /// <returns>The value from <see cref="IArgumentMetadataParsed"/> or <see cref="IArgumentMetadata.Default"/> if value was not set</returns>
+        public static T Get<T>(this IArgumentMetadataParsed arg)
+        {
+            if (arg == null) throw new ArgumentNullException("arg cannot be null.");
+            if (!typeof(T).IsAssignableFrom(arg.DataType)) throw new ArgumentException(string.Format("{0} is incomplatible wirh {1}.", typeof(T), arg.DataType));
+            if (arg.Value != null)
+            {
+                return (T)arg.Value;
+            }
+            return (T)arg.Default;
+        }
     }
 
     /// <summary>
@@ -315,20 +332,14 @@ namespace MASES.CLIParser
         }
 
         /// <summary>
-        /// Return the <see cref="IArgumentMetadataParsed"/> at <paramref name="name"/>
+        /// Return the value from <see cref="IArgumentMetadataParsed"/>
         /// </summary>
-        /// <param name="args">An ensemble of <see cref="IArgumentMetadataParsed"/> to parse</param>
-        /// <param name="name">The argument name, or short name, to get</param>
-        /// <returns>The selected <see cref="IArgumentMetadataParsed"/></returns>
+        /// <typeparam name="T">The <see cref="Type"/> to use to retrieve value</typeparam>
+        /// <param name="arg">The <see cref="IArgumentMetadataParsed"/> to use to get value</param>
+        /// <returns>The value from <see cref="IArgumentMetadataParsed"/></returns>
         public T Get<T>(IArgumentMetadataParsed arg)
         {
-            if (arg == null) throw new ArgumentNullException("arg cannot be null.");
-            if (!typeof(T).IsAssignableFrom(arg.DataType)) throw new ArgumentException(string.Format("{0} is incomplatible wirh {1}.", typeof(T), arg.DataType));
-            if (arg.Value != null)
-            {
-                return (T)arg.Value;
-            }
-            return (T)arg.Default;
+            return arg.Get<T>();
         }
 
         /// <summary>

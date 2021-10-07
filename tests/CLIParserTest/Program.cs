@@ -73,7 +73,7 @@ namespace MASES.CLIParserTest
                 Name = "multivalue",
                 Type = ArgumentType.Double,
                 IsMultiValue = true,
-                Default = new string[] {"a", "b"}
+                Default = new string[] { "a", "b" }
             });
             parser.Add(new ArgumentMetadata<string>(parser)
             {
@@ -81,7 +81,7 @@ namespace MASES.CLIParserTest
                 Type = ArgumentType.Single,
             });
 
-            var result =  parser.Parse(args);
+            var result = parser.Parse(args);
 
             var fileInfo = parser.FromFile(result);
 
@@ -91,6 +91,11 @@ namespace MASES.CLIParserTest
 
             foreach (var item in parser.Exists(noFile))
             {
+                if (item.Name == "enum")
+                {
+                    Console.WriteLine("Testing method extension: {0} is {1}", item.Name, item.Get<MyValues>());
+                }
+
                 if (!item.IsMultiValue)
                 {
                     Console.WriteLine("{0} is {1}", item.Name, item.Value);
