@@ -167,7 +167,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// Filter the <paramref name="args"/> for existing <see cref="IArgumentMetadataParsed"/>
         /// </summary>
-        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
+        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse"/></param>
         /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
         public static IEnumerable<IArgumentMetadataParsed> Exists(this IEnumerable<IArgumentMetadataParsed> args)
         {
@@ -186,7 +186,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// Check the <paramref name="args"/> for existing <paramref name="name"/>
         /// </summary>
-        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
+        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse"/></param>
         /// <param name="name">Argument name to search</param>
         /// <returns>true if the the argument with <paramref name="name"/> name exist</returns>
         public static bool Exist(this IEnumerable<IArgumentMetadataParsed> args, string name)
@@ -202,7 +202,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// Filter the <paramref name="args"/> for non existing <see cref="IArgumentMetadataParsed"/>
         /// </summary>
-        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse(string[])"/></param>
+        /// <param name="args">Arguments to test using the list prepared using <see cref="Parse"/></param>
         /// <returns>A filtered list of <see cref="IArgumentMetadataParsed"/></returns>
         public static IEnumerable<IArgumentMetadataParsed> NotExists(this IEnumerable<IArgumentMetadataParsed> args)
         {
@@ -561,7 +561,7 @@ namespace MASES.CLIParser
         /// Returns the help information
         /// </summary>
         /// <param name="width">The width of the help to write</param>
-        /// <returns>A <see cref="string with help information"/></returns>
+        /// <returns>A <see cref="string"/> with help information</returns>
         public string HelpInfo(int? width = null)
         {
             int newWidth = Console.WindowWidth;
