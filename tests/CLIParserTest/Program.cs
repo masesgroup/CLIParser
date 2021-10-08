@@ -80,6 +80,16 @@ namespace MASES.CLIParserTest
                 Name = "myval",
                 Type = ArgumentType.Single,
             });
+            parser.Add(new ArgumentMetadata<string>(parser)
+            {
+                Name = "MyParam",
+                Type = ArgumentType.Double,
+            });
+            parser.Add(new ArgumentMetadata<string>(parser)
+            {
+                Name = "MyParam2",
+                Type = ArgumentType.Double,
+            });
 
             var result = parser.Parse(args);
 

@@ -589,6 +589,21 @@ namespace MASES.CLIParser
             if (Default != null) Helper.TestValue(Default);
         }
 
+        bool checkParam(string stringToTest)
+        {
+            bool result = false;
+            switch (Type)
+            {
+                case ArgumentType.KeyValue:
+                    result = stringToTest.StartsWith(Helper.StartWith) || (!string.IsNullOrEmpty(Helper.ShortStartWith) ? stringToTest.StartsWith(Helper.ShortStartWith) : false);
+                    break;
+                default:
+                    result = stringToTest == Helper.StartWith || (!string.IsNullOrEmpty(Helper.ShortStartWith) ? stringToTest == Helper.ShortStartWith : false);
+                    break;
+            }
+            return result;
+        }
+
         IArgumentMetadataParsed IArgumentMetadataHelper.Parse(IList<string> args)
         {
             for (int i = 0; i < args.Count; i++)
@@ -606,7 +621,7 @@ namespace MASES.CLIParser
                     args.RemoveAt(i);
                     return parsedData;
                 }
-                else if (stringToTest.StartsWith(Helper.StartWith) || (!string.IsNullOrEmpty(Helper.ShortStartWith) ? stringToTest.StartsWith(Helper.ShortStartWith) : false))
+                else if (checkParam(stringToTest))
                 {
                     ArgumentMetadataParsed parsedData = new ArgumentMetadataParsed(this)
                     {
