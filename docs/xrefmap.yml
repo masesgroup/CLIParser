@@ -77,6 +77,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ArgumentMetadataBase.ArrayValues
   nameWithType: ArgumentMetadataBase.ArrayValues
+- uid: MASES.CLIParser.ArgumentMetadataBase.CrossCheck
+  name: CrossCheck
+  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_CrossCheck
+  commentId: P:MASES.CLIParser.ArgumentMetadataBase.CrossCheck
+  fullName: MASES.CLIParser.ArgumentMetadataBase.CrossCheck
+  nameWithType: ArgumentMetadataBase.CrossCheck
+- uid: MASES.CLIParser.ArgumentMetadataBase.CrossCheck*
+  name: CrossCheck
+  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_CrossCheck_
+  commentId: Overload:MASES.CLIParser.ArgumentMetadataBase.CrossCheck
+  isSpec: "True"
+  fullName: MASES.CLIParser.ArgumentMetadataBase.CrossCheck
+  nameWithType: ArgumentMetadataBase.CrossCheck
 - uid: MASES.CLIParser.ArgumentMetadataBase.CustomPrefix
   name: CustomPrefix
   href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_CustomPrefix
@@ -440,6 +453,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.IArgumentMetadata.ArrayValues
   nameWithType: IArgumentMetadata.ArrayValues
+- uid: MASES.CLIParser.IArgumentMetadata.CrossCheck
+  name: CrossCheck
+  href: api/MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_CrossCheck
+  commentId: P:MASES.CLIParser.IArgumentMetadata.CrossCheck
+  fullName: MASES.CLIParser.IArgumentMetadata.CrossCheck
+  nameWithType: IArgumentMetadata.CrossCheck
+- uid: MASES.CLIParser.IArgumentMetadata.CrossCheck*
+  name: CrossCheck
+  href: api/MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_CrossCheck_
+  commentId: Overload:MASES.CLIParser.IArgumentMetadata.CrossCheck
+  isSpec: "True"
+  fullName: MASES.CLIParser.IArgumentMetadata.CrossCheck
+  nameWithType: IArgumentMetadata.CrossCheck
 - uid: MASES.CLIParser.IArgumentMetadata.CustomPrefix
   name: CustomPrefix
   href: api/MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_CustomPrefix
@@ -1017,6 +1043,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Parser.Settings
   nameWithType: Parser.Settings
+- uid: MASES.CLIParser.Parser.UnparsedArgs
+  name: UnparsedArgs
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_UnparsedArgs
+  commentId: P:MASES.CLIParser.Parser.UnparsedArgs
+  fullName: MASES.CLIParser.Parser.UnparsedArgs
+  nameWithType: Parser.UnparsedArgs
+- uid: MASES.CLIParser.Parser.UnparsedArgs*
+  name: UnparsedArgs
+  href: api/MASES.CLIParser.Parser.html#MASES_CLIParser_Parser_UnparsedArgs_
+  commentId: Overload:MASES.CLIParser.Parser.UnparsedArgs
+  isSpec: "True"
+  fullName: MASES.CLIParser.Parser.UnparsedArgs
+  nameWithType: Parser.UnparsedArgs
 - uid: MASES.CLIParser.ParserExtension
   name: ParserExtension
   href: api/MASES.CLIParser.ParserExtension.html

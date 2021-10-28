@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IArgumentMetadata
    | CLI Parser website ">
-    <meta name="generator" content="docfx 2.58.4.0">
+    <meta name="generator" content="docfx 2.58.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -117,6 +117,37 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_CrossCheck.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.CrossCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/ArgumentMetadata.cs/#L178">View Source</a>
+  </span>
+  <a id="MASES_CLIParser_IArgumentMetadata_CrossCheck_" data-uid="MASES.CLIParser.IArgumentMetadata.CrossCheck*"></a>
+  <h4 id="MASES_CLIParser_IArgumentMetadata_CrossCheck" data-uid="MASES.CLIParser.IArgumentMetadata.CrossCheck">CrossCheck</h4>
+  <div class="markdown level1 summary"><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a> to cross check multiple values. If something is not correct during check an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> shall be raised.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Action&lt;IEnumerable&lt;IArgumentMetadataParsed&gt;&gt; CrossCheck { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_CustomPrefix.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.CustomPrefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -151,7 +182,7 @@
     <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_DataType.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.DataType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/ArgumentMetadata.cs/#L178">View Source</a>
+    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/CLIParser/ArgumentMetadata.cs/#L182">View Source</a>
   </span>
   <a id="MASES_CLIParser_IArgumentMetadata_DataType_" data-uid="MASES.CLIParser.IArgumentMetadata.DataType*"></a>
   <h4 id="MASES_CLIParser_IArgumentMetadata_DataType" data-uid="MASES.CLIParser.IArgumentMetadata.DataType">DataType</h4>
@@ -465,7 +496,7 @@
   </span>
   <a id="MASES_CLIParser_IArgumentMetadata_MaxValue_" data-uid="MASES.CLIParser.IArgumentMetadata.MaxValue*"></a>
   <h4 id="MASES_CLIParser_IArgumentMetadata_MaxValue" data-uid="MASES.CLIParser.IArgumentMetadata.MaxValue">MaxValue</h4>
-  <div class="markdown level1 summary"><p>The ,aximum value for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Range">Range</a></p>
+  <div class="markdown level1 summary"><p>The maximum value for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Range">Range</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
