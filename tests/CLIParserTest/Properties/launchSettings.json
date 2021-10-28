@@ -2,7 +2,7 @@
   "profiles": {
     "CLIParserTest": {
       "commandName": "Project",
-      "commandLineArgs": "-MyParam2 pippo -enum \"Second,Third\"  -multivalue    \"qui:quo:qua\" -tst true -tst false @MyFile ???"
+      "commandLineArgs": "-MyParam2 pippo -enum \"Second,Third\" -range 9 -multivalue    \"qui:quo:qua\" -tst true -tst false @MyFile ???"
     }
   }
 }
