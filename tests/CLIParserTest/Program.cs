@@ -24,6 +24,7 @@
 
 using MASES.CLIParser;
 using System;
+using System.Collections.Generic;
 
 namespace MASES.CLIParserTest
 {
@@ -36,6 +37,11 @@ namespace MASES.CLIParserTest
             Second = 0x2,
             Third = 0x4
         };
+
+        static void crossCheckExample(IEnumerable<IArgumentMetadataParsed> args)
+        {
+            if (!args.Exist("range")) throw new ArgumentException("range is mandatory for test.");
+        }
 
         static void Main(string[] args)
         {
@@ -57,6 +63,7 @@ namespace MASES.CLIParserTest
                 ShortName = "tst",
                 Help = "this is a test",
                 Type = ArgumentType.Double,
+                CrossCheck = crossCheckExample,
                 ValueType = ArgumentValueType.Free,
             });
             parser.Add(new ArgumentMetadata<int>(parser)

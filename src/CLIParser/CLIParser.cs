@@ -382,6 +382,14 @@ namespace MASES.CLIParser
                 throw new ArgumentException(string.Format("Parameter{0} {1} are not managed", lstArgs.Count == 1 ? string.Empty : "s", string.Join(", ", lstArgs)));
             }
 
+            foreach (var item in parsedArgs.Values)
+            {
+                if (item.CrossCheck != null)
+                {
+                    item.CrossCheck(parsedArgs.Values);
+                }
+            }
+
             UnparsedArgs = new List<string>(lstArgs).ToArray();
 
             return parsedArgs.Values;

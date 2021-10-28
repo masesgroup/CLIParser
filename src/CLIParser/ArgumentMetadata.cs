@@ -35,23 +35,23 @@ namespace MASES.CLIParser
     public enum ArgumentPrefix
     {
         /// <summary>
-        /// Represent an argument without a prefix
+        /// Represents an argument without a prefix
         /// </summary>
         None = 0x0,
         /// <summary>
-        /// Represent a "-"
+        /// Represents a "-"
         /// </summary>
         Dash = 0x1,
         /// <summary>
-        /// Represent a "--"
+        /// Represents a "--"
         /// </summary>
         DoubleDash = 0x2,
         /// <summary>
-        /// Represent a "/"
+        /// Represents a "/"
         /// </summary>
         Slash = 0x4,
         /// <summary>
-        /// Represent a custom prefix
+        /// Represents a custom prefix
         /// </summary>
         Custom = 0x8,
     }
@@ -69,7 +69,7 @@ namespace MASES.CLIParser
         /// </summary>
         KeyValue,
         /// <summary>
-        /// Reperesent an argument whose value if the next argument
+        /// Represents an argument whose value if the next argument
         /// </summary>
         Double
     }
@@ -83,11 +83,11 @@ namespace MASES.CLIParser
         /// </summary>
         Free,
         /// <summary>
-        /// Represent a possible value into an array
+        /// Represents a possible value into an array
         /// </summary>
         Array,
         /// <summary>
-        /// Represent a range of values
+        /// Represents a range of values
         /// </summary>
         Range
     }
@@ -169,9 +169,13 @@ namespace MASES.CLIParser
         /// </summary>
         object MinValue { get; set; }
         /// <summary>
-        /// The ,aximum value for the argument if <see cref="ValueType"/> is <see cref="ArgumentValueType.Range"/>
+        /// The maximum value for the argument if <see cref="ValueType"/> is <see cref="ArgumentValueType.Range"/>
         /// </summary>
         object MaxValue { get; set; }
+        /// <summary>
+        /// An <see cref="Action"/> to cross check multiple values. If something is not correct during check an <see cref="ArgumentException"/> shall be raised.
+        /// </summary>
+        Action<IEnumerable<IArgumentMetadataParsed>> CrossCheck { get; set; }
         /// <summary>
         /// The <see cref="Type"/> of the parameter.
         /// </summary>
@@ -291,6 +295,8 @@ namespace MASES.CLIParser
         /// <inheritdoc/>
         public virtual object MaxValue { get; set; }
         /// <inheritdoc/>
+        public virtual Action<IEnumerable<IArgumentMetadataParsed>> CrossCheck { get; set; }
+        /// <inheritdoc/>
         public virtual Type DataType { get; protected set; }
     }
 
@@ -316,6 +322,7 @@ namespace MASES.CLIParser
             ArrayValues = reference.ArrayValues;
             MinValue = reference.MinValue;
             MaxValue = reference.MaxValue;
+            CrossCheck = reference.CrossCheck;
             DataType = reference.DataType;
         }
 
