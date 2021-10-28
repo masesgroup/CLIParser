@@ -310,6 +310,10 @@ namespace MASES.CLIParser
         /// </summary>
         public Settings Settings { get; private set; }
         /// <summary>
+        /// The arguments in command-line not parsed, i.e. the possible extra arguments to be used from the application for other scopes
+        /// </summary>
+        public string[] UnparsedArgs { get; private set; }
+        /// <summary>
         /// Available <see cref="IArgumentMetadata"/> for parsing
         /// </summary>
         public IReadOnlyList<IArgumentMetadata> Arguments { get { return new List<IArgumentMetadata>(arguments.Values); } }
@@ -377,6 +381,16 @@ namespace MASES.CLIParser
             {
                 throw new ArgumentException(string.Format("Parameter{0} {1} are not managed", lstArgs.Count == 1 ? string.Empty : "s", string.Join(", ", lstArgs)));
             }
+
+            foreach (var item in parsedArgs.Values)
+            {
+                if (item.CrossCheck != null)
+                {
+                    item.CrossCheck(parsedArgs.Values);
+                }
+            }
+
+            UnparsedArgs = new List<string>(lstArgs).ToArray();
 
             return parsedArgs.Values;
         }

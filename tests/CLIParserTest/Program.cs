@@ -24,6 +24,7 @@
 
 using MASES.CLIParser;
 using System;
+using System.Collections.Generic;
 
 namespace MASES.CLIParserTest
 {
@@ -37,88 +38,101 @@ namespace MASES.CLIParserTest
             Third = 0x4
         };
 
+        static void crossCheckExample(IEnumerable<IArgumentMetadataParsed> args)
+        {
+            if (!args.Exist("range")) throw new ArgumentException("range is mandatory for test.");
+        }
+
         static void Main(string[] args)
         {
-            Parser parser = Parser.CreateInstance(new Settings()
+            try
             {
-                CheckUnwanted = false
-            });
-
-            new ArgumentMetadata<MyValues>(parser)
-            {
-                Name = "enum",
-                Default = MyValues.First,
-                Help = "this is an enum test",
-                Type = ArgumentType.Double,
-            }.Add();
-            parser.Add(new ArgumentMetadata<bool>()
-            {
-                Name = "test",
-                ShortName = "tst",
-                Help = "this is a test",
-                Type = ArgumentType.Double,
-                ValueType = ArgumentValueType.Free,
-            });
-            parser.Add(new ArgumentMetadata<int>(parser)
-            {
-                Name = "range",
-                Default = 9,
-                Type = ArgumentType.Double,
-                ValueType = ArgumentValueType.Range,
-                MinValue = 2,
-                MaxValue = 10,
-            });
-            parser.Add(new ArgumentMetadata<string>(parser)
-            {
-                Name = "multivalue",
-                Type = ArgumentType.Double,
-                IsMultiValue = true,
-                Default = new string[] { "a", "b" }
-            });
-            parser.Add(new ArgumentMetadata<string>(parser)
-            {
-                Name = "myval",
-                Type = ArgumentType.Single,
-            });
-            parser.Add(new ArgumentMetadata<string>(parser)
-            {
-                Name = "MyParam",
-                Type = ArgumentType.Double,
-            });
-            parser.Add(new ArgumentMetadata<string>(parser)
-            {
-                Name = "MyParam2",
-                Type = ArgumentType.Double,
-            });
-
-            var result = parser.Parse(args);
-
-            var fileInfo = parser.FromFile(result);
-
-            parser.Override(result, fileInfo);
-
-            var noFile = parser.RemoveFile(result);
-
-            foreach (var item in parser.Exists(noFile))
-            {
-                if (item.Name == "enum")
+                Parser parser = Parser.CreateInstance(new Settings()
                 {
-                    Console.WriteLine("Testing method extension: {0} is {1}", item.Name, item.Get<MyValues>());
+                    CheckUnwanted = false
+                });
+
+                new ArgumentMetadata<MyValues>(parser)
+                {
+                    Name = "enum",
+                    Default = MyValues.First,
+                    Help = "this is an enum test",
+                    Type = ArgumentType.Double,
+                }.Add();
+                parser.Add(new ArgumentMetadata<bool>()
+                {
+                    Name = "test",
+                    ShortName = "tst",
+                    Help = "this is a test",
+                    Type = ArgumentType.Double,
+                    CrossCheck = crossCheckExample,
+                    ValueType = ArgumentValueType.Free,
+                });
+                parser.Add(new ArgumentMetadata<int>(parser)
+                {
+                    Name = "range",
+                    Default = 9,
+                    Type = ArgumentType.Double,
+                    ValueType = ArgumentValueType.Range,
+                    MinValue = 2,
+                    MaxValue = 10,
+                });
+                parser.Add(new ArgumentMetadata<string>(parser)
+                {
+                    Name = "multivalue",
+                    Type = ArgumentType.Double,
+                    IsMultiValue = true,
+                    Default = new string[] { "a", "b" }
+                });
+                parser.Add(new ArgumentMetadata<string>(parser)
+                {
+                    Name = "myval",
+                    Type = ArgumentType.Single,
+                });
+                parser.Add(new ArgumentMetadata<string>(parser)
+                {
+                    Name = "MyParam",
+                    Type = ArgumentType.Double,
+                });
+                parser.Add(new ArgumentMetadata<string>(parser)
+                {
+                    Name = "MyParam2",
+                    Type = ArgumentType.Double,
+                });
+
+                var result = parser.Parse(args);
+
+                var fileInfo = parser.FromFile(result);
+
+                parser.Override(result, fileInfo);
+
+                var noFile = parser.RemoveFile(result);
+
+                foreach (var item in parser.Exists(noFile))
+                {
+                    if (item.Name == "enum")
+                    {
+                        Console.WriteLine("Testing method extension: {0} is {1}", item.Name, item.Get<MyValues>());
+                    }
+
+                    if (!item.IsMultiValue)
+                    {
+                        Console.WriteLine("{0} is {1}", item.Name, item.Value);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} is {1}", item.Name, string.Join(", ", (object[])item.Value));
+                    }
                 }
 
-                if (!item.IsMultiValue)
+                foreach (var item in parser.NotExists(noFile))
                 {
-                    Console.WriteLine("{0} is {1}", item.Name, item.Value);
-                }
-                else
-                {
-                    Console.WriteLine("{0} is {1}", item.Name, string.Join(", ", (object[])item.Value));
+                    Console.WriteLine("{0} not exist", item.Name);
                 }
             }
-
-            foreach (var item in parser.NotExists(noFile))
+            catch (Exception e)
             {
-                Console.WriteLine("{0} not exist", item.Name);
+                Console.WriteLine(e.Message);
             }
         }
     }
