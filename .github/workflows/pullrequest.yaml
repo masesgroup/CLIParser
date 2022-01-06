@@ -12,7 +12,7 @@ jobs:
   # This workflow contains a single job called "build_release"
   build_pullrequest:
     # The type of runner that the job will run on
-    runs-on: windows-2019
+    runs-on: windows-2022
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a set of commands using the runners shell
@@ -33,6 +33,8 @@ jobs:
       - name: Test 
         run: |
           dotnet run --framework net461 --project tests\CLIParserTest\CLIParserTest.csproj
+          dotnet run --framework net6.0 --project tests\CLIParserTest\CLIParserTest.csproj
+          dotnet run --framework net6.0-windows --project tests\CLIParserTest\CLIParserTest.csproj
           dotnet run --framework net5.0 --project tests\CLIParserTest\CLIParserTest.csproj
           dotnet run --framework net5.0-windows --project tests\CLIParserTest\CLIParserTest.csproj
           dotnet run --framework netcoreapp3.1 --project tests\CLIParserTest\CLIParserTest.csproj
