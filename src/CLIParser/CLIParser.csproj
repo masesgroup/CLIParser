@@ -19,7 +19,7 @@
 		<PackageIconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</PackageIconUrl>
 		<RepositoryUrl>https://github.com/masesgroup/CLIParser</RepositoryUrl>
 		<PackageReleaseNotes>https://github.com/masesgroup/CLIParser/releases</PackageReleaseNotes>
-		<PackageLicense>LICENSE</PackageLicense>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageTags>command-line cli parser dotnet clr netcore net5 net6</PackageTags>
 		<PackageId>MASES.CLIParser</PackageId>
 		<IncludeSymbols>true</IncludeSymbols>
