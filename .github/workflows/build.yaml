@@ -62,6 +62,9 @@ jobs:
           nuget-version: '5.x'
       - run: nuget restore src\CLIParser.sln
 
+      - name: Compile 
+        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" tests\CLIParserTest.sln
+
       - name: Test 
         run: |
           dotnet run --framework net461 --project tests\CLIParserTest\CLIParserTest.csproj
