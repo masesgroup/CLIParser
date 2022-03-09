@@ -29,14 +29,15 @@ jobs:
         with:
           nuget-version: '5.x'
       - run: nuget restore src\CLIParser.sln
+      
+      - name: Compile 
+        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" tests\CLIParserTest.sln
 
       - name: Test 
         run: |
           dotnet run --framework net461 --project tests\CLIParserTest\CLIParserTest.csproj
           dotnet run --framework net6.0 --project tests\CLIParserTest\CLIParserTest.csproj
-          dotnet run --framework net6.0-windows --project tests\CLIParserTest\CLIParserTest.csproj
           dotnet run --framework net5.0 --project tests\CLIParserTest\CLIParserTest.csproj
-          dotnet run --framework net5.0-windows --project tests\CLIParserTest\CLIParserTest.csproj
           dotnet run --framework netcoreapp3.1 --project tests\CLIParserTest\CLIParserTest.csproj
 
       - name: Create Release
