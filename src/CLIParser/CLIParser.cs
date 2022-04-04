@@ -55,6 +55,59 @@ namespace MASES.CLIParser
                     return string.Empty;
             }
         }
+        /// <summary>
+        /// Creates the command line switch associated to the switch with <paramref name="name"/> and <paramref name="value"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadata"/> to with all possible arguments</param>
+        /// <param name="name">The command-line switch name</param>
+        /// <param name="values">The value(s) to use. Multiple value can be used in case of argument reports <see cref="IArgumentMetadata.IsMultiValue"/> as <see langword="true"/></param>
+        /// <returns>The string equivalent for command-line</returns>
+        public static string ToString(this IEnumerable<IArgumentMetadata> metadatas, string name, params object[] values)
+        {
+            var cmdArg = metadatas.Get(name);
+            return cmdArg.ToString(values);
+        }
+
+        /// <summary>
+        /// Creates the command line switch associated to the <paramref name="metadata"/> and <paramref name="values"/>
+        /// </summary>
+        /// <param name="metadata">The <see cref="IArgumentMetadata"/> switch</param>
+        /// <param name="values">The value(s) to use. Multiple value can be used in case of argument reports <see cref="IArgumentMetadata.IsMultiValue"/> to be <see langword="true"/></param>
+        /// <returns>The string equivalent for command-line</returns>
+        public static string ToString(this IArgumentMetadata metadata, params object[] values)
+        {
+            if (metadata.Type != ArgumentType.Single && values == null || values.Length == 0) throw new ArgumentException("Cannot be null or empty", "values");
+            string valueStr = string.Empty;
+            if (metadata.IsMultiValue)
+            {
+                foreach (var item in values)
+                {
+                    valueStr += $"{item}{metadata.MultiValueSeparator}";
+                }
+                valueStr = valueStr.Substring(0, valueStr.Length - 1);
+            }
+            else
+            {
+                valueStr = values[0].ToString();
+            }
+
+            var prefix = metadata.PrefixInUse;
+
+            switch (metadata.Type)
+            {
+                case ArgumentType.Single:
+                    return $"{prefix}{metadata.Name}";
+                case ArgumentType.Double:
+                    {
+                        return $"{prefix}{metadata.Name} {valueStr}";
+                    }
+                case ArgumentType.KeyValue:
+                    {
+                        return $"{prefix}{metadata.Name}{metadata.KeyValuePairSeparator}{valueStr}";
+                    }
+                default: throw new ArgumentException($"Parameter {metadata.Name} does not have a correct Type: {metadata.Type}");
+            }
+        }
 
         /// <summary>
         /// Adds an <see cref="IArgumentMetadata"/>
@@ -77,7 +130,31 @@ namespace MASES.CLIParser
                 Add(item);
             }
         }
+        /// <summary>
+        /// Return the <see cref="IArgumentMetadata"/> at <paramref name="index"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadata"/> to parse</param>
+        /// <param name="index">Index to get</param>
+        /// <returns>The selected <see cref="IArgumentMetadata"/></returns>
+        public static IArgumentMetadata Get(this IEnumerable<IArgumentMetadata> args, int index)
+        {
+            return new List<IArgumentMetadata>(args)[index];
+        }
 
+        /// <summary>
+        /// Return the <see cref="IArgumentMetadata"/> at <paramref name="name"/>
+        /// </summary>
+        /// <param name="args">An ensemble of <see cref="IArgumentMetadata"/> to parse</param>
+        /// <param name="name">The argument name, or short name, to get</param>
+        /// <returns>The selected <see cref="IArgumentMetadata"/></returns>
+        public static IArgumentMetadata Get(this IEnumerable<IArgumentMetadata> args, string name)
+        {
+            foreach (var item in new List<IArgumentMetadata>(args))
+            {
+                if (item.Name == name || item.ShortName == name) return item;
+            }
+            throw new ArgumentException("name is not a valid argument.");
+        }
         /// <summary>
         /// Return the <see cref="IArgumentMetadataParsed"/> at <paramref name="index"/>
         /// </summary>
