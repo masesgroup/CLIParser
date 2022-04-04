@@ -105,6 +105,10 @@ namespace MASES.CLIParser
         /// </summary>
         string CustomPrefix { get; set; }
         /// <summary>
+        /// The string representing the actual prefix from configuration
+        /// </summary>
+        string PrefixInUse { get; }
+        /// <summary>
         /// Argument name
         /// </summary>
         string Name { get; set; }
@@ -261,6 +265,8 @@ namespace MASES.CLIParser
         /// <inheritdoc/>
         public virtual string CustomPrefix { get; set; }
         /// <inheritdoc/>
+        public string PrefixInUse => Prefix?.Prefix(CustomPrefix);
+        /// <inheritdoc/>
         public virtual string Name { get; set; }
         /// <inheritdoc/>
         public virtual string ShortName { get; set; }
@@ -373,7 +379,7 @@ namespace MASES.CLIParser
             Default = default(T);
             DataType = typeof(T);
             IsEnum = DataType.IsEnum;
-            foreach (var flagattrib in DataType.CustomAttributes)
+            foreach (var _ in DataType.CustomAttributes)
             {
                 IsFlag = true; break;
             }
@@ -383,20 +389,7 @@ namespace MASES.CLIParser
 
         string IArgumentMetadataHelper.GetPrefix()
         {
-            switch (Prefix)
-            {
-                case ArgumentPrefix.Dash:
-                    return InternalConst.ArgumentPrefix.Dash;
-                case ArgumentPrefix.DoubleDash:
-                    return InternalConst.ArgumentPrefix.DoubleDash;
-                case ArgumentPrefix.Slash:
-                    return InternalConst.ArgumentPrefix.Slash;
-                case ArgumentPrefix.Custom:
-                    return CustomPrefix;
-                case ArgumentPrefix.None:
-                default:
-                    return string.Empty;
-            }
+            return PrefixInUse;
         }
 
         Parser IArgumentMetadataHelper.Parser { get; set; }

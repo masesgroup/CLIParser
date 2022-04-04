@@ -34,6 +34,29 @@ namespace MASES.CLIParser
     public static class ParserExtension
     {
         /// <summary>
+        /// Convert an <see cref="ArgumentPrefix"/> to the equivalent <see cref="string"/> representation
+        /// </summary>
+        /// <param name="prefix">The <see cref="ArgumentPrefix"/> to convert in string</param>
+        /// <param name="customPrefix">The custom prefix associated to <paramref name="prefix"/> with a value of <see cref="ArgumentPrefix.Custom"/></param>
+        public static string Prefix(this ArgumentPrefix prefix, string customPrefix = null)
+        {
+            switch (prefix)
+            {
+                case ArgumentPrefix.Dash:
+                    return InternalConst.ArgumentPrefix.Dash;
+                case ArgumentPrefix.DoubleDash:
+                    return InternalConst.ArgumentPrefix.DoubleDash;
+                case ArgumentPrefix.Slash:
+                    return InternalConst.ArgumentPrefix.Slash;
+                case ArgumentPrefix.Custom:
+                    return customPrefix;
+                case ArgumentPrefix.None:
+                default:
+                    return string.Empty;
+            }
+        }
+
+        /// <summary>
         /// Adds an <see cref="IArgumentMetadata"/>
         /// </summary>
         /// <param name="metadatas">The <see cref="IArgumentMetadata"/> to add</param>
@@ -239,7 +262,10 @@ namespace MASES.CLIParser
             DefaultIsCaseInvariant = true;
             DefaultDescriptionPadding = 30;
         }
-
+        /// <summary>
+        /// The string representing the actual prefix from configuration
+        /// </summary>
+        public string PrefixInUse { get { return DefaultPrefix.Prefix(DefaultCustomPrefix); } }
         /// <summary>
         /// Default value of identifier used when an argument represent a file containing the arguments
         /// </summary>
