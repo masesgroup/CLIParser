@@ -14,7 +14,7 @@
 		<TargetFrameworks>netstandard2.0</TargetFrameworks>
 		<OutputPath>..\..\bin\</OutputPath>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl>https://github.com/masesgroup/CLIParser/</PackageProjectUrl>
 		<PackageIconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</PackageIconUrl>
 		<RepositoryUrl>https://github.com/masesgroup/CLIParser</RepositoryUrl>
