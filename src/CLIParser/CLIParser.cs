@@ -58,7 +58,7 @@ namespace MASES.CLIParser
         /// <summary>
         /// Creates the command line switch associated to the switch with <paramref name="name"/> and <paramref name="value"/>
         /// </summary>
-        /// <param name="args">An ensemble of <see cref="IArgumentMetadata"/> to with all possible arguments</param>
+        /// <param name="metadatas">An ensemble of <see cref="IArgumentMetadata"/> with all possible arguments</param>
         /// <param name="name">The command-line switch name</param>
         /// <param name="values">The value(s) to use. Multiple value can be used in case of argument reports <see cref="IArgumentMetadata.IsMultiValue"/> as <see langword="true"/></param>
         /// <returns>The string equivalent for command-line</returns>
