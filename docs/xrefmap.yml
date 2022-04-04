@@ -311,6 +311,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ArgumentMetadataBase.Prefix
   nameWithType: ArgumentMetadataBase.Prefix
+- uid: MASES.CLIParser.ArgumentMetadataBase.PrefixInUse
+  name: PrefixInUse
+  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_PrefixInUse
+  commentId: P:MASES.CLIParser.ArgumentMetadataBase.PrefixInUse
+  fullName: MASES.CLIParser.ArgumentMetadataBase.PrefixInUse
+  nameWithType: ArgumentMetadataBase.PrefixInUse
+- uid: MASES.CLIParser.ArgumentMetadataBase.PrefixInUse*
+  name: PrefixInUse
+  href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_PrefixInUse_
+  commentId: Overload:MASES.CLIParser.ArgumentMetadataBase.PrefixInUse
+  isSpec: "True"
+  fullName: MASES.CLIParser.ArgumentMetadataBase.PrefixInUse
+  nameWithType: ArgumentMetadataBase.PrefixInUse
 - uid: MASES.CLIParser.ArgumentMetadataBase.ShortName
   name: ShortName
   href: api/MASES.CLIParser.ArgumentMetadataBase.html#MASES_CLIParser_ArgumentMetadataBase_ShortName
@@ -674,6 +687,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.IArgumentMetadata.Prefix
   nameWithType: IArgumentMetadata.Prefix
+- uid: MASES.CLIParser.IArgumentMetadata.PrefixInUse
+  name: PrefixInUse
+  href: api/MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_PrefixInUse
+  commentId: P:MASES.CLIParser.IArgumentMetadata.PrefixInUse
+  fullName: MASES.CLIParser.IArgumentMetadata.PrefixInUse
+  nameWithType: IArgumentMetadata.PrefixInUse
+- uid: MASES.CLIParser.IArgumentMetadata.PrefixInUse*
+  name: PrefixInUse
+  href: api/MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_PrefixInUse_
+  commentId: Overload:MASES.CLIParser.IArgumentMetadata.PrefixInUse
+  isSpec: "True"
+  fullName: MASES.CLIParser.IArgumentMetadata.PrefixInUse
+  nameWithType: IArgumentMetadata.PrefixInUse
 - uid: MASES.CLIParser.IArgumentMetadata.ShortName
   name: ShortName
   href: api/MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ShortName
@@ -1116,6 +1142,24 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ParserExtension.Exists
   nameWithType: ParserExtension.Exists
+- uid: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata},System.Int32)
+  name: Get(IEnumerable<IArgumentMetadata>, Int32)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadata__System_Int32_
+  commentId: M:MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata},System.Int32)
+  name.vb: Get(IEnumerable(Of IArgumentMetadata), Int32)
+  fullName: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadata>, System.Int32)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadata), System.Int32)
+  nameWithType: ParserExtension.Get(IEnumerable<IArgumentMetadata>, Int32)
+  nameWithType.vb: ParserExtension.Get(IEnumerable(Of IArgumentMetadata), Int32)
+- uid: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata},System.String)
+  name: Get(IEnumerable<IArgumentMetadata>, String)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadata__System_String_
+  commentId: M:MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata},System.String)
+  name.vb: Get(IEnumerable(Of IArgumentMetadata), String)
+  fullName: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadata>, System.String)
+  fullName.vb: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadata), System.String)
+  nameWithType: ParserExtension.Get(IEnumerable<IArgumentMetadata>, String)
+  nameWithType.vb: ParserExtension.Get(IEnumerable(Of IArgumentMetadata), String)
 - uid: MASES.CLIParser.ParserExtension.Get(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed},System.Int32)
   name: Get(IEnumerable<IArgumentMetadataParsed>, Int32)
   href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Get_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__System_Int32_
@@ -1200,6 +1244,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ParserExtension.Override
   nameWithType: ParserExtension.Override
+- uid: MASES.CLIParser.ParserExtension.Prefix(MASES.CLIParser.ArgumentPrefix,System.String)
+  name: Prefix(ArgumentPrefix, String)
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Prefix_MASES_CLIParser_ArgumentPrefix_System_String_
+  commentId: M:MASES.CLIParser.ParserExtension.Prefix(MASES.CLIParser.ArgumentPrefix,System.String)
+  fullName: MASES.CLIParser.ParserExtension.Prefix(MASES.CLIParser.ArgumentPrefix, System.String)
+  nameWithType: ParserExtension.Prefix(ArgumentPrefix, String)
+- uid: MASES.CLIParser.ParserExtension.Prefix*
+  name: Prefix
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Prefix_
+  commentId: Overload:MASES.CLIParser.ParserExtension.Prefix
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.Prefix
+  nameWithType: ParserExtension.Prefix
 - uid: MASES.CLIParser.ParserExtension.RemoveFile(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadataParsed})
   name: RemoveFile(IEnumerable<IArgumentMetadataParsed>)
   href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_RemoveFile_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadataParsed__
@@ -1216,6 +1273,31 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.ParserExtension.RemoveFile
   nameWithType: ParserExtension.RemoveFile
+- uid: MASES.CLIParser.ParserExtension.ToString(MASES.CLIParser.IArgumentMetadata,System.Object[])
+  name: ToString(IArgumentMetadata, Object[])
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_ToString_MASES_CLIParser_IArgumentMetadata_System_Object___
+  commentId: M:MASES.CLIParser.ParserExtension.ToString(MASES.CLIParser.IArgumentMetadata,System.Object[])
+  name.vb: ToString(IArgumentMetadata, Object())
+  fullName: MASES.CLIParser.ParserExtension.ToString(MASES.CLIParser.IArgumentMetadata, System.Object[])
+  fullName.vb: MASES.CLIParser.ParserExtension.ToString(MASES.CLIParser.IArgumentMetadata, System.Object())
+  nameWithType: ParserExtension.ToString(IArgumentMetadata, Object[])
+  nameWithType.vb: ParserExtension.ToString(IArgumentMetadata, Object())
+- uid: MASES.CLIParser.ParserExtension.ToString(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata},System.String,System.Object[])
+  name: ToString(IEnumerable<IArgumentMetadata>, String, Object[])
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_ToString_System_Collections_Generic_IEnumerable_MASES_CLIParser_IArgumentMetadata__System_String_System_Object___
+  commentId: M:MASES.CLIParser.ParserExtension.ToString(System.Collections.Generic.IEnumerable{MASES.CLIParser.IArgumentMetadata},System.String,System.Object[])
+  name.vb: ToString(IEnumerable(Of IArgumentMetadata), String, Object())
+  fullName: MASES.CLIParser.ParserExtension.ToString(System.Collections.Generic.IEnumerable<MASES.CLIParser.IArgumentMetadata>, System.String, System.Object[])
+  fullName.vb: MASES.CLIParser.ParserExtension.ToString(System.Collections.Generic.IEnumerable(Of MASES.CLIParser.IArgumentMetadata), System.String, System.Object())
+  nameWithType: ParserExtension.ToString(IEnumerable<IArgumentMetadata>, String, Object[])
+  nameWithType.vb: ParserExtension.ToString(IEnumerable(Of IArgumentMetadata), String, Object())
+- uid: MASES.CLIParser.ParserExtension.ToString*
+  name: ToString
+  href: api/MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_ToString_
+  commentId: Overload:MASES.CLIParser.ParserExtension.ToString
+  isSpec: "True"
+  fullName: MASES.CLIParser.ParserExtension.ToString
+  nameWithType: ParserExtension.ToString
 - uid: MASES.CLIParser.Settings
   name: Settings
   href: api/MASES.CLIParser.Settings.html
@@ -1365,3 +1447,16 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Settings.DefaultValueType
   nameWithType: Settings.DefaultValueType
+- uid: MASES.CLIParser.Settings.PrefixInUse
+  name: PrefixInUse
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_PrefixInUse
+  commentId: P:MASES.CLIParser.Settings.PrefixInUse
+  fullName: MASES.CLIParser.Settings.PrefixInUse
+  nameWithType: Settings.PrefixInUse
+- uid: MASES.CLIParser.Settings.PrefixInUse*
+  name: PrefixInUse
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_PrefixInUse_
+  commentId: Overload:MASES.CLIParser.Settings.PrefixInUse
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.PrefixInUse
+  nameWithType: Settings.PrefixInUse
