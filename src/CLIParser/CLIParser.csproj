@@ -8,13 +8,13 @@
 		<Owners>MASES s.r.l.</Owners>
 		<Authors>MASES s.r.l.</Authors>
 		<Company>MASES s.r.l.</Company>
-		<Version>3.0.0.0</Version>
+		<Version>3.1.0.0</Version>
 		<Product>CLIParser</Product>
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 		<TargetFrameworks>netstandard2.0</TargetFrameworks>
 		<OutputPath>..\..\bin\</OutputPath>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl>https://github.com/masesgroup/CLIParser/</PackageProjectUrl>
 		<PackageIconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</PackageIconUrl>
 		<RepositoryUrl>https://github.com/masesgroup/CLIParser</RepositoryUrl>
