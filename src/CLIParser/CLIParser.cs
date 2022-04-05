@@ -329,6 +329,7 @@ namespace MASES.CLIParser
         /// </summary>
         public Settings()
         {
+            DefaultConsoleWindowWidth = 80;
             DefaultFileNameIdentifier = InternalConst.DefaultFileNameIdentifier;
             DefaultPrefix = ArgumentPrefix.Dash;
             DefaultCustomPrefix = string.Empty;
@@ -343,6 +344,10 @@ namespace MASES.CLIParser
         /// The string representing the actual prefix from configuration
         /// </summary>
         public string PrefixInUse { get { return DefaultPrefix.Prefix(DefaultCustomPrefix); } }
+        /// <summary>
+        /// Default value to be used when a real console device is not available. Default is 80
+        /// </summary>
+        public int DefaultConsoleWindowWidth { get; set; }
         /// <summary>
         /// Default value of identifier used when an argument represent a file containing the arguments
         /// </summary>
@@ -681,7 +686,12 @@ namespace MASES.CLIParser
         /// <returns>A <see cref="string"/> with help information</returns>
         public string HelpInfo(int? width = null)
         {
-            int newWidth = Console.WindowWidth;
+            int newWidth = Settings.DefaultConsoleWindowWidth;
+            try
+            {
+                newWidth = Console.WindowWidth;
+            }
+            catch { }
             if (width.HasValue) newWidth = width.Value;
             StringBuilder builder = new StringBuilder();
             foreach (IArgumentMetadataHelper item in Arguments)
