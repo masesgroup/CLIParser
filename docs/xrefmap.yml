@@ -1330,6 +1330,19 @@ references:
   isSpec: "True"
   fullName: MASES.CLIParser.Settings.CheckUnwanted
   nameWithType: Settings.CheckUnwanted
+- uid: MASES.CLIParser.Settings.DefaultConsoleWindowWidth
+  name: DefaultConsoleWindowWidth
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultConsoleWindowWidth
+  commentId: P:MASES.CLIParser.Settings.DefaultConsoleWindowWidth
+  fullName: MASES.CLIParser.Settings.DefaultConsoleWindowWidth
+  nameWithType: Settings.DefaultConsoleWindowWidth
+- uid: MASES.CLIParser.Settings.DefaultConsoleWindowWidth*
+  name: DefaultConsoleWindowWidth
+  href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultConsoleWindowWidth_
+  commentId: Overload:MASES.CLIParser.Settings.DefaultConsoleWindowWidth
+  isSpec: "True"
+  fullName: MASES.CLIParser.Settings.DefaultConsoleWindowWidth
+  nameWithType: Settings.DefaultConsoleWindowWidth
 - uid: MASES.CLIParser.Settings.DefaultCustomPrefix
   name: DefaultCustomPrefix
   href: api/MASES.CLIParser.Settings.html#MASES_CLIParser_Settings_DefaultCustomPrefix
