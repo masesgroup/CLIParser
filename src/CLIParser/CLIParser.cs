@@ -681,7 +681,12 @@ namespace MASES.CLIParser
         /// <returns>A <see cref="string"/> with help information</returns>
         public string HelpInfo(int? width = null)
         {
-            int newWidth = Console.WindowWidth;
+            int newWidth = 80; // set a default
+            try
+            {
+                newWidth = Console.WindowWidth;
+            }
+            catch { }
             if (width.HasValue) newWidth = width.Value;
             StringBuilder builder = new StringBuilder();
             foreach (IArgumentMetadataHelper item in Arguments)
