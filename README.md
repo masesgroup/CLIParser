@@ -1,6 +1,10 @@
-[![CI_BUILD](https://github.com/masesgroup/CLIParser/actions/workflows/build.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/build.yaml) [![CI_PULLREQUEST](https://github.com/masesgroup/CLIParser/actions/workflows/pullrequest.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/pullrequest.yaml) [![CI_RELEASE](https://github.com/masesgroup/CLIParser/actions/workflows/release.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/release.yaml)
-
 # CLI Parser
+
+[![CI_BUILD](https://github.com/masesgroup/CLIParser/actions/workflows/build.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/build.yaml) [![CI_RELEASE](https://github.com/masesgroup/CLIParser/actions/workflows/release.yaml/badge.svg)](https://github.com/masesgroup/CLIParser/actions/workflows/release.yaml)
+
+|CLIParser |
+|---	|
+|[![CLIParser nuget](https://img.shields.io/nuget/v/MASES.CLIParser)](https://www.nuget.org/packages/MASES.CLIParser) [![downloads](https://img.shields.io/nuget/dt/MASES.CLIParser)](https://www.nuget.org/packages/MASES.CLIParser) |
 
 A library to manage command-line arguments in a simple way. It was an internal MASES project, now it is available to anyone.
 
