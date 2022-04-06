@@ -76,19 +76,22 @@ namespace MASES.CLIParser
         /// <returns>The string equivalent for command-line</returns>
         public static string ToString(this IArgumentMetadata metadata, params object[] values)
         {
-            if (metadata.Type != ArgumentType.Single && values == null || values.Length == 0) throw new ArgumentException("Cannot be null or empty", "values");
             string valueStr = string.Empty;
-            if (metadata.IsMultiValue)
+            if (metadata.Type != ArgumentType.Single)
             {
-                foreach (var item in values)
+                if (values == null || values.Length == 0) throw new ArgumentException("Cannot be null or empty", "values");
+                if (metadata.IsMultiValue)
                 {
-                    valueStr += $"{item}{metadata.MultiValueSeparator}";
+                    foreach (var item in values)
+                    {
+                        valueStr += $"{item}{metadata.MultiValueSeparator}";
+                    }
+                    valueStr = valueStr.Substring(0, valueStr.Length - 1);
                 }
-                valueStr = valueStr.Substring(0, valueStr.Length - 1);
-            }
-            else
-            {
-                valueStr = values[0].ToString();
+                else
+                {
+                    valueStr = values[0].ToString();
+                }
             }
 
             var prefix = metadata.PrefixInUse;
