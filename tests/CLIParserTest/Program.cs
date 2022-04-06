@@ -102,6 +102,9 @@ namespace MASES.CLIParserTest
 
                 var result = parser.Parse(args);
 
+                var resultToString = parser.Arguments.ToString("MyParam2", "TEST");
+                resultToString = parser.Arguments.ToString("myval");
+
                 var fileInfo = parser.FromFile(result);
 
                 parser.Override(result, fileInfo);
