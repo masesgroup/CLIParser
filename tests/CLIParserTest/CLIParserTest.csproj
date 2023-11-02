@@ -6,7 +6,7 @@
     <RootNamespace>MASES.CLIParserTest</RootNamespace>
     <Title>CLIParserTest - a parser test tool for CLIParser</Title>
     <Description>CLIParserTest - a parser test tool for CLIParser</Description>
-    <Copyright>Copyright ©  MASES s.r.l. 2022</Copyright>
+    <Copyright>Copyright ©  MASES s.r.l. 2023</Copyright>
     <Authors>MASES s.r.l.</Authors>
     <Company>MASES s.r.l.</Company>
     <Version>3.1.2.0</Version>
@@ -14,7 +14,7 @@
     <OutputPath>..\..\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\CLIParser\CLIParser.csproj" />
+    <ProjectReference Include="..\..\src\net\CLIParser\CLIParser.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="MyFile">
