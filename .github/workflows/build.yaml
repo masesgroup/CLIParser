@@ -84,7 +84,7 @@ jobs:
           cd src\Documentation
           docfx
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: CLIParser
           path: .\bin\*nupkg
