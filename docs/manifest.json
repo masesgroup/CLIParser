@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/a/CLIParser/CLIParser/src/Documentation",
+  "source_base_path": "D:/a/CLIParser/CLIParser/src/documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.ArgumentMetadata-1.html",
-          "hash": "7JbKfn7EQPEN8Tdzarxf8CAIT43CKwOAYJwsgG3LvGc="
+          "hash": "4HiD9i/zsdSnleumtneKdWtoPxS84sU6TmStsqiMFck="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.ArgumentMetadataBase.html",
-          "hash": "rajXP+1eUUXZ7svawgBKPx+0/ySOQgn3gUmN3xOEBV8="
+          "hash": "VxVAOYiqUgWctdJ9D8zncVyXsFOVb+Wa7R7TQDuaaSA="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.ArgumentPrefix.html",
-          "hash": "0dHS/2P76uhQFoEGVEHAiUheoZRhoyDkesjXHO6LsQg="
+          "hash": "BsYsE/fb8oXGwoVG78zhFEKqgejbtyMXq8pc9FFxmKg="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.ArgumentType.html",
-          "hash": "LkadTFke6g5FBUezGg4Dv6wTWoz46PeekLH/MeM6zRQ="
+          "hash": "BMgls2Bg2WandSnlP5umhjXvqqb92aObSnel2mBERTU="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.ArgumentValueType.html",
-          "hash": "dRB39VTS8dVzNJMdlcrnGKt6MaVb1FLawStLglr9GGk="
+          "hash": "k6JP65if9MQ1mOk/vB6LLv+dK2wEE4Y3er465KWdIvI="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.IArgumentMetadata.html",
-          "hash": "JweV5rRpCOvPpYnBEdXYEK75qqth9EO6Z9W+IJxy/VI="
+          "hash": "M5ibXqDAWfUfvwyfkkYTcJRRnfbHU4p0MxtD1EkfzFk="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.IArgumentMetadataParsed.html",
-          "hash": "4XLgS2Xy3Du1UZXofdVQn4CMWpCh5WZTIdHb3hxEXAA="
+          "hash": "oOcc3tSQFbzugOFKYWVWN6HBGrwhnq0yGh01CGoZ2Mk="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.Parser.html",
-          "hash": "45kd2kdq+OeHLXoyfzfx6qH0NqJzbj1Eti2rXW+uUvk="
+          "hash": "U1cbuCNrC3lK6OLqj3I/XIvwT5taPcPKrVCryYQy9fs="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.ParserExtension.html",
-          "hash": "l0aSorxItdVK5CCWiySDC3pwpI/3PioVgVSJjlGuQkY="
+          "hash": "n91N0C2eYtBamk0VSq6a4/IwvgYTXlHEj8ey9+xsNmg="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.Settings.html",
-          "hash": "/0xNkqF7QQcNSM5Dam3MMNDIIHaAcqHYpiDhxqHC3Wg="
+          "hash": "zqUqrraqnuFMq1iY1UcDYhYwbrFrwFlivi7jXqwZqto="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.CLIParser.html",
-          "hash": "+LQDz6vUnPfqc6eJUVwMz2IHN4Xq3t5TSXJLKU7NeKU="
+          "hash": "mQ2CpUZaldOYVrb9MnE5r2H88JBtye5uoBEVVgTDO44="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "zmf3EJd/yawxhXZyaN7LihzF+/FdndkLy+qQ0H8zRvo="
+          "hash": "fOAbpnmvIDXufm010GclmFkEx4Cwidmyi6NgWgjZjfg="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "0jsyvCyr3GjKhfUjhDHxrFn6NO+J2oqP8YX6ST4uHMk="
+          "hash": "BTcEl/VdwTnutfruEFxOVxZahqkbwYppAAJ9OSR+QxI="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/usage.html",
-          "hash": "/uY3zvMriLA9rE9EjXYpGc5IiaJNMC2F7+JVqgsAjDY="
+          "hash": "KfMPg9CpUfJ08Hbn6KALJzIEIqNBEPe9uYXwXUkbhws="
         }
       },
       "is_incremental": false,
@@ -212,7 +212,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "utW5k619CXnI5BhhcIXUp0bH/7XzUFXrbtIfYKuZeSQ="
+          "hash": "2F3CvG1ZMocM1l+uRVFQZCcEgbWqtsIdSZKMKfB0mFA="
         }
       },
       "is_incremental": false,
@@ -224,7 +224,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "pgmUuQDXzLiVa2NC6kjvUDE2zolekW+sFHoWu87bcTM="
+          "hash": "hgsk4j+SWKWFI/uK6Cm9eSc5JBG0qNj0l9cbbr9/r50="
         }
       },
       "is_incremental": false,
