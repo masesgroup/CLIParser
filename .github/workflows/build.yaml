@@ -60,7 +60,7 @@ jobs:
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
-      - run: nuget restore src\CLIParser.sln
+      - run: nuget restore src\net\CLIParser.sln
 
       - name: Compile 
         run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" tests\CLIParserTest.sln
@@ -72,7 +72,7 @@ jobs:
           dotnet run --framework net7.0 --project tests\CLIParserTest\CLIParserTest.csproj
 
       - name: Create Release
-        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\CLIParser.sln
+        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\net\CLIParser.sln
 
       - name: Clear documentation folder 
         run: Remove-Item .\docs\* -Recurse -Force -Exclude _config.yml,CNAME
@@ -80,7 +80,7 @@ jobs:
       - name: Build documentation
         run: |
           choco install docfx
-          cd src\Documentation
+          cd src\documentation
           docfx
 
       - uses: actions/upload-artifact@v3

@@ -4,7 +4,7 @@
 		<RootNamespace>MASES.CLIParser</RootNamespace>
 		<Title>CLIParser - a parser for command line interface</Title>
 		<Description>CLIParser - a parser for command line interface</Description>
-		<Copyright>Copyright ©  MASES s.r.l. 2022</Copyright>
+		<Copyright>Copyright ©  MASES s.r.l. 2023</Copyright>
 		<Owners>MASES s.r.l.</Owners>
 		<Authors>MASES s.r.l.</Authors>
 		<Company>MASES s.r.l.</Company>
@@ -12,7 +12,7 @@
 		<Product>CLIParser</Product>
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 		<TargetFrameworks>netstandard2.0</TargetFrameworks>
-		<OutputPath>..\..\bin\</OutputPath>
+		<OutputPath>..\..\..\bin\</OutputPath>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl>https://github.com/masesgroup/CLIParser/</PackageProjectUrl>
