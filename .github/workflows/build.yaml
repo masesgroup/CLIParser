@@ -104,7 +104,7 @@ jobs:
           body: Automated changes by GitHub action
           reviewers: masesdevelopers
           assignees: masesdevelopers
-          labels: documentation, enhancement 
+          labels: documentation, enhancement
 
      # - name: Commit changes
      #   if: ${{ github.repository_owner == 'masesgroup'}} #do not push any changes outside main repo

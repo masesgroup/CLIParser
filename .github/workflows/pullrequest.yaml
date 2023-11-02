@@ -40,7 +40,7 @@ jobs:
           dotnet run --framework net7.0 --project tests\CLIParserTest\CLIParserTest.csproj
 
       - name: Create Release
-        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\CLIParser.sln
+        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\net\CLIParser.sln
         
       - name: Clear documentation folder 
         run: Remove-Item .\docs\* -Recurse -Force -Exclude _config.yml,CNAME
