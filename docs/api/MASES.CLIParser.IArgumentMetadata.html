@@ -1,818 +1,860 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IArgumentMetadata
-   | CLI Parser website </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IArgumentMetadata
-   | CLI Parser website ">
-    <meta name="generator" content="docfx 2.59.4.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Interface IArgumentMetadata
+ | MASES Group website - CLI Parser </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IArgumentMetadata
+ | MASES Group website - CLI Parser ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-            </div>
-          </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="MASES.CLIParser.IArgumentMetadata">
-  
-  
-  <h1 id="MASES_CLIParser_IArgumentMetadata" data-uid="MASES.CLIParser.IArgumentMetadata" class="text-break">Interface IArgumentMetadata
-  </h1>
-  <div class="markdown level0 summary"><p>Metadata associated to the argument, used during the parse</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="MASES.CLIParser.html">MASES.CLIParser</a></h6>
-  <h6><strong>Assembly</strong>: MASES.CLIParser.dll</h6>
-  <h5 id="MASES_CLIParser_IArgumentMetadata_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IArgumentMetadata</code></pre>
-  </div>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_ArrayValues.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.ArrayValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L170">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_ArrayValues_" data-uid="MASES.CLIParser.IArgumentMetadata.ArrayValues*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_ArrayValues" data-uid="MASES.CLIParser.IArgumentMetadata.ArrayValues">ArrayValues</h4>
-  <div class="markdown level1 summary"><p>The array of possible values for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Array">Array</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object[] ArrayValues { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_CrossCheck.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.CrossCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L182">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_CrossCheck_" data-uid="MASES.CLIParser.IArgumentMetadata.CrossCheck*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_CrossCheck" data-uid="MASES.CLIParser.IArgumentMetadata.CrossCheck">CrossCheck</h4>
-  <div class="markdown level1 summary"><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a> to cross check multiple values. If something is not correct during check an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> shall be raised.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Action&lt;IEnumerable&lt;IArgumentMetadataParsed&gt;&gt; CrossCheck { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_CustomPrefix.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.CustomPrefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L106">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_CustomPrefix_" data-uid="MASES.CLIParser.IArgumentMetadata.CustomPrefix*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_CustomPrefix" data-uid="MASES.CLIParser.IArgumentMetadata.CustomPrefix">CustomPrefix</h4>
-  <div class="markdown level1 summary"><p>If <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_Prefix">Prefix</a> contains <a class="xref" href="MASES.CLIParser.ArgumentPrefix.html#MASES_CLIParser_ArgumentPrefix_Custom">Custom</a> use <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_CustomPrefix">CustomPrefix</a> to analyze arguments</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string CustomPrefix { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_DataType.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.DataType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L186">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_DataType_" data-uid="MASES.CLIParser.IArgumentMetadata.DataType*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_DataType" data-uid="MASES.CLIParser.IArgumentMetadata.DataType">DataType</h4>
-  <div class="markdown level1 summary"><p>The <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_Type">Type</a> of the parameter.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Type DataType { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_Default.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.Default%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L166">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_Default_" data-uid="MASES.CLIParser.IArgumentMetadata.Default*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_Default" data-uid="MASES.CLIParser.IArgumentMetadata.Default">Default</h4>
-  <div class="markdown level1 summary"><p>The dafault value to use if the value is not found</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object Default { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_Help.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.Help%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L122">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_Help_" data-uid="MASES.CLIParser.IArgumentMetadata.Help*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_Help" data-uid="MASES.CLIParser.IArgumentMetadata.Help">Help</h4>
-  <div class="markdown level1 summary"><p>Argument help</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Help { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_IsCaseInvariant.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.IsCaseInvariant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L138">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_IsCaseInvariant_" data-uid="MASES.CLIParser.IArgumentMetadata.IsCaseInvariant*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_IsCaseInvariant" data-uid="MASES.CLIParser.IArgumentMetadata.IsCaseInvariant">IsCaseInvariant</h4>
-  <div class="markdown level1 summary"><p>True if the argument shall be treated as case invariant</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool? IsCaseInvariant { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_IsEnum.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.IsEnum%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L154">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_IsEnum_" data-uid="MASES.CLIParser.IArgumentMetadata.IsEnum*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_IsEnum" data-uid="MASES.CLIParser.IArgumentMetadata.IsEnum">IsEnum</h4>
-  <div class="markdown level1 summary"><p>The argument contains an enumeration value</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsEnum { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_IsExtended.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.IsExtended%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L146">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_IsExtended_" data-uid="MASES.CLIParser.IArgumentMetadata.IsExtended*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_IsExtended" data-uid="MASES.CLIParser.IArgumentMetadata.IsExtended">IsExtended</h4>
-  <div class="markdown level1 summary"><p>True if the argument is an extended argument</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsExtended { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_IsFlag.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.IsFlag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L158">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_IsFlag_" data-uid="MASES.CLIParser.IArgumentMetadata.IsFlag*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_IsFlag" data-uid="MASES.CLIParser.IArgumentMetadata.IsFlag">IsFlag</h4>
-  <div class="markdown level1 summary"><p>The argument contains an enumeration value with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.flagsattribute">FlagsAttribute</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsFlag { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_IsMandatory.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.IsMandatory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L142">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_IsMandatory_" data-uid="MASES.CLIParser.IArgumentMetadata.IsMandatory*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_IsMandatory" data-uid="MASES.CLIParser.IArgumentMetadata.IsMandatory">IsMandatory</h4>
-  <div class="markdown level1 summary"><p>True if the argument shall be mandatory</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsMandatory { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_IsMultiValue.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.IsMultiValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L150">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_IsMultiValue_" data-uid="MASES.CLIParser.IArgumentMetadata.IsMultiValue*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_IsMultiValue" data-uid="MASES.CLIParser.IArgumentMetadata.IsMultiValue">IsMultiValue</h4>
-  <div class="markdown level1 summary"><p>The argument contains multiple values</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsMultiValue { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_KeyValuePairSeparator.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.KeyValuePairSeparator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L134">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_KeyValuePairSeparator_" data-uid="MASES.CLIParser.IArgumentMetadata.KeyValuePairSeparator*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_KeyValuePairSeparator" data-uid="MASES.CLIParser.IArgumentMetadata.KeyValuePairSeparator">KeyValuePairSeparator</h4>
-  <div class="markdown level1 summary"><p>Separator used when <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_Type">Type</a> is set to <a class="xref" href="MASES.CLIParser.ArgumentType.html#MASES_CLIParser_ArgumentType_KeyValue">KeyValue</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string KeyValuePairSeparator { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_MaxValue.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.MaxValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L178">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_MaxValue_" data-uid="MASES.CLIParser.IArgumentMetadata.MaxValue*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_MaxValue" data-uid="MASES.CLIParser.IArgumentMetadata.MaxValue">MaxValue</h4>
-  <div class="markdown level1 summary"><p>The maximum value for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Range">Range</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object MaxValue { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_MinValue.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.MinValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L174">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_MinValue_" data-uid="MASES.CLIParser.IArgumentMetadata.MinValue*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_MinValue" data-uid="MASES.CLIParser.IArgumentMetadata.MinValue">MinValue</h4>
-  <div class="markdown level1 summary"><p>The minimum value for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Range">Range</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object MinValue { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_MultiValueSeparator.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.MultiValueSeparator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L162">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_MultiValueSeparator_" data-uid="MASES.CLIParser.IArgumentMetadata.MultiValueSeparator*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_MultiValueSeparator" data-uid="MASES.CLIParser.IArgumentMetadata.MultiValueSeparator">MultiValueSeparator</h4>
-  <div class="markdown level1 summary"><p>The separator used in the multiple value argument</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">char? MultiValueSeparator { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_Name.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L114">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_Name_" data-uid="MASES.CLIParser.IArgumentMetadata.Name*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_Name" data-uid="MASES.CLIParser.IArgumentMetadata.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Argument name</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Name { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_Prefix.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.Prefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L102">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_Prefix_" data-uid="MASES.CLIParser.IArgumentMetadata.Prefix*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_Prefix" data-uid="MASES.CLIParser.IArgumentMetadata.Prefix">Prefix</h4>
-  <div class="markdown level1 summary"><p><a class="xref" href="MASES.CLIParser.ArgumentPrefix.html">ArgumentPrefix</a> prefix associated to <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html">IArgumentMetadata</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ArgumentPrefix? Prefix { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="MASES.CLIParser.ArgumentPrefix.html">ArgumentPrefix</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_PrefixInUse.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.PrefixInUse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L110">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_PrefixInUse_" data-uid="MASES.CLIParser.IArgumentMetadata.PrefixInUse*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_PrefixInUse" data-uid="MASES.CLIParser.IArgumentMetadata.PrefixInUse">PrefixInUse</h4>
-  <div class="markdown level1 summary"><p>The string representing the actual prefix from configuration</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string PrefixInUse { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_ShortName.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.ShortName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L118">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_ShortName_" data-uid="MASES.CLIParser.IArgumentMetadata.ShortName*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_ShortName" data-uid="MASES.CLIParser.IArgumentMetadata.ShortName">ShortName</h4>
-  <div class="markdown level1 summary"><p>Argument short name</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string ShortName { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_Type.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L126">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_Type_" data-uid="MASES.CLIParser.IArgumentMetadata.Type*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_Type" data-uid="MASES.CLIParser.IArgumentMetadata.Type">Type</h4>
-  <div class="markdown level1 summary"><p>Set how to manage the <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html">IArgumentMetadata</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ArgumentType? Type { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="MASES.CLIParser.ArgumentType.html">ArgumentType</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata_ValueType.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata.ValueType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L130">View Source</a>
-  </span>
-  <a id="MASES_CLIParser_IArgumentMetadata_ValueType_" data-uid="MASES.CLIParser.IArgumentMetadata.ValueType*"></a>
-  <h4 id="MASES_CLIParser_IArgumentMetadata_ValueType" data-uid="MASES.CLIParser.IArgumentMetadata.ValueType">ValueType</h4>
-  <div class="markdown level1 summary"><p><a class="xref" href="MASES.CLIParser.ArgumentValueType.html">ArgumentValueType</a> to check input</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ArgumentValueType? ValueType { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="MASES.CLIParser.ArgumentValueType.html">ArgumentValueType</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_ToString_MASES_CLIParser_IArgumentMetadata_System_Object___">ParserExtension.ToString(IArgumentMetadata, Object[])</a>
-  </div>
-  <div>
-      <a class="xref" href="MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Add_MASES_CLIParser_IArgumentMetadata_">ParserExtension.Add(IArgumentMetadata)</a>
-  </div>
-</article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/masesgroup/CLIParser/new/master/apiSpec/new?filename=MASES_CLIParser_IArgumentMetadata.md&amp;value=---%0Auid%3A%20MASES.CLIParser.IArgumentMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/masesgroup/CLIParser/blob/master/src/net/CLIParser/ArgumentMetadata.cs/#L97" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <span>Copyright © 2023 MASES s.r.l..<br>Generated by <strong>DocFX</strong></span>
-            
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+
+        <article data-uid="MASES.CLIParser.IArgumentMetadata">
+
+
+
+  <h1 id="MASES_CLIParser_IArgumentMetadata" data-uid="MASES.CLIParser.IArgumentMetadata" class="text-break">
+    Interface IArgumentMetadata
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="MASES.html">MASES</a>.<a class="xref" href="MASES.CLIParser.html">CLIParser</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>MASES.CLIParser.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Metadata associated to the argument, used during the parse</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IArgumentMetadata</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_Add_MASES_CLIParser_IArgumentMetadata_">ParserExtension.Add(IArgumentMetadata)</a>
+  </div>
+  <div>
+      <a class="xref" href="MASES.CLIParser.ParserExtension.html#MASES_CLIParser_ParserExtension_ToString_MASES_CLIParser_IArgumentMetadata_System_Object___">ParserExtension.ToString(IArgumentMetadata, params object[])</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_ArrayValues_" data-uid="MASES.CLIParser.IArgumentMetadata.ArrayValues*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_ArrayValues" data-uid="MASES.CLIParser.IArgumentMetadata.ArrayValues">
+  ArrayValues
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The array of possible values for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Array">Array</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object[] ArrayValues { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_CrossCheck_" data-uid="MASES.CLIParser.IArgumentMetadata.CrossCheck*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_CrossCheck" data-uid="MASES.CLIParser.IArgumentMetadata.CrossCheck">
+  CrossCheck
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a> to cross check multiple values. If something is not correct during check an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> shall be raised.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Action&lt;IEnumerable&lt;IArgumentMetadataParsed&gt;&gt; CrossCheck { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="MASES.CLIParser.IArgumentMetadataParsed.html">IArgumentMetadataParsed</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_CustomPrefix_" data-uid="MASES.CLIParser.IArgumentMetadata.CustomPrefix*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_CustomPrefix" data-uid="MASES.CLIParser.IArgumentMetadata.CustomPrefix">
+  CustomPrefix
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_Prefix">Prefix</a> contains <a class="xref" href="MASES.CLIParser.ArgumentPrefix.html#MASES_CLIParser_ArgumentPrefix_Custom">Custom</a> use <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_CustomPrefix">CustomPrefix</a> to analyze arguments</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string CustomPrefix { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_DataType_" data-uid="MASES.CLIParser.IArgumentMetadata.DataType*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_DataType" data-uid="MASES.CLIParser.IArgumentMetadata.DataType">
+  DataType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_Type">Type</a> of the parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Type DataType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_Default_" data-uid="MASES.CLIParser.IArgumentMetadata.Default*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_Default" data-uid="MASES.CLIParser.IArgumentMetadata.Default">
+  Default
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The dafault value to use if the value is not found</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object Default { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_Help_" data-uid="MASES.CLIParser.IArgumentMetadata.Help*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_Help" data-uid="MASES.CLIParser.IArgumentMetadata.Help">
+  Help
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Argument help</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Help { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_IsCaseInvariant_" data-uid="MASES.CLIParser.IArgumentMetadata.IsCaseInvariant*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_IsCaseInvariant" data-uid="MASES.CLIParser.IArgumentMetadata.IsCaseInvariant">
+  IsCaseInvariant
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True if the argument shall be treated as case invariant</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool? IsCaseInvariant { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_IsEnum_" data-uid="MASES.CLIParser.IArgumentMetadata.IsEnum*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_IsEnum" data-uid="MASES.CLIParser.IArgumentMetadata.IsEnum">
+  IsEnum
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The argument contains an enumeration value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsEnum { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_IsExtended_" data-uid="MASES.CLIParser.IArgumentMetadata.IsExtended*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_IsExtended" data-uid="MASES.CLIParser.IArgumentMetadata.IsExtended">
+  IsExtended
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True if the argument is an extended argument</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsExtended { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_IsFlag_" data-uid="MASES.CLIParser.IArgumentMetadata.IsFlag*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_IsFlag" data-uid="MASES.CLIParser.IArgumentMetadata.IsFlag">
+  IsFlag
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The argument contains an enumeration value with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.flagsattribute">FlagsAttribute</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsFlag { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_IsMandatory_" data-uid="MASES.CLIParser.IArgumentMetadata.IsMandatory*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_IsMandatory" data-uid="MASES.CLIParser.IArgumentMetadata.IsMandatory">
+  IsMandatory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True if the argument shall be mandatory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsMandatory { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_IsMultiValue_" data-uid="MASES.CLIParser.IArgumentMetadata.IsMultiValue*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_IsMultiValue" data-uid="MASES.CLIParser.IArgumentMetadata.IsMultiValue">
+  IsMultiValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The argument contains multiple values</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsMultiValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_KeyValuePairSeparator_" data-uid="MASES.CLIParser.IArgumentMetadata.KeyValuePairSeparator*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_KeyValuePairSeparator" data-uid="MASES.CLIParser.IArgumentMetadata.KeyValuePairSeparator">
+  KeyValuePairSeparator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Separator used when <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_Type">Type</a> is set to <a class="xref" href="MASES.CLIParser.ArgumentType.html#MASES_CLIParser_ArgumentType_KeyValue">KeyValue</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string KeyValuePairSeparator { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_MaxValue_" data-uid="MASES.CLIParser.IArgumentMetadata.MaxValue*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_MaxValue" data-uid="MASES.CLIParser.IArgumentMetadata.MaxValue">
+  MaxValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L178"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The maximum value for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Range">Range</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object MaxValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_MinValue_" data-uid="MASES.CLIParser.IArgumentMetadata.MinValue*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_MinValue" data-uid="MASES.CLIParser.IArgumentMetadata.MinValue">
+  MinValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The minimum value for the argument if <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html#MASES_CLIParser_IArgumentMetadata_ValueType">ValueType</a> is <a class="xref" href="MASES.CLIParser.ArgumentValueType.html#MASES_CLIParser_ArgumentValueType_Range">Range</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object MinValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_MultiValueSeparator_" data-uid="MASES.CLIParser.IArgumentMetadata.MultiValueSeparator*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_MultiValueSeparator" data-uid="MASES.CLIParser.IArgumentMetadata.MultiValueSeparator">
+  MultiValueSeparator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The separator used in the multiple value argument</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">char? MultiValueSeparator { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_Name_" data-uid="MASES.CLIParser.IArgumentMetadata.Name*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_Name" data-uid="MASES.CLIParser.IArgumentMetadata.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Argument name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Name { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_Prefix_" data-uid="MASES.CLIParser.IArgumentMetadata.Prefix*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_Prefix" data-uid="MASES.CLIParser.IArgumentMetadata.Prefix">
+  Prefix
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><a class="xref" href="MASES.CLIParser.ArgumentPrefix.html">ArgumentPrefix</a> prefix associated to <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html">IArgumentMetadata</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ArgumentPrefix? Prefix { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MASES.CLIParser.ArgumentPrefix.html">ArgumentPrefix</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_PrefixInUse_" data-uid="MASES.CLIParser.IArgumentMetadata.PrefixInUse*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_PrefixInUse" data-uid="MASES.CLIParser.IArgumentMetadata.PrefixInUse">
+  PrefixInUse
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The string representing the actual prefix from configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string PrefixInUse { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_ShortName_" data-uid="MASES.CLIParser.IArgumentMetadata.ShortName*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_ShortName" data-uid="MASES.CLIParser.IArgumentMetadata.ShortName">
+  ShortName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Argument short name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ShortName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_Type_" data-uid="MASES.CLIParser.IArgumentMetadata.Type*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_Type" data-uid="MASES.CLIParser.IArgumentMetadata.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set how to manage the <a class="xref" href="MASES.CLIParser.IArgumentMetadata.html">IArgumentMetadata</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ArgumentType? Type { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MASES.CLIParser.ArgumentType.html">ArgumentType</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MASES_CLIParser_IArgumentMetadata_ValueType_" data-uid="MASES.CLIParser.IArgumentMetadata.ValueType*"></a>
+
+  <h3 id="MASES_CLIParser_IArgumentMetadata_ValueType" data-uid="MASES.CLIParser.IArgumentMetadata.ValueType">
+  ValueType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><a class="xref" href="MASES.CLIParser.ArgumentValueType.html">ArgumentValueType</a> to check input</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ArgumentValueType? ValueType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MASES.CLIParser.ArgumentValueType.html">ArgumentValueType</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/masesgroup/CLIParser/blob/master/src\net\CLIParser\ArgumentMetadata.cs/#L97" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2023 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
