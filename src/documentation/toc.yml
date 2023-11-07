@@ -3,9 +3,14 @@
 - name: .NET API Documentation
   href: api/
   homepage: api/index.md
+- name: Browse repository
+  href: https://github.com/masesgroup/CLIParser
+- name: Releases
+  href: https://github.com/masesgroup/CLIParser/releases/
+- name: Issues
+  href: https://github.com/masesgroup/CLIParser/issues/
 - name: Open source projects
   dropdown: true
-  href: https://masesgroup.github.io/
   items:
   - name: JNet
     href: https://masesgroup.github.io/JNet/
