@@ -69,7 +69,7 @@ namespace MASES.CLIParser
         /// </summary>
         KeyValue,
         /// <summary>
-        /// Represents an argument whose value if the next argument
+        /// Represents an argument whose value is the next command-line argument
         /// </summary>
         Double
     }
@@ -462,7 +462,7 @@ namespace MASES.CLIParser
             string description = Name;
             if (!string.IsNullOrEmpty(ShortName))
             {
-                description += string.Format(" ({0})", ShortName);
+                description += $" ({ShortName})";
             }
             return description;
         }
@@ -480,11 +480,11 @@ namespace MASES.CLIParser
                 if (!description.EndsWith(" ")) description += " ";
             }
 
-            description += string.Format("The argument is {0}. ", IsMandatory ? "mandatory" : "optional");
+            description += $"The argument is {(IsMandatory ? "mandatory" : "optional")}. ";
 
             if (Default != null)
             {
-                description += string.Format("Default: {0}. ", Default);
+                description += $"Default: {Default}. ";
             }
             string range = null;
             if (IsEnum)
@@ -504,7 +504,7 @@ namespace MASES.CLIParser
                     case ArgumentValueType.Range:
                         if (MinValue != null && MaxValue != null)
                         {
-                            range = string.Format("[{0}...{1}]", MinValue, MaxValue);
+                            range = $"[{MinValue}...{MaxValue}]";
                         }
                         break;
                     case ArgumentValueType.Free:
@@ -515,20 +515,19 @@ namespace MASES.CLIParser
 
             switch (Type)
             {
-                case ArgumentType.Single:
-                    break;
                 case ArgumentType.KeyValue:
                     if (!string.IsNullOrEmpty(range))
                     {
-                        description += string.Format("{0}{1}=<{2}>.", Helper.GetPrefix(), Name, range);
+                        description += $"{Helper.GetPrefix()}{Name}=<{range}>.";
                     }
                     break;
                 case ArgumentType.Double:
                     if (!string.IsNullOrEmpty(range))
                     {
-                        description += string.Format("{0}{1} <{2}>.", Helper.GetPrefix(), Name, range);
+                        description += $"{Helper.GetPrefix()}{Name} <{range}>.";
                     }
                     break;
+                case ArgumentType.Single:
                 default:
                     break;
             }
@@ -555,50 +554,48 @@ namespace MASES.CLIParser
                     var dType = Default.GetType();
                     if (dType.GetInterface(typeof(System.Collections.IEnumerable).Name) != null)
                     {
-                        var elemType = dType.GetElementType();
-                        if (elemType == null) throw new ArgumentException(string.Format("Default type shall be an instance of {0}<{1}>.", typeof(System.Collections.IEnumerable).Name, DataType));
-                        if (elemType != DataType) throw new ArgumentException(string.Format("Default type shall be equal to {0}.", DataType));
+                        var elemType = dType.GetElementType() ?? throw new ArgumentException($"Default type shall be an instance of {typeof(System.Collections.IEnumerable).Name}<{DataType}>.");
+                        if (elemType != DataType) throw new ArgumentException($"Default type shall be equal to {DataType}.");
                     }
-                    else throw new ArgumentException(string.Format("Default type shall be an instance of {0}<{1}>.", typeof(System.Collections.IEnumerable).Name, DataType));
+                    else throw new ArgumentException($"Default type shall be an instance of {typeof(System.Collections.IEnumerable).Name}<{DataType}>.");
                 }
                 else
                 {
-                    if (Default.GetType() != DataType) throw new ArgumentException(string.Format("Default type shall be equal to {0}.", DataType));
+                    if (Default.GetType() != DataType) throw new ArgumentException($"Default type shall be equal to {DataType}.");
                 }
             }
             switch (ValueType)
             {
-                case ArgumentValueType.Free:
-                    break;
                 case ArgumentValueType.Array:
                     if (ArrayValues == null || ArrayValues.Length == 0) throw new ArgumentException("Argument needs to set ArrayValues.");
                     foreach (var item in ArrayValues)
                     {
-                        if (item.GetType() != DataType) throw new ArgumentException(string.Format("ArrayValues type shall be equal to {0}.", DataType));
+                        if (item.GetType() != DataType) throw new ArgumentException($"ArrayValues type shall be equal to {DataType}.");
                     }
                     break;
                 case ArgumentValueType.Range:
                     if (MinValue == null && MaxValue == null) throw new ArgumentException("Argument needs to set both MinValue and MaxValue.");
-                    if (!(DataType.IsValueType)) throw new ArgumentException(string.Format("DataType shall be a ValueType, found {0}.", DataType));
-                    if (MinValue.GetType() != DataType) throw new ArgumentException(string.Format("MinValue type shall be equal to {0}.", DataType));
-                    if (MaxValue.GetType() != DataType) throw new ArgumentException(string.Format("MaxValue type shall be equal to {0}.", DataType));
+                    if (!(DataType.IsValueType)) throw new ArgumentException($"DataType shall be a ValueType, found {DataType}.");
+                    if (MinValue.GetType() != DataType) throw new ArgumentException($"MinValue type shall be equal to {DataType}.");
+                    if (MaxValue.GetType() != DataType) throw new ArgumentException("MaxValue type shall be equal to {DataType}.");
                     break;
+                case ArgumentValueType.Free:
                 default:
                     break;
             }
             if (Default != null) Helper.TestValue(Default);
         }
 
-        bool checkParam(string stringToTest)
+        bool CheckParam(string stringToTest)
         {
-            bool result = false;
+            bool result;
             switch (Type)
             {
                 case ArgumentType.KeyValue:
-                    result = stringToTest.StartsWith(Helper.StartWith) || (!string.IsNullOrEmpty(Helper.ShortStartWith) ? stringToTest.StartsWith(Helper.ShortStartWith) : false);
+                    result = stringToTest.StartsWith(Helper.StartWith) || (!string.IsNullOrEmpty(Helper.ShortStartWith) && stringToTest.StartsWith(Helper.ShortStartWith));
                     break;
                 default:
-                    result = stringToTest == Helper.StartWith || (!string.IsNullOrEmpty(Helper.ShortStartWith) ? stringToTest == Helper.ShortStartWith : false);
+                    result = stringToTest == Helper.StartWith || (!string.IsNullOrEmpty(Helper.ShortStartWith) && stringToTest == Helper.ShortStartWith);
                     break;
             }
             return result;
@@ -621,7 +618,7 @@ namespace MASES.CLIParser
                     args.RemoveAt(i);
                     return parsedData;
                 }
-                else if (checkParam(stringToTest))
+                else if (CheckParam(stringToTest))
                 {
                     ArgumentMetadataParsed parsedData = new ArgumentMetadataParsed(this)
                     {
@@ -638,7 +635,8 @@ namespace MASES.CLIParser
                             break;
                         case ArgumentType.KeyValue:
                             {
-                                string value = args[i];
+                                _ = args[i];
+                                string value;
                                 if (stringToTest.StartsWith(Helper.StartWith))
                                 {
                                     value = args[i].Substring(Helper.StartWith.Length);
@@ -649,7 +647,7 @@ namespace MASES.CLIParser
                                 }
                                 if (string.IsNullOrEmpty(value))
                                 {
-                                    throw new ArgumentException(string.Format("Parameter {0} needs a value", Name));
+                                    throw new ArgumentException($"Parameter {Name} needs a value");
                                 }
                                 if (IsEnum)
                                 {
@@ -660,7 +658,7 @@ namespace MASES.CLIParser
                                     }
                                     catch
                                     {
-                                        throw new ArgumentException(string.Format("Argument {0} shall be in {1}: {2} was found.", Name, string.Join(", ", Enum.GetNames(DataType)), value));
+                                        throw new ArgumentException($"Argument {Name} shall be in {string.Join(", ", Enum.GetNames(DataType))}: {value} was found.");
                                     }
                                 }
                                 else if (IsMultiValue)
@@ -697,7 +695,7 @@ namespace MASES.CLIParser
                                         }
                                         catch
                                         {
-                                            throw new ArgumentException(string.Format("Argument {0} shall be in {1}: {2} was found.", Name, string.Join(", ", Enum.GetNames(DataType)), value));
+                                            throw new ArgumentException($"Argument {Name} shall be in {string.Join(", ", Enum.GetNames(DataType))}: {value} was found.");
                                         }
                                     }
                                     else if (IsMultiValue)
@@ -720,7 +718,7 @@ namespace MASES.CLIParser
                                     args.RemoveAt(i);
                                     args.RemoveAt(i);
                                 }
-                                else throw new ArgumentException(string.Format("Parameter {0} needs a value", Name));
+                                else throw new ArgumentException($"Parameter {Name} needs a value");
                             }
                             break;
                         default:
@@ -732,7 +730,7 @@ namespace MASES.CLIParser
                 else continue;
             }
 
-            if (IsMandatory) throw new ArgumentException(string.Format("Parameter {0} is mandatory", Name));
+            if (IsMandatory) throw new ArgumentException($"Parameter {Name} is mandatory");
 
             return new ArgumentMetadataParsed(this)
             {
@@ -746,7 +744,7 @@ namespace MASES.CLIParser
             {
                 if (!IsFlag && !Enum.IsDefined(DataType, value))
                 {
-                    throw new ArgumentException(string.Format("Argument {0} shall be in {1}: {2} was found.", Name, string.Join(", ", Enum.GetNames(DataType)), value));
+                    throw new ArgumentException($"Argument {Name} shall be in {string.Join(", ", Enum.GetNames(DataType))}: {value} was found.");
                 }
             }
             else
@@ -762,7 +760,7 @@ namespace MASES.CLIParser
                             }
                             if (!found)
                             {
-                                throw new ArgumentException(string.Format("Argument {0} shall be in {1}, {2} was found.", Name, string.Join(", ", ArrayValues), value));
+                                throw new ArgumentException($"Argument {Name} shall be in {string.Join(", ", ArrayValues)}, {value} was found.");
                             }
                         }
                         break;
@@ -772,7 +770,7 @@ namespace MASES.CLIParser
                             {
                                 break;
                             }
-                            else throw new ArgumentException(string.Format("Argument {0} shall be in {1} - {2}, {3} was found.", Name, MinValue, MaxValue, value));
+                            else throw new ArgumentException($"Argument {Name} shall be in {MinValue} - {MaxValue}, {value} was found.");
                         }
                     case ArgumentValueType.Free:
                     default:

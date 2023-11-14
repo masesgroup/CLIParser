@@ -24,6 +24,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MASES.CLIParser
@@ -98,16 +99,9 @@ namespace MASES.CLIParser
 
             switch (metadata.Type)
             {
-                case ArgumentType.Single:
-                    return $"{prefix}{metadata.Name}";
-                case ArgumentType.Double:
-                    {
-                        return $"{prefix}{metadata.Name} {valueStr}";
-                    }
-                case ArgumentType.KeyValue:
-                    {
-                        return $"{prefix}{metadata.Name}{metadata.KeyValuePairSeparator}{valueStr}";
-                    }
+                case ArgumentType.Single: return $"{prefix}{metadata.Name}";
+                case ArgumentType.Double: return $"{prefix}{metadata.Name} {valueStr}";
+                case ArgumentType.KeyValue: return $"{prefix}{metadata.Name}{metadata.KeyValuePairSeparator}{valueStr}";
                 default: throw new ArgumentException($"Parameter {metadata.Name} does not have a correct Type: {metadata.Type}");
             }
         }
@@ -119,7 +113,7 @@ namespace MASES.CLIParser
         public static void Add(this IArgumentMetadata metadata)
         {
             IArgumentMetadataHelper helper = metadata as IArgumentMetadataHelper;
-            if (helper.Parser == null) throw new ArgumentException(string.Format("Parameter {0} does not have any associated Parser", metadata.Name));
+            if (helper.Parser == null) throw new ArgumentException($"Parameter {metadata.Name} does not have any associated Parser");
             helper.Parser.Add(metadata);
         }
         /// <summary>
@@ -219,7 +213,7 @@ namespace MASES.CLIParser
         public static T Get<T>(this IArgumentMetadataParsed arg)
         {
             if (arg == null) throw new ArgumentNullException("arg cannot be null.");
-            if (!typeof(T).IsAssignableFrom(arg.DataType)) throw new ArgumentException(string.Format("{0} is incomplatible wirh {1}.", typeof(T), arg.DataType));
+            if (!typeof(T).IsAssignableFrom(arg.DataType)) throw new ArgumentException($"{typeof(T)} is incomplatible wirh {arg.DataType}.");
             if (arg.Value != null)
             {
                 return (T)arg.Value;
@@ -257,7 +251,7 @@ namespace MASES.CLIParser
             {
                 foreach (var item2 in newSrc.ToArray())
                 {
-                    if (rawReplace ? true : item2.Exist && item.Override(item2))
+                    if (rawReplace || item2.Exist && item.Override(item2))
                     {
                         newSrc.Remove(item2);
                         break;
@@ -436,7 +430,7 @@ namespace MASES.CLIParser
         {
             if (metadata == null) throw new ArgumentNullException("metadata cannot be null.");
             if (string.IsNullOrEmpty(metadata.Name)) throw new ArgumentException("Parameter Name shall be set.");
-            if (arguments.ContainsKey(metadata.Name)) throw new ArgumentException(string.Format("Parameter {0} is duplicated", metadata.Name));
+            if (arguments.ContainsKey(metadata.Name)) throw new ArgumentException($"Parameter {metadata.Name} is duplicated");
             IArgumentMetadataHelper helper = metadata as IArgumentMetadataHelper;
             if (helper.Parser == null)
             {
@@ -445,7 +439,7 @@ namespace MASES.CLIParser
             }
             if (!ReferenceEquals(helper.Parser, this))
             {
-                throw new ArgumentException(string.Format("Parser mismatch: {0} is not associated to this parser instance.", metadata.Name));
+                throw new ArgumentException($"Parser mismatch: {metadata.Name} is not associated to this parser instance.");
             }
             helper.Check();
             arguments.Add(metadata.Name, metadata);
@@ -480,7 +474,7 @@ namespace MASES.CLIParser
             {
                 IArgumentMetadataParsed dataParsed = item.Parse(lstArgs);
 
-                if (parsedArgs.ContainsKey(dataParsed.Name)) throw new ArgumentException(string.Format("Parameter {0} is duplicated", dataParsed.Name));
+                if (parsedArgs.ContainsKey(dataParsed.Name)) throw new ArgumentException($"Parameter {dataParsed.Name} is duplicated");
 
                 if (dataParsed != null)
                 {
@@ -490,15 +484,12 @@ namespace MASES.CLIParser
 
             if (Settings.CheckUnwanted && lstArgs.Count != 0)
             {
-                throw new ArgumentException(string.Format("Parameter{0} {1} are not managed", lstArgs.Count == 1 ? string.Empty : "s", string.Join(", ", lstArgs)));
+                throw new ArgumentException($"Parameter {(lstArgs.Count == 1 ? string.Empty : "s")} {string.Join(", ", lstArgs)} are not managed");
             }
 
             foreach (var item in parsedArgs.Values)
             {
-                if (item.CrossCheck != null)
-                {
-                    item.CrossCheck(parsedArgs.Values);
-                }
+                item.CrossCheck?.Invoke(parsedArgs.Values);
             }
 
             UnparsedArgs = new List<string>(lstArgs).ToArray();
@@ -519,7 +510,7 @@ namespace MASES.CLIParser
 
             IList<string> lstArgs = new List<string>(arg.Value as IEnumerable<string>);
 
-            foreach (IArgumentMetadataHelper item in Arguments)
+            foreach (IArgumentMetadataHelper item in Arguments.Cast<IArgumentMetadataHelper>())
             {
                 IArgumentMetadataParsed dataParsed = item.Parse(lstArgs);
 
@@ -675,7 +666,7 @@ namespace MASES.CLIParser
         public int PaddingFromArguments()
         {
             int len = 0;
-            foreach (IArgumentMetadataHelper item in Arguments)
+            foreach (IArgumentMetadataHelper item in Arguments.Cast<IArgumentMetadataHelper>())
             {
                 len = Math.Max(len, item.Parameter().Length);
             }
@@ -697,7 +688,7 @@ namespace MASES.CLIParser
             catch { }
             if (width.HasValue) newWidth = width.Value;
             StringBuilder builder = new StringBuilder();
-            foreach (IArgumentMetadataHelper item in Arguments)
+            foreach (IArgumentMetadataHelper item in Arguments.Cast<IArgumentMetadataHelper>())
             {
                 builder.AppendLine(item.DescriptionBuilder(newWidth));
             }
