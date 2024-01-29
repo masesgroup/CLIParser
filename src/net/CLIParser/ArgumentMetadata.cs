@@ -1,7 +1,7 @@
 ﻿/*
  *  MIT License
  *
- *  Copyright (c) 2023 MASES s.r.l.
+ *  Copyright (c) 2024 MASES s.r.l.
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -469,6 +469,7 @@ namespace MASES.CLIParser
 
         string IArgumentMetadataHelper.DescriptionBuilder(int width)
         {
+            if (width <= 0) width = 80; // set a new default since received one is not Parser.HelpInfo is not correct
             Helper.Check();
             string description = Helper.Parameter();
             description = description.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding, ' ');
@@ -536,8 +537,10 @@ namespace MASES.CLIParser
             StringBuilder builder = new StringBuilder();
             while (trimming.Length > width)
             {
-                builder.AppendLine(trimming.Substring(0, width - 2) + "-");
-                trimming = string.Empty.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding + 2, ' ') + trimming.Remove(0, width - 2);
+                int cuttingPoint = width - 2;
+                if (cuttingPoint < 0) cuttingPoint = 0;
+                builder.AppendLine(trimming.Substring(0, cuttingPoint) + "-");
+                trimming = string.Empty.PadRight(Helper.Parser.Settings.DefaultDescriptionPadding + 2, ' ') + trimming.Remove(0, cuttingPoint);
             }
             builder.AppendLine(trimming);
 
