@@ -6,6 +6,10 @@ name: CI_BUILD
 # events but only for the master branch
 on:
   push:
+    # only trigger on branches, not on tags
+    branches: '**'
+    paths-ignore:
+      - 'docs/**'
 
 # This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
