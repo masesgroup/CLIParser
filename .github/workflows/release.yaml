@@ -8,7 +8,6 @@ on:
   release:
     types: 
       - published
-      - edited
 
 jobs:
   # This workflow contains a single job called "build_release"
