@@ -25,7 +25,7 @@ jobs:
         with:
           submodules: 'true'
 
-      - uses: nuget/setup-nuget@v1
+      - uses: nuget/setup-nuget@v2
         with:
           nuget-version: '5.x'
       - run: nuget restore src\net\CLIParser.sln
