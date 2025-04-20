@@ -6,11 +6,11 @@
     <RootNamespace>MASES.CLIParserTest</RootNamespace>
     <Title>CLIParserTest - a parser test tool for CLIParser</Title>
     <Description>CLIParserTest - a parser test tool for CLIParser</Description>
-    <Copyright>Copyright ©  MASES s.r.l. 2023</Copyright>
+    <Copyright>Copyright ©  MASES s.r.l. 2025</Copyright>
     <Authors>MASES s.r.l.</Authors>
     <Company>MASES s.r.l.</Company>
     <Version>3.2.0.0</Version>
-    <TargetFrameworks>net462;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net462;net8.0;net9.0</TargetFrameworks>
     <OutputPath>..\..\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>

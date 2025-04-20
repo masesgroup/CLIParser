@@ -35,23 +35,13 @@ jobs:
       - run: nuget restore src\net\CLIParser.sln
       
       - name: Compile 
-        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" tests\CLIParserTest.sln
+        run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" tests\net\CLIParserTest.sln
 
       - name: Test 
         run: |
-          dotnet run --framework net462 --project tests\CLIParserTest\CLIParserTest.csproj
-          dotnet run --framework net6.0 --project tests\CLIParserTest\CLIParserTest.csproj
-          dotnet run --framework net7.0 --project tests\CLIParserTest\CLIParserTest.csproj
+          dotnet run --framework net462 --project tests\net\CLIParserTest\CLIParserTest.csproj
+          dotnet run --framework net8.0 --project tests\net\CLIParserTest\CLIParserTest.csproj
+          dotnet run --framework net9.0 --project tests\net\CLIParserTest\CLIParserTest.csproj
 
       - name: Create Release
         run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\net\CLIParser.sln
-        
-      - name: Clear documentation folder 
-        run: Remove-Item .\docs\* -Recurse -Force -Exclude _config.yml,CNAME
-
-      - run: dotnet tool update -g docfx
-
-      - name: Build documentation
-        run: |
-          cd src\documentation
-          docfx

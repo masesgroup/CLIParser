@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLIParserTest", "CLIParserTest\CLIParserTest.csproj", "{3EF594CC-5450-45D3-BAB0-07D4B11C4872}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLIParser", "..\src\net\CLIParser\CLIParser.csproj", "{A235BF90-1C9A-491C-B39A-E6E4386CB2A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLIParser", "..\..\src\net\CLIParser\CLIParser.csproj", "{49DF0FB9-5997-0852-E080-B6DF32114B21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3EF594CC-5450-45D3-BAB0-07D4B11C4872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF594CC-5450-45D3-BAB0-07D4B11C4872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF594CC-5450-45D3-BAB0-07D4B11C4872}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A235BF90-1C9A-491C-B39A-E6E4386CB2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A235BF90-1C9A-491C-B39A-E6E4386CB2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A235BF90-1C9A-491C-B39A-E6E4386CB2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A235BF90-1C9A-491C-B39A-E6E4386CB2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49DF0FB9-5997-0852-E080-B6DF32114B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DF0FB9-5997-0852-E080-B6DF32114B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DF0FB9-5997-0852-E080-B6DF32114B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DF0FB9-5997-0852-E080-B6DF32114B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
