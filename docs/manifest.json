@@ -10,7 +10,11 @@
           "relative_path": "api/MASES.CLIParser.ArgumentMetadata-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.ArgumentMetadata<T>",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.ArgumentMetadata-1.yml\" sourcestartlinenumber=\"1\">Class managing the argument information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -20,7 +24,11 @@
           "relative_path": "api/MASES.CLIParser.ArgumentMetadataBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.ArgumentMetadataBase",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.ArgumentMetadataBase.yml\" sourcestartlinenumber=\"1\">Class managing the argument information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -30,7 +38,11 @@
           "relative_path": "api/MASES.CLIParser.ArgumentPrefix.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.ArgumentPrefix",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.ArgumentPrefix.yml\" sourcestartlinenumber=\"1\">Prefixes of the argument</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -40,7 +52,11 @@
           "relative_path": "api/MASES.CLIParser.ArgumentType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.ArgumentType",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.ArgumentType.yml\" sourcestartlinenumber=\"1\">Represent the argument format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -50,7 +66,11 @@
           "relative_path": "api/MASES.CLIParser.ArgumentValueType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.ArgumentValueType",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.ArgumentValueType.yml\" sourcestartlinenumber=\"1\">Represent the argument possible values to check</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -60,7 +80,11 @@
           "relative_path": "api/MASES.CLIParser.IArgumentMetadata.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.IArgumentMetadata",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.IArgumentMetadata.yml\" sourcestartlinenumber=\"1\">Metadata associated to the argument, used during the parse</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -70,7 +94,11 @@
           "relative_path": "api/MASES.CLIParser.IArgumentMetadataParsed.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.IArgumentMetadataParsed",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.IArgumentMetadataParsed.yml\" sourcestartlinenumber=\"1\">Result of the argument analysis after the parse</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -80,7 +108,11 @@
           "relative_path": "api/MASES.CLIParser.Parser.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.Parser",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.Parser.yml\" sourcestartlinenumber=\"1\">Public entry point for the parser</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -90,7 +122,11 @@
           "relative_path": "api/MASES.CLIParser.ParserExtension.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.ParserExtension",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.ParserExtension.yml\" sourcestartlinenumber=\"1\">Helper methods for the <xref href=\"MASES.CLIParser.Parser\" data-throw-if-not-resolved=\"false\"></xref> class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -100,7 +136,11 @@
           "relative_path": "api/MASES.CLIParser.Settings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser.Settings",
+      "Summary": "<p sourcefile=\"api/MASES.CLIParser.Settings.yml\" sourcestartlinenumber=\"1\">The class managing the settings of <xref href=\"MASES.CLIParser.Parser\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -110,7 +150,11 @@
           "relative_path": "api/MASES.CLIParser.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.CLIParser",
+      "Summary": null
     },
     {
       "type": "Conceptual",
