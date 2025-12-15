@@ -79,7 +79,7 @@ jobs:
       - name: Create Release
         run: dotnet build --no-incremental --configuration Release /p:Platform="Any CPU" src\net\CLIParser.sln
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: CLIParser
           path: .\bin\*nupkg
