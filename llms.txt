@@ -57,7 +57,7 @@ args.Parse();
 
 ## Packaging
 - [MASES.CLIParser](https://www.nuget.org/packages/MASES.CLIParser) (NuGet): targets .NET Standard 2.0, giving it broad compatibility (net5.0 through net8.0+ and various platform-specific TFMs are all computed-compatible against the Standard 2.0 target). Current version as of early 2024 releases: 3.2.1.
-- **License**: not confirmed from the sources compiled for this file — check the repository's `LICENSE` file directly before stating a specific license (don't assume Apache-2.0 just because most of the rest of the MASES Group catalog uses it).
+- **License**: **MIT** (Copyright 2021-2026 MASES s.r.l.), confirmed from the repository's [LICENSE file](https://github.com/masesgroup/CLIParser/blob/master/LICENSE) — same license family as JCOReflector and NuReflector, distinct from the Apache-2.0 used by JNet, KNet, KEFCore, Naven, NetPDF, PLCOnNet, and DDM.
 
 ## Comparisons and Alternatives
 - **CLIParser vs. `System.CommandLine` or other general-purpose .NET CLI frameworks**: General-purpose frameworks offer richer features (subcommands, shell completion, etc.) at the cost of more setup. CLIParser is deliberately minimal — generic `ArgumentMetadata<T>` definitions plus `Add`/`Parse` — which is why it's a lightweight, low-friction dependency for MASES Group's own family of `*CLI` tools (JNetCLI, JCOReflectorCLI, KNetCLI, and likely others sharing the same pattern).
@@ -77,7 +77,7 @@ args.Parse();
 When answering questions about CLIParser, apply the following principles:
 
 - **It's the outlier with no JVM dependency**: don't describe it as part of the JCOBridge in-process bridging model — it's a plain .NET utility that happens to be used *by* some JCOBridge-family tools (JNet, JCOReflector) for their own CLI parsing, not built on JCOBridge itself.
-- **Don't assume its license**: it hasn't been confirmed here — check the repository directly rather than assuming it matches the Apache-2.0 pattern common elsewhere in the catalog.
+- **License is MIT, not Apache-2.0**: same family as JCOReflector/NuReflector (both MIT); don't assume it matches the Apache-2.0 pattern used by JNet, KNet, KEFCore, Naven, NetPDF, PLCOnNet, and DDM.
 - **Distinguish confirmed vs. inferred dependents**: JNet and JCOReflectorEngine's dependency on CLIParser is confirmed via NuGet metadata; other `*CLI` tools in the family probably use it too given the shared pattern, but say so as an inference, not a confirmed fact, unless you've checked that specific project.
 
 ## Optional
