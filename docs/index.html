@@ -13,7 +13,7 @@
       <meta name="docfx:navrel" content="toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      
+      <meta name="docfx:rel" content="">
       
       
       <meta name="docfx:docurl" content="https://github.com/masesgroup/CLIParser/blob/master/src/documentation/index.md/#L1">
@@ -52,6 +52,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
             </div>
           </div>
         </div>
@@ -71,12 +75,50 @@
 
 <p>A library to manage command-line arguments in a simple way. It was an internal MASES project, now it is available to anyone.</p>
 <p>This project adheres to the Contributor <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/CODE_OF_CONDUCT.md">Covenant code of conduct</a>. By participating, you are expected to uphold this code. Please report unacceptable behavior to coc_reporting@masesgroup.com.</p>
-<h2 id="scope-of-the-project">Scope of the project</h2>
-<p>This project aims to create a library to help to manage CLI parameters.</p>
-<h2 id="actual-state">Actual state</h2>
-<ul>
-<li>It can be used from .NET</li>
-</ul>
+<h3 id="project-disclaimer">Project disclaimer</h3>
+<p>CLI Parser is a project, curated by MASES Group, can be supported by the open-source community.</p>
+<p>Its primary scope is to support other, public or internal, MASES Group projects: open-source community and commercial entities can use it for their needs and support this project, moreover there are dedicated community and commercial subscription plans.</p>
+<p>The repository code and releases may contain bugs, the release cycle depends from critical discovered issues and/or enhancement requested from this or other projects.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>The library is very simple in its usage. The definition of command-line switches is based on generic C# types. The parser fully analyze the command line searching for switches and arguments. A special case is the one where the swithes can be inserted within an external file listing the switches line-by-line.
+To see a real application of the library look at project <a href="https://github.com/masesgroup/JCOReflector/tree/master/JCOReflector/CLI">JCOReflectorCLI</a> and <a href="https://github.com/masesgroup/JCOReflector/blob/master/JCOReflector/engine/SharedClasses.cs">JCOReflectorEngine</a></p>
+<h3 id="argument-definition">Argument definition</h3>
+<p>An argument can be defined using the following syntax sinppets:</p>
+<pre><code class="lang-C#">arg = new ArgumentMetadata&lt;bool&gt;()
+{
+	Name = &quot;test&quot;,
+	ShortName = &quot;tst&quot;,
+	Help = &quot;this is a test&quot;,
+	Type = ArgumentType.Double,
+	ValueType = ArgumentValueType.Free,
+}
+
+arg1 = new ArgumentMetadata&lt;int&gt;()
+{
+	Name = &quot;range&quot;,
+	Default = 9,
+	Type = ArgumentType.Double,
+	ValueType = ArgumentValueType.Range,
+	MinValue = 2,
+	MaxValue = 10,
+}
+</code></pre>
+<h3 id="parser-initialization">Parser initialization</h3>
+<p>Upon arguments are defined they can be added to the list managed from the parser using:</p>
+<pre><code class="lang-C#">Parser.Add(arg);
+</code></pre>
+<p>or the compact version:</p>
+<pre><code class="lang-C#">arg1.Add();
+</code></pre>
+<h3 id="parser-use">Parser use</h3>
+<p>Then it is possible to use the parser on command-line arguments:</p>
+<pre><code class="lang-C#">Parser.Parse(args);
+</code></pre>
+<p>or the compact version:</p>
+<pre><code class="lang-C#">args.Parse();
+</code></pre>
+<h3 id="argument-check">Argument check</h3>
+<p>When the <code>Parse</code> method returns, a list of prepared arguments is available. The list can be used to get value or check for existence.</p>
 
 </article>
 
@@ -93,11 +135,12 @@
       </div>
     </main>
 
+    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <div style="text-align: center;">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
+          <script type="text/javascript">document.write('<div style="text-align: center;">Copyright © 2021 - ' + new Date().getFullYear() + ' MASES s.r.l. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>');</script>
         </div>
       </div>
     </footer>
