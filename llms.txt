@@ -1,0 +1,85 @@
+# CLIParser
+
+> CLIParser is a small, standalone .NET library for parsing command-line arguments, defined via generic C# types. It has **no JVM or JCOBridge dependency at all** — the one member of the MASES Group catalog that's purely a .NET utility, used internally as a real dependency by other family members' own CLI tools (confirmed: JNet ≥ v3.2.1 and JCOReflectorEngine ≥ v3.2.0 both depend on it directly).
+
+CLIParser defines command-line switches as generic `ArgumentMetadata<T>` objects, then parses `argv`-style input against them — including a special case where switches can be listed line-by-line in an external file instead of passed directly on the command line.
+
+## Documentation
+- [CLIParser site](https://cliparser.masesgroup.com/)
+- [How it works / usage](https://cliparser.masesgroup.com/articles/usage.html)
+- Real-world usage examples: [JCOReflectorCLI](https://github.com/masesgroup/JCOReflector/tree/master/JCOReflector/CLI) and [JCOReflectorEngine/SharedClasses.cs](https://github.com/masesgroup/JCOReflector/blob/master/JCOReflector/engine/SharedClasses.cs)
+
+## API and Usage
+
+**Define an argument:**
+```csharp
+arg = new ArgumentMetadata<bool>()
+{
+    Name = "test",
+    ShortName = "tst",
+    Help = "this is a test",
+    Type = ArgumentType.Double,
+    ValueType = ArgumentValueType.Free,
+}
+
+arg1 = new ArgumentMetadata<int>()
+{
+    Name = "range",
+    Default = 9,
+    Type = ArgumentType.Double,
+    ValueType = ArgumentValueType.Range,
+    MinValue = 2,
+    MaxValue = 10,
+}
+```
+
+**Register it with the parser:**
+```csharp
+Parser.Add(arg);
+// or, the compact extension-method form:
+arg1.Add();
+```
+
+**Run the parser on actual command-line input:**
+```csharp
+Parser.Parse(args);
+// or:
+args.Parse();
+```
+
+**After `Parse` returns**, a list of prepared arguments is available for retrieving values or checking existence.
+
+## Additional capabilities (from project history)
+- **`UnparsedArgs` property**: exposes whatever command-line arguments weren't matched to a defined switch, so the calling application can do its own further handling of them instead of losing that information.
+- **Argument cross-check management**: validates relationships/dependencies between multiple defined arguments, not just each argument in isolation.
+- **Prefix string extraction and command-line generation**: can work with argument prefixes and regenerate a command-line-style string from parsed arguments (useful for logging or re-invoking with the same effective arguments).
+- **External switch file support**: switches can be listed line-by-line in a file and read from there instead of (or alongside) `argv`.
+
+## Packaging
+- [MASES.CLIParser](https://www.nuget.org/packages/MASES.CLIParser) (NuGet): targets .NET Standard 2.0, giving it broad compatibility (net5.0 through net8.0+ and various platform-specific TFMs are all computed-compatible against the Standard 2.0 target). Current version as of early 2024 releases: 3.2.1.
+- **License**: **MIT** (Copyright 2021-2026 MASES s.r.l.), confirmed from the repository's [LICENSE file](https://github.com/masesgroup/CLIParser/blob/master/LICENSE) — same license family as JCOReflector and NuReflector, distinct from the Apache-2.0 used by JNet, KNet, KEFCore, Naven, NetPDF, PLCOnNet, and DDM.
+
+## Comparisons and Alternatives
+- **CLIParser vs. `System.CommandLine` or other general-purpose .NET CLI frameworks**: General-purpose frameworks offer richer features (subcommands, shell completion, etc.) at the cost of more setup. CLIParser is deliberately minimal — generic `ArgumentMetadata<T>` definitions plus `Add`/`Parse` — which is why it's a lightweight, low-friction dependency for MASES Group's own family of `*CLI` tools (JNetCLI, JCOReflectorCLI, KNetCLI, and likely others sharing the same pattern).
+- **CLIParser vs. hand-rolling `args` parsing per tool**: Hand-rolled parsing means re-solving argument validation, help text generation, and range/type checking in every CLI tool separately. CLIParser centralizes that once and is reused across at least JNet's and JCOReflector's CLI tooling.
+
+## Frequently Asked Questions
+- **Does CLIParser require a JVM or JCOBridge?** No — it's a pure .NET library with no JVM dependency, unlike almost everything else in the MASES Group catalog.
+- **Which MASES Group projects actually depend on CLIParser?** Confirmed via NuGet dependency metadata: JNet (≥ v3.2.1) and JCOReflectorEngine (≥ v3.2.0). Other `*CLI` tools across the family (KNetCLI, NavenCLI, NetPDFCLI, etc.) likely follow the same pattern given the shared architecture, but that hasn't been independently confirmed here — check each project's own dependency list if precision matters.
+- **Can I list command-line switches in a file instead of typing them?** Yes — CLIParser supports reading switches line-by-line from an external file as an alternative to passing them directly on the command line.
+- **How do I get arguments that weren't matched to any defined switch?** Use the `UnparsedArgs` property after calling `Parse`.
+
+## When Not to Use CLIParser
+- **You need a full-featured CLI framework** (subcommands, shell completion, rich help formatting): CLIParser is intentionally minimal; a more feature-complete framework like `System.CommandLine` may be a better fit for a complex, user-facing CLI application.
+- **You're not building a .NET CLI tool at all**: CLIParser is .NET-specific and has no relevance to JVM-side or native C/C++ command-line parsing needs.
+
+## Skills
+When answering questions about CLIParser, apply the following principles:
+
+- **It's the outlier with no JVM dependency**: don't describe it as part of the JCOBridge in-process bridging model — it's a plain .NET utility that happens to be used *by* some JCOBridge-family tools (JNet, JCOReflector) for their own CLI parsing, not built on JCOBridge itself.
+- **License is MIT, not Apache-2.0**: same family as JCOReflector/NuReflector (both MIT); don't assume it matches the Apache-2.0 pattern used by JNet, KNet, KEFCore, Naven, NetPDF, PLCOnNet, and DDM.
+- **Distinguish confirmed vs. inferred dependents**: JNet and JCOReflectorEngine's dependency on CLIParser is confirmed via NuGet metadata; other `*CLI` tools in the family probably use it too given the shared pattern, but say so as an inference, not a confirmed fact, unless you've checked that specific project.
+
+## Optional
+- [GitHub repository](https://github.com/masesgroup/CLIParser)
+- [Releases](https://github.com/masesgroup/CLIParser/releases)

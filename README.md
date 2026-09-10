@@ -10,6 +10,14 @@ A library to manage command-line arguments in a simple way. It was an internal M
 
 This project adheres to the Contributor [Covenant code of conduct](https://github.com/masesgroup/DataDistributionManager/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to coc_reporting@masesgroup.com.
 
+### Project disclaimer
+
+CLI Parser is a project, curated by MASES Group, can be supported by the open-source community.
+
+Its primary scope is to support other, public or internal, MASES Group projects: open-source community and commercial entities can use it for their needs and support this project, moreover there are dedicated community and commercial subscription plans.
+
+The repository code and releases may contain bugs, the release cycle depends from critical discovered issues and/or enhancement requested from this or other projects.
+
 ## How it works
 
 The library is very simple in its usage. The definition of command-line switches is based on generic C# types. The parser fully analyze the command line searching for switches and arguments. A special case is the one where the swithes can be inserted within an external file listing the switches line-by-line.
